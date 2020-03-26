@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+    <include layout="@layout/top"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="修改用户名:"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:hint="用户名"
+        android:textSize="20sp"
+        android:maxLength="10"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:text="以中文或英文字母开头，限4-10个字符，一个汉字为两个字符"
+        android:textSize="13dp"/>
+
+    <Button
+        android:id="@+id/lout_my_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_circle_shape"
+        android:text="确定"
+        android:textColor="#ffffff"
+        android:onClick="my_username_okBtn"/>
+
+</LinearLayout>

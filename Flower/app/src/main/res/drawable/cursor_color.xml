@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:andorid="http://schemas.android.com/apk/res/android"
+    andorid:shape="rectangle">
+    <size andorid:width="2dp"/>
+    <!--<solid andorid:color="@android:color/holo_orange_light"/>-->
+    <solid andorid:color="#00CC99"/>
+</shape>

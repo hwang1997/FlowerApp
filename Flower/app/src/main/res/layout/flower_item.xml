@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/iv_flower_img"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/flower"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:id="@+id/tv_flower_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="王五六七"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textColor="#ff0000"/>
+        <TextView
+            android:id="@+id/tv_flower_price"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="142.5"
+            android:textColor="#ff0000"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

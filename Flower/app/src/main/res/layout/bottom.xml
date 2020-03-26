@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:gravity="center"
+    android:background="#f0f0f0"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/id_tab_fst"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#FEFFFF">
+
+        <ImageButton
+            android:id="@+id/id_tab_fst_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/tab_fst_pressed"
+            android:background="#FEFFFF"
+            android:focusable="false"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#78C840"-->
+            <!--android:text="首页"/>-->
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/id_tab_bus"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#FEFFFF">
+
+        <ImageButton
+            android:id="@+id/id_tab_bus_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/tab_bus_pressed"
+            android:background="#FEFFFF"
+            android:focusable="false"
+            />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#78C840"-->
+            <!--android:text="购物车"/>-->
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/id_tab_my"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#FEFFFF">
+
+        <ImageButton
+            android:id="@+id/id_tab_my_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/tab_my_pressed"
+            android:background="#FEFFFF"
+            android:focusable="false"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#78C840"-->
+            <!--android:text="我的"/>-->
+
+    </LinearLayout>
+
+</LinearLayout>
