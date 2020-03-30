@@ -18,6 +18,7 @@ import com.wanghuan.login.bus_Page.BusFragment;
 import com.wanghuan.login.frist_Page.FstFragment;
 import com.wanghuan.login.my_Page.MyFragment;
 import com.wanghuan.login.my_Page.my_addr;
+import com.wanghuan.login.my_Page.my_order;
 import com.wanghuan.login.my_Page.my_pwd;
 import com.wanghuan.login.my_Page.my_username;
 
@@ -44,16 +45,20 @@ public class home extends FragmentActivity implements View.OnClickListener {
         startActivity(intent);
     }
     public void MyPsw(View view){
-        Intent intent1 = new Intent(getApplicationContext(), my_pwd.class);
-        startActivity(intent1);
+        Intent intent = new Intent(getApplicationContext(), my_pwd.class);
+        startActivity(intent);
     }
     public void MyAddr(View view){
-        Intent intent2 = new Intent(getApplicationContext(), my_addr.class);
-        startActivity(intent2);
+        Intent intent = new Intent(getApplicationContext(), my_addr.class);
+        startActivity(intent);
+    }
+    public void MyOrder(View view){
+        Intent intent = new Intent(getApplicationContext(), my_order.class);
+        startActivity(intent);
     }
     public void logout(View view){
-        Intent intent5 = new Intent(getApplicationContext(), login.class);
-        startActivity(intent5);
+        Intent intent = new Intent(getApplicationContext(), login.class);
+        startActivity(intent);
     }
 
 

@@ -13,7 +13,6 @@ import com.wanghuan.login.model.Flowers;
 
 import java.util.List;
 
-import static java.security.AccessController.getContext;
 
 public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder> {
     private List<Flowers> mFlowerList;
@@ -50,7 +49,7 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
         holder.flowerName.setText(flowers.getGood_name());
         holder.flowerPrice.setText(flowers.getPrice());
         holder.flowerDes.setText(flowers.getDes());
-        holder.flowerImage.setImageResource(Integer.parseInt("R.mipmap." + "flowers.getPic()"));
+        holder.flowerImage.setImageResource(Integer.parseInt("R.mipmap." + flowers.getPic()));
 
     }
     public int getItemCount(){

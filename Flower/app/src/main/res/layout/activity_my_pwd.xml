@@ -4,7 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgColor">
-    <include layout="@layout/top"/>
+    <com.wanghuan.login.util.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.wanghuan.login.util.TitleLayout>
 
 
     <TextView

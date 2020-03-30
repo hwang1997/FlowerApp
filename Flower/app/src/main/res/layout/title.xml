@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:background="#00CC99"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+
+<LinearLayout
+    android:id="@+id/title_back"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginLeft="10dp">
+    <TextView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@mipmap/back"
+        />
+</LinearLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:paddingLeft="90dp"
+        android:text="秋秋花坊"
+        android:textColor="#ffffff"
+        android:textSize="24sp"/>
+
+</LinearLayout>

@@ -6,11 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/bgColor"
     android:orientation="vertical" >
+    <com.wanghuan.login.util.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    </com.wanghuan.login.util.TitleLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
 
         android:gravity="center_vertical">
 
@@ -18,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="注册"
-            android:textSize="30sp" />
+            android:text="注册新账号"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

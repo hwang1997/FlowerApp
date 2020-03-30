@@ -33,7 +33,6 @@ public class my_addr extends AppCompatActivity {
         initAddr();
         final AddrAdapter adapter = new AddrAdapter(my_addr.this,R.layout.addr_item, addrList);
         ListView listView = (ListView) findViewById(R.id.list_view);
-        Button btnView = (Button) findViewById(R.id.btn_addr_delete);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -78,13 +77,13 @@ public class my_addr extends AppCompatActivity {
             addrList.add(addr3);
 //        }
     }
-    public void getIntent(Intent intent){
-        String address = intent.getStringExtra("address");
-        String name = intent.getStringExtra("name");
-        String tel = intent.getStringExtra("tel");
-        Addr addr = new Addr(address, name, tel);
-        addrList.add(addr);
-    }
+//    public void getIntent(Intent intent){
+//        String address = intent.getStringExtra("address");
+//        String name = intent.getStringExtra("name");
+//        String tel = intent.getStringExtra("tel");
+//        Addr addr = new Addr(address, name, tel);
+//        addrList.add(addr);
+//    }
 
 //    public void my_addr_okBtn(){
 //        Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
