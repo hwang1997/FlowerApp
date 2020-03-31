@@ -59,6 +59,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
     public void logout(View view){
         Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);
+        finish();
     }
 
 
