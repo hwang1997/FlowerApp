@@ -66,7 +66,8 @@ public class UpdateServlet extends HttpServlet {
             String str = name.substring(name.lastIndexOf("."), name.length() - 1);
             System.out.println("测试获取文件的后缀：" + str);
             
-            String r = UUID.randomUUID().toString();
+//            String r = UUID.randomUUID().toString();
+            String r = good_name;
 
             //生成一个新的文件名，不重复，数据库存储的就是这个文件名，不重复的
             String filename = root + "\\" + r + str;
