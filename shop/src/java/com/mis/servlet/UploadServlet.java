@@ -26,6 +26,15 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            
+            request.setCharacterEncoding("UTF-8");
+            int good_id = Integer.parseInt(request.getParameter("good_id"));
+            String good_name = request.getParameter("good_name");
+            String price = request.getParameter("price");
+            String cnt2 = request.getParameter("count");
+            int count =Integer.parseInt(request.getParameter("count"));
+            String des =  request.getParameter("des");
+            
             //获取文件描述信息
             //String desc = request.getParameter("desc");
             //获取上传的文件
@@ -43,7 +52,8 @@ public class UploadServlet extends HttpServlet {
             String str = name.substring(name.lastIndexOf("."), name.length() - 1);
             System.out.println("测试获取文件的后缀：" + str);
             
-            String r = UUID.randomUUID().toString();
+//            String r = UUID.randomUUID().toString();
+            String r = good_name;
 
             //生成一个新的文件名，不重复，数据库存储的就是这个文件名，不重复的
             String filename = root + "\\" + r + str;
@@ -54,15 +64,7 @@ public class UploadServlet extends HttpServlet {
             //上传文件到指定目录，不想上传文件就不调用这个
             part.write(filename);
             
-            request.setCharacterEncoding("UTF-8");
-            int good_id = Integer.parseInt(request.getParameter("good_id"));
-            String good_name = request.getParameter("good_name");
-            String price = request.getParameter("price");
-            String cnt2 = request.getParameter("count");
-            int count =Integer.parseInt(request.getParameter("count"));
-            String des =  request.getParameter("des");
-            
-            
+                  
             Goods good = DaoFactory.getGoodsDao().getOneByGood_id(good_id);
             
             if(good != null){
