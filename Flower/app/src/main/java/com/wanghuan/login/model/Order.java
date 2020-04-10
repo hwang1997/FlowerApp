@@ -2,8 +2,8 @@ package com.wanghuan.login.model;
 
 public class Order {
     private int order_id;
-    private User user_id;
-    private Flowers good_id;
+    private User user;
+    private Flowers flowers;
     private String amount;
     private String order_name;
     private String phone;
@@ -11,12 +11,10 @@ public class Order {
     private String pay;
     private String state;
 
-//    public Order(int order_id, User user_id, Flowers good_id,
-//                 String amount, String order_name, String phone,
-//                 String address, String pay, String state) {
+//    public Order(int order_id, User user, Flowers flowers, String amount, String order_name, String phone, String address, String pay, String state) {
 //        this.order_id = order_id;
-//        this.user_id = user_id;
-//        this.good_id = good_id;
+//        this.user = user;
+//        this.flowers = flowers;
 //        this.amount = amount;
 //        this.order_name = order_name;
 //        this.phone = phone;
@@ -24,7 +22,8 @@ public class Order {
 //        this.pay = pay;
 //        this.state = state;
 //    }
-public Order(int order_id, String amount, String order_name, String phone, String address, String pay, String state) {
+
+    public Order(int order_id, String amount, String order_name, String phone, String address, String pay, String state) {
     this.order_id = order_id;
     this.amount = amount;
     this.order_name = order_name;
@@ -43,20 +42,20 @@ public Order(int order_id, String amount, String order_name, String phone, Strin
         this.order_id = order_id;
     }
 
-//    public User getUser_id() {
-//        return user_id;
+//    public User getUser() {
+//        return user;
 //    }
 //
-//    public void setUser_id(User user_id) {
-//        this.user_id = user_id;
-//    }
-
-//    public Flowers getGood_id() {
-//        return good_id;
+//    public void setUser(User user) {
+//        this.user = user;
 //    }
 //
-//    public void setGood_id(Flowers good_id) {
-//        this.good_id = good_id;
+//    public Flowers getFlowers() {
+//        return flowers;
+//    }
+//
+//    public void setFlowers(Flowers flowers) {
+//        this.flowers = flowers;
 //    }
 
     public String getAmount() {

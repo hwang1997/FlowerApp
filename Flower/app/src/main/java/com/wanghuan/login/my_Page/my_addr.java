@@ -49,24 +49,7 @@ public class my_addr extends AppCompatActivity {
             }
         });
     }
-//    public void my_delete_addr(View view){
-//        Toast.makeText(getApplicationContext(),"123",Toast.LENGTH_SHORT).show();
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("删除地址");
-//        builder.setMessage("确定删除该地址？");
-//        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                Toast.makeText(getApplicationContext(),"取消",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                Toast.makeText(getApplicationContext(),"删除成功",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
+
     private void initAddr(){
 //        for (int i = 0; i < 10; i++){
             Addr addr1 = new Addr("华凯大厦1103", "张三","18372608361");

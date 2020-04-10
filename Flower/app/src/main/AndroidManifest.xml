@@ -30,7 +30,8 @@
         <activity android:name=".my_Page.update_addr" />
         <activity android:name=".my_Page.add_addr" />
         <activity android:name=".my_Page.my_order" />
-        <activity android:name=".my_Page.show_order"></activity>
+        <activity android:name=".my_Page.show_order" />
+        <activity android:name=".frist_Page.goodsInfoActivity"></activity>
     </application>
 
 </manifest>

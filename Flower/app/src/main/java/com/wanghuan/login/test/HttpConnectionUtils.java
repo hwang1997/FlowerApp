@@ -6,7 +6,7 @@ import java.net.URL;
 
 public class HttpConnectionUtils {
     public static HttpURLConnection getConnection(String data)throws Exception{
-        URL url = new URL("http://192.168.0.120:8090/shop/AdminLogin");
+        URL url = new URL("http://192.168.0.119:8090/shop");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setReadTimeout(5000);

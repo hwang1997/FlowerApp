@@ -1,14 +1,17 @@
 package com.wanghuan.login.model;
 
-public class Flowers {
+
+import java.io.Serializable;
+
+public class Flowers implements Serializable {
     private int good_id;
     private String good_name;
     private String price;
     private String count;
     private String des;
-    private String pic;
+    private int pic;
 
-    public Flowers(int good_id, String good_name, String price, String count, String des, String pic) {
+    public Flowers(int good_id, String good_name, String price, String count, String des, int pic) {
         this.good_id = good_id;
         this.good_name = good_name;
         this.price = price;
@@ -57,11 +60,11 @@ public class Flowers {
         this.des = des;
     }
 
-    public String getPic() {
+    public int getPic() {
         return pic;
     }
 
-    public void setPic(String pic) {
+    public void setPic(int pic) {
         this.pic = pic;
     }
 }
