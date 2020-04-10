@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cbacda05-0ec0-446c-892f-0dcd729b4ad4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/shop/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/dongpu.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/1.~sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/IAdminDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/IGoodsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/IOrderDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/IUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/impl/AdminDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/impl/GoodsDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/impl/OrderDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/dao/impl/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/filter/CharEncodingFilter$GetHttpServletRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/filter/CharEncodingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/model/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/model/Goods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/model/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/AdminLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/AdminLogout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/CheckGood_idServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/CheckUserIdServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/GoodsDelete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/GoodsManage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/GoodsUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/GoodsUpdateDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/OrderManage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/OrderUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/OrderUpdateDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UpdateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UploadServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UserDelete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UserInsert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UserManage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UserUpdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/servlet/UserUpdateDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/test/JDBCTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/util/DaoFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/util/DatabaseBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/classes/com/mis/util/Pagination.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/jspf/admin_menu.jspf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/jspf/admin_top.jspf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/activation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/gson-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/jstl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/ojdbc6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/standard.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/webservices-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/webservices-extra-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/webservices-extra.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/webservices-rt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/lib/webservices-tools.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/goods.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/goods_add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/goods_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/order.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/order_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/user_add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/admin/user_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/css/pintuer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/image/icon_logo_1.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/image/login_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/js/admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/build/web/js/pintuer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/dist/shop.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/image/icon_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/image/login_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/ant-deploy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/jax-ws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/shop.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/conf/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/IAdminDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/IGoodsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/IOrderDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/IUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/impl/AdminDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/impl/GoodsDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/impl/OrderDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/dao/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/filter/CharEncodingFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/model/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/model/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/model/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/AdminLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/AdminLogout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/CheckGood_idServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/CheckUserIdServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/GoodsDelete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/GoodsInsert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/GoodsManage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/GoodsUpdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/GoodsUpdateDo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/OrderManage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/OrderUpdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/OrderUpdateDo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UpdateServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UploadServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UserDelete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UserInsert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UserManage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UserUpdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/servlet/UserUpdateDo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/test/JDBCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/util/DaoFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/util/DatabaseBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/java/com/mis/util/Pagination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/WEB-INF/jspf/admin_menu.jspf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/WEB-INF/jspf/admin_top.jspf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/goods.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/goods_add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/goods_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/order.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/order_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/user.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/user_add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/admin/user_update.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/css/pintuer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/image/icon_logo_1.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/image/login_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/js/admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/web/js/pintuer.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="198" />
+    <option name="y" value="176" />
+    <option name="width" value="1615" />
+    <option name="height" value="1052" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="flowersAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="flowersAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="flowersAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flowerAdmin" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="FlowersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="flowersAdmin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mis.flowers.flowers.FlowersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbacda05-0ec0-446c-892f-0dcd729b4ad4" name="Default Changelist" comment="" />
+      <created>1586484416671</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586484416671</updated>
+      <workItem from="1586484465697" duration="330000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="330000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="198" y="176" width="1615" height="1052" extended-state="0" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Web" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24951768" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-495">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+  </component>
+</project>
