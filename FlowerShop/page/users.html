@@ -132,7 +132,7 @@
                 {field: 'userName', title: '用户名', align: 'center', edit: true},
                 {field: 'userPassword', title: '密码', align: 'center', edit: true},
                 {
-                    field: 'role', title: '角色', align: 'center', edit: true, templet: function (d) {
+                    field: 'role', title: '角色', align: 'center', templet: function (d) {
                         return d.role == "1" ? "普通用户" : "后台管理员";
                     }
                 },
@@ -350,13 +350,35 @@
 
     //监听单元格的单击事件
     table.on('edit(userTable)', function (obj) {
-        console.log(obj.value);//得到修改后的值
-        console.log(obj.field);//得到当前编辑的字段名
-        console.log(obj.data);//得到所在行的所有数据
-        //发送post请求
-        // $.post("url?"+obj.field+"&id="+obj.data.id,function (json) {
-        //
-        // })
+        // console.log(obj.value);//得到修改后的值
+        // console.log(obj.field);//得到当前编辑的字段名
+        // console.log(obj.data);//得到所在行的所有数据
+        var data = obj.data;
+        var params = {
+            "userId":data.userId,
+            "userName":data.userName,
+            "userPassword":data.userPassword,
+            "role":data.role
+        };
+        $.ajax({
+            url: WebPath + '/users/updateUsers',
+            type: "POST",
+            dataType: "json",
+            data: params,
+            success: function (result) {
+                if (result.code == 0) {
+                    layer.msg("修改" + result.message, {
+                        icon: 6,
+                        time: 2000
+                    });
+                } else {
+                    layer.msg("修改" + result.message, {
+                        icon: 5,
+                        time: 2000
+                    });
+                }
+            }
+        });
 
     });
 
