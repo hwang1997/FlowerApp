@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.wanghuan.login.R;
 
 public class BusFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_bus, container, false);
         return view;
     }

@@ -24,14 +24,14 @@ public class Order {
 //    }
 
     public Order(int order_id, String amount, String order_name, String phone, String address, String pay, String state) {
-    this.order_id = order_id;
-    this.amount = amount;
-    this.order_name = order_name;
-    this.phone = phone;
-    this.address = address;
-    this.pay = pay;
-    this.state = state;
-}
+        this.order_id = order_id;
+        this.amount = amount;
+        this.order_name = order_name;
+        this.phone = phone;
+        this.address = address;
+        this.pay = pay;
+        this.state = state;
+    }
 
 
     public int getOrder_id() {

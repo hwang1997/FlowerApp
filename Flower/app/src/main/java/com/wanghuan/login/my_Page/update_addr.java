@@ -24,7 +24,8 @@ public class update_addr extends AppCompatActivity {
         setContentView(R.layout.activity_update_addr);
         initView();
     }
-    public void initView(){
+
+    public void initView() {
         Intent intent = getIntent();
         addr_address = (EditText) findViewById(R.id.et_addr_address);
         addr_name = (EditText) findViewById(R.id.et_addr_name);
@@ -35,16 +36,17 @@ public class update_addr extends AppCompatActivity {
         addr_tel.setText(intent.getStringExtra("tel"));
 
     }
-    public void my_addr_okBtn(View view){
+
+    public void my_addr_okBtn(View view) {
 
         addr_address = (EditText) findViewById(R.id.et_addr_address);
         addr_name = (EditText) findViewById(R.id.et_addr_name);
         addr_tel = (EditText) findViewById(R.id.et_addr_tel);
-        Toast.makeText(getApplicationContext(),addr_name.getText(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), addr_name.getText(), Toast.LENGTH_SHORT).show();
         delay();
     }
 
-    private void delay(){
+    private void delay() {
         Handler handler;
         handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -52,6 +54,6 @@ public class update_addr extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        },2000);
+        }, 2000);
     }
 }

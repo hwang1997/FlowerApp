@@ -27,24 +27,25 @@ public class add_addr extends AppCompatActivity {
         setContentView(R.layout.activity_add_addr);
 
     }
-    public void my_add_addr_okBtn(View view){
+
+    public void my_add_addr_okBtn(View view) {
         et_addr_address = (EditText) findViewById(R.id.et_addr_address);
         et_addr_name = (EditText) findViewById(R.id.et_addr_name);
         et_addr_tel = (EditText) findViewById(R.id.et_addr_tel);
         String address = et_addr_address.getText().toString();
         String name = et_addr_name.getText().toString();
         String tel = et_addr_tel.getText().toString();
-        if ("".equals(address) || "".equals(name) || "".equals(tel)){
-            Toast.makeText(getApplicationContext(),"地址、姓名、电话不能为空",Toast.LENGTH_SHORT).show();
-        }else {
+        if ("".equals(address) || "".equals(name) || "".equals(tel)) {
+            Toast.makeText(getApplicationContext(), "地址、姓名、电话不能为空", Toast.LENGTH_SHORT).show();
+        } else {
 //            Addr addr = new Addr(address, name, tel);
 //            addrList.add(addr);
 
 
-            Intent intent = new Intent(getApplicationContext(),my_addr.class);
-            intent.putExtra("address",address);
-            intent.putExtra("name",name);
-            intent.putExtra("tel",tel);
+            Intent intent = new Intent(getApplicationContext(), my_addr.class);
+            intent.putExtra("address", address);
+            intent.putExtra("name", name);
+            intent.putExtra("tel", tel);
 
             startActivity(intent);
             finish();

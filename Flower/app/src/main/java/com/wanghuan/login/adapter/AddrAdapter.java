@@ -17,17 +17,18 @@ import java.util.List;
 public class AddrAdapter extends ArrayAdapter<Addr> {
 
     private int resourceId;
-    public AddrAdapter(Context context, int textViewResourceId, List<Addr> objects){
+
+    public AddrAdapter(Context context, int textViewResourceId, List<Addr> objects) {
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
 
-    public View getView(final int position, View convertView, ViewGroup parent){
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final Addr addr = getItem(position);
 
         View view;
         final ViewHolder viewHolder;
-        if (convertView == null){
+        if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.addr_address = (TextView) view.findViewById(R.id.tv_item_address);
@@ -35,7 +36,7 @@ public class AddrAdapter extends ArrayAdapter<Addr> {
             viewHolder.addr_tel = (TextView) view.findViewById(R.id.tv_item_tel);
             viewHolder.addr_btn_delete = (Button) view.findViewById(R.id.btn_addr_delete);
             view.setTag(viewHolder);
-        }else {
+        } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
@@ -43,7 +44,7 @@ public class AddrAdapter extends ArrayAdapter<Addr> {
             @Override
             public void onClick(View v) {
                 remove(getItem(position));
-                Toast.makeText(getContext(),"删除"+addr.getAddress(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "删除" + addr.getAddress(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -53,7 +54,7 @@ public class AddrAdapter extends ArrayAdapter<Addr> {
         return view;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         TextView addr_address;
         TextView addr_name;
         TextView addr_tel;

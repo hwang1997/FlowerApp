@@ -22,7 +22,8 @@ import java.util.List;
 public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder> {
     private Context context;
     private List<Flowers> mFlowerList;
-     class ViewHolder extends RecyclerView.ViewHolder{
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView flowerId;
         TextView flowerName;
         TextView flowerPrice;
@@ -30,7 +31,7 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
         ImageView flowerImage;
         LinearLayout flower_item;
 
-        public ViewHolder(View view){
+        public ViewHolder(View view) {
             super(view);
             flower_item = (LinearLayout) view.findViewById(R.id.flower_item);
             flowerImage = (ImageView) view.findViewById(R.id.iv_flower_img);
@@ -39,16 +40,19 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
         }
 
     }
-    public FlowerAdapter(Context context,List<Flowers> flowersList){
+
+    public FlowerAdapter(Context context, List<Flowers> flowersList) {
         this.context = context;
         mFlowerList = flowersList;
     }
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.flower_item, parent, false);
         return new ViewHolder(view);
     }
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position){
+
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final Flowers flowers = mFlowerList.get(position);
 
 
@@ -57,26 +61,27 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
         holder.flowerName.setText(flowers.getGood_name());
         holder.flowerPrice.setText(flowers.getPrice());
 //        holder.flowerDes.setText(flowers.getDes());
-        holder.flowerImage.setImageResource( flowers.getPic());
+        holder.flowerImage.setImageResource(flowers.getPic());
 
         holder.flower_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,goodsInfoActivity.class);
-                intent.putExtra("goodsImage",flowers.getPic());
-                intent.putExtra("goodsId",flowers.getGood_id()+"");
-                intent.putExtra("goodsName",flowers.getGood_name());
-                intent.putExtra("goodsPrice",flowers.getPrice());
-                intent.putExtra("goodsCount",flowers.getCount());
-                intent.putExtra("goodsDes",flowers.getDes());
-                intent.putExtra("flowerList",mFlowerList.get(position));
-               context.startActivity(intent);
+                Intent intent = new Intent(context, goodsInfoActivity.class);
+                intent.putExtra("goodsImage", flowers.getPic());
+                intent.putExtra("goodsId", flowers.getGood_id() + "");
+                intent.putExtra("goodsName", flowers.getGood_name());
+                intent.putExtra("goodsPrice", flowers.getPrice());
+                intent.putExtra("goodsCount", flowers.getCount());
+                intent.putExtra("goodsDes", flowers.getDes());
+                intent.putExtra("flowerList", mFlowerList.get(position));
+                context.startActivity(intent);
 //                Toast.makeText(context,flowers.getGood_name(),Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-    public int getItemCount(){
+
+    public int getItemCount() {
         return mFlowerList.size();
     }
 

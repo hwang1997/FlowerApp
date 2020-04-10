@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.wanghuan.login.R;
 import com.wanghuan.login.login;
 
-public class splash extends Activity{
+public class splash extends Activity {
     private TextView textView;
     private CountDownTimer timer;
 
@@ -23,17 +23,18 @@ public class splash extends Activity{
         textView = (TextView) findViewById(R.id.btn_bar);
         initView();
     }
-    private void initView(){
 
-        timer = new CountDownTimer(5000,10) {
+    private void initView() {
+
+        timer = new CountDownTimer(5000, 10) {
             @Override
             public void onTick(long millisUntilFinished) {
-                textView.setText("跳过" + (millisUntilFinished/1000 + 1));
+                textView.setText("跳过" + (millisUntilFinished / 1000 + 1));
             }
 
             @Override
             public void onFinish() {
-                Intent intent = new Intent(getApplicationContext(),login.class);
+                Intent intent = new Intent(getApplicationContext(), login.class);
                 startActivity(intent);
                 finish();
                 textView.setClickable(true);
@@ -41,15 +42,16 @@ public class splash extends Activity{
         };
         timer.start();
     }
-    public void jumpTo(View view){
-        Intent intent = new Intent(getApplicationContext(),login.class);
+
+    public void jumpTo(View view) {
+        Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);
         finish();
     }
 
     @Override
     protected void onDestroy() {
-        if (timer!=null){
+        if (timer != null) {
             timer.cancel();
         }
         super.onDestroy();

@@ -28,40 +28,42 @@ public class login extends AppCompatActivity {
     private final int REGISTEREXCEPT = 5;
 
     @SuppressLint("Handlerleak")
-    Handler handler = new Handler(){
+    Handler handler = new Handler() {
         @Override
-        public void handleMessage(Message msg){
-            switch (msg.what){
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
                 case LOGINSUCCESS:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
                 case LOGINNOTFOUND:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
                 case LOGINEXCEPT:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
                 case REGISTERSUCCESS:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
                 case REGISTERNOTFOUND:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
                 case REGISTEREXCEPT:
-                    Toast.makeText(getApplicationContext(),(String)msg.obj,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
                     break;
             }
         }
     };
 
-    public void register(View view){
+    public void register(View view) {
         Intent intent = new Intent(getApplicationContext(), register.class);
         startActivity(intent);
     }
-    public void login(View view){
+
+    public void login(View view) {
         Intent intent = new Intent(getApplicationContext(), home.class);
         startActivity(intent);
     }
+
     protected void onDestroy() {
         super.onDestroy();
     }

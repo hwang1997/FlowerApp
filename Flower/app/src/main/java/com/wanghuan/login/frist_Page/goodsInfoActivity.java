@@ -34,7 +34,8 @@ public class goodsInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_goods_info);
         initView();
     }
-    private void initView(){
+
+    private void initView() {
         Intent intent = getIntent();
 
 //        Toast.makeText(getApplicationContext(),intent.getStringExtra("goodsId"),Toast.LENGTH_SHORT).show();
@@ -50,7 +51,7 @@ public class goodsInfoActivity extends AppCompatActivity {
         goodsImage.setImageResource(R.mipmap.flower);
         goodsId.setText(String.valueOf(intent.getStringExtra("goodsId").trim()));
         goodsName.setText(intent.getStringExtra("goodsName"));
-        goodsPrice.setText("￥"+intent.getStringExtra("goodsPrice"));
+        goodsPrice.setText("￥" + intent.getStringExtra("goodsPrice"));
         goodsCount.setText(intent.getStringExtra("goodsCount"));
         goodsDes.setText(intent.getStringExtra("goodsDes"));
     }
@@ -61,7 +62,7 @@ public class goodsInfoActivity extends AppCompatActivity {
         buyFast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"立即购买",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "立即购买", Toast.LENGTH_SHORT).show();
             }
         });
         joinBus.setOnClickListener(new View.OnClickListener() {
@@ -75,9 +76,7 @@ public class goodsInfoActivity extends AppCompatActivity {
                 String goodsBuyCount1 = goodsBuyCount.getText().toString();
 
 
-
-
-                Toast.makeText(getApplicationContext(),"加入购物车",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "加入购物车", Toast.LENGTH_SHORT).show();
             }
         });
     }

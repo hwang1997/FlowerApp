@@ -18,7 +18,8 @@ import java.util.List;
 
 public class OrderAdapter extends ArrayAdapter<Order> {
     private int resourceId;
-    public OrderAdapter(Context context, int textViewResourceId, List<Order> objects){
+
+    public OrderAdapter(Context context, int textViewResourceId, List<Order> objects) {
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
@@ -27,8 +28,8 @@ public class OrderAdapter extends ArrayAdapter<Order> {
     public View getView(final int position, View convertView, ViewGroup parent) {
         final Order order = getItem(position);
         View view;
-         ViewHolder viewHolder;
-        if (convertView == null){
+        ViewHolder viewHolder;
+        if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.goodsName = (TextView) view.findViewById(R.id.tv_order_item_goodsName);
@@ -38,7 +39,7 @@ public class OrderAdapter extends ArrayAdapter<Order> {
             viewHolder.orderTel = (TextView) view.findViewById(R.id.tv_order_item_tel);
             viewHolder.order_delete = (Button) view.findViewById(R.id.btn_order_delete);
             view.setTag(viewHolder);
-        }else {
+        } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
@@ -46,7 +47,7 @@ public class OrderAdapter extends ArrayAdapter<Order> {
             @Override
             public void onClick(View v) {
                 remove(getItem(position));
-                Toast.makeText(getContext(),"删除"+order.getOrder_name(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "删除" + order.getOrder_name(), Toast.LENGTH_SHORT).show();
             }
         });
         viewHolder.goodsName.setText(order.getOrder_name());
@@ -60,7 +61,8 @@ public class OrderAdapter extends ArrayAdapter<Order> {
         return view;
 
     }
-    class ViewHolder{
+
+    class ViewHolder {
         TextView goodsName;
         ImageView goodsImage;
         TextView goodsPrice;

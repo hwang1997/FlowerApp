@@ -14,8 +14,9 @@ public class my_pwd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_pwd);
     }
-    public void my_pwd_okBtn(View view){
-        Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
+
+    public void my_pwd_okBtn(View view) {
+        Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

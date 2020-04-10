@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import com.wanghuan.login.R;
 
 public class TitleLayout extends LinearLayout {
-    public TitleLayout(Context context, AttributeSet attrs){
+    public TitleLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.title,this);
+        LayoutInflater.from(context).inflate(R.layout.title, this);
         LinearLayout titleBack = (LinearLayout) findViewById(R.id.title_back);
         titleBack.setOnClickListener(new OnClickListener() {
             @Override

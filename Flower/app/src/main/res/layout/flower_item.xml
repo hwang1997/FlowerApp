@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="1dp"
-    android:background="@color/bgColor"
-    android:id="@+id/flower_item">
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="1dp"
+              android:background="@color/bgColor"
+              android:id="@+id/flower_item">
 
     <ImageView
-        android:id="@+id/iv_flower_img"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@mipmap/flower"/>
+            android:id="@+id/iv_flower_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/flower"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-        <TextView
-            android:id="@+id/tv_flower_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="王五六七"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="#000000"/>
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <TextView
+                android:id="@+id/tv_flower_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="王五六七"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#000000"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥"
-            android:textColor="#ff0000"/>
+            android:layout_gravity="center">
         <TextView
-            android:id="@+id/tv_flower_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="142.5"
-            android:textColor="#ff0000" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="#ff0000"/>
+        <TextView
+                android:id="@+id/tv_flower_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="142.5"
+                android:textColor="#ff0000"/>
     </LinearLayout>
 </LinearLayout>

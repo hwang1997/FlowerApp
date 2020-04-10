@@ -30,7 +30,8 @@ public class show_order extends AppCompatActivity {
         initEven();
 
     }
-    public  void initEven(){
+
+    public void initEven() {
         Intent intent = getIntent();
 
         orderId.setText(String.valueOf(intent.getStringExtra("orderId").trim()));
@@ -47,7 +48,8 @@ public class show_order extends AppCompatActivity {
         orderPay.setText(intent.getStringExtra("pay"));
         orderState.setText(intent.getStringExtra("state"));
     }
-    public void initView(){
+
+    public void initView() {
         orderId = (TextView) findViewById(R.id.tv_order_show_id);
         goodsImage = (ImageView) findViewById(R.id.iv_order_show_img);
         price = (TextView) findViewById(R.id.tv_order_show_price);

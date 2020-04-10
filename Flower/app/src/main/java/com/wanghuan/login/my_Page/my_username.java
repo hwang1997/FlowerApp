@@ -17,10 +17,10 @@ public class my_username extends AppCompatActivity {
         setContentView(R.layout.activity_my_username);
     }
 
-    public void my_username_okBtn(View view){
+    public void my_username_okBtn(View view) {
 //        Intent intent = new Intent(getApplicationContext(), home.class);
 //        startActivity(intent);
-        Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_SHORT).show();
         finish();
     }
 }

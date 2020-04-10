@@ -40,23 +40,27 @@ public class home extends FragmentActivity implements View.OnClickListener {
     private ImageButton mImgBus;
     private ImageButton mImgMy;
 
-    public void MyUsername(View view){
+    public void MyUsername(View view) {
         Intent intent = new Intent(getApplicationContext(), my_username.class);
         startActivity(intent);
     }
-    public void MyPsw(View view){
+
+    public void MyPsw(View view) {
         Intent intent = new Intent(getApplicationContext(), my_pwd.class);
         startActivity(intent);
     }
-    public void MyAddr(View view){
+
+    public void MyAddr(View view) {
         Intent intent = new Intent(getApplicationContext(), my_addr.class);
         startActivity(intent);
     }
-    public void MyOrder(View view){
+
+    public void MyOrder(View view) {
         Intent intent = new Intent(getApplicationContext(), my_order.class);
         startActivity(intent);
     }
-    public void logout(View view){
+
+    public void logout(View view) {
         Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);
         finish();
@@ -101,7 +105,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
         super.onDestroy();
     }
 
-    private void initDatas(){
+    private void initDatas() {
         mFragments = new ArrayList<>();
         mFragments.add(new FstFragment());
         mFragments.add(new BusFragment());
@@ -138,12 +142,14 @@ public class home extends FragmentActivity implements View.OnClickListener {
             }
         });
     }
-    private void initEvents(){
+
+    private void initEvents() {
         mImgFst.setOnClickListener(this);
         mImgBus.setOnClickListener(this);
         mImgMy.setOnClickListener(this);
     }
-    private void initViews(){
+
+    private void initViews() {
         mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 
         mTabFst = (LinearLayout) findViewById(R.id.id_tab_fst);
@@ -154,9 +160,10 @@ public class home extends FragmentActivity implements View.OnClickListener {
         mImgBus = (ImageButton) findViewById(R.id.id_tab_bus_img);
         mImgMy = (ImageButton) findViewById(R.id.id_tab_my_img);
     }
-    public void onClick(View view){
+
+    public void onClick(View view) {
         resetImgs();
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.id_tab_fst_img:
                 selectTab(0);
                 break;
@@ -168,25 +175,27 @@ public class home extends FragmentActivity implements View.OnClickListener {
                 break;
         }
     }
-    private void selectTab(int i){
+
+    private void selectTab(int i) {
         resetImgs();
-        switch (i){
+        switch (i) {
             case 0:
                 mImgFst.setImageResource(R.mipmap.tab_fst_pressed);
-                Toast.makeText(getApplicationContext(),"111",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "111", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
                 mImgBus.setImageResource(R.mipmap.tab_bus_pressed);
-                Toast.makeText(getApplicationContext(),"222",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "222", Toast.LENGTH_SHORT).show();
                 break;
             case 2:
                 mImgMy.setImageResource(R.mipmap.tab_my_pressed);
-                Toast.makeText(getApplicationContext(),"333",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "333", Toast.LENGTH_SHORT).show();
                 break;
         }
         mViewPager.setCurrentItem(i);
     }
-    private void resetImgs(){
+
+    private void resetImgs() {
         mImgFst.setImageResource(R.mipmap.tab_fst_normal);
         mImgBus.setImageResource(R.mipmap.tab_bus_normal);
         mImgMy.setImageResource(R.mipmap.tab_my_normal);

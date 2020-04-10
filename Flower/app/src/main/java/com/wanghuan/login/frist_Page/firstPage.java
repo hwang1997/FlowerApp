@@ -12,13 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class firstPage extends AppCompatActivity {
-//    private List<Flowers> flowersList = new ArrayList<>();
+    //    private List<Flowers> flowersList = new ArrayList<>();
     private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        Toast.makeText(getApplicationContext(),"111",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "111", Toast.LENGTH_SHORT).show();
 
 
 //        initFruits();
