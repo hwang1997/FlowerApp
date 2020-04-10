@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+    <meta charset="utf-8">
+    <title>登录--河马后台管理系统 1.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="../images/icon_logo.ico">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../css/public.css" media="all"/>
+</head>
+<style>
+    /* 验证码 */
+    .code #code_span {
+        position: relative;
+        display: inline-block;
+        margin-top: 12px;
+        margin-left: 12px;
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        color: #000000;
+        line-height: 35px;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 5px;
+        border: 1px solid #00d197;
+    }
+</style>
+<body class="loginBody">
+<div class="layui-form" style="position: relative">
+    <div class="login_face"><img src="../images/login_face.jpeg" class="userAvatar"></div>
+    <div class="layui-form-item input-item" id="usernameId">
+        <label for="userName">用户名</label>
+        <input type="text" placeholder="请输入用户名" autocomplete="off" alt="用户名" id="userName" class="layui-input lay"
+               lay-verify="required">
+    </div>
+    <div class="layui-form-item input-item" id="passwordId">
+        <label for="password">密码</label>
+        <input type="password" placeholder="请输入密码" autocomplete="off" alt="密码" id="password" class="layui-input lay"
+               lay-verify="required">
+    </div>
+    <div class="layui-form-item input-item " id="imgCode" style="width:60%;">
+        <label for="code">验证码</label>
+        <input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input" lay-verify="required">
+        <span id="codeSpan" class="code" style="position: absolute;top: -11px;right: -123px;">
+				<span id="code_span" alt="" onclick="createCode()"></span>
+			</span>
+    </div>
+    <div class="layui-form-item">
+        <button class="layui-btn layui-block" id="dologin" onclick="dologin();">登录</button>
+    </div>
+    <div class="layui-form-item layui-row">
+        <a href="javascript:;" class="seraph layui-icon icon-qq layui-icon-login-qq" style="margin:0 30px"></a>
+        <a href="javascript:;" class="seraph layui-icon icon-wechat layui-icon-login-wechat" style="margin:0 30px"></a>
+        <a href="javascript:;" class="seraph layui-icon icon-sina layui-icon-login-weibo " style="margin:0 30px"></a>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../layui/layui.all.js"></script>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+    var layer = parent.layer === undefined ? layui.layer : top.layer;
+    $ = layui.jquery;
+
+    $(".loginBody .seraph").click(function () {
+        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧", {
+            time: 5000
+        });
+    });
+    $(document).on('keydown', function (event) {
+        var event = event || window.event;
+        if (event.keyCode == 13) {
+            $("#dologin").click();
+        }
+    });
+
+    //登录按钮
+    function dologin() {
+        var id = document.getElementById('userName').value;
+        var password = document.getElementById('password').value;
+        var code = document.getElementById("code").value;
+        var code1 = document.getElementById("code_span").innerHTML;
+        if (id == "") {
+            layer.msg("用户名不能为空！");
+            $('#usernameId').addClass("layui-input-focus");
+            $('#usernameId').addClass("layui-input-active");
+            $('#userName').focus();
+            return;
+        }
+        if (password == "") {
+            layer.msg("密码不能为空！");
+            $('#passwordId').addClass("layui-input-focus");
+            $('#passwordId').addClass("layui-input-active");
+
+            $('#password').focus();
+
+            return;
+        }
+        if (code == "") {
+            layer.msg("验证码不能为空！");
+            $('#imgCode').addClass("layui-input-focus");
+            $('#imgCode').addClass("layui-input-active");
+            $('#code').focus();
+            return;
+        } else if (code != code1) {
+            layer.msg("验证码错误！");
+            return;
+        }
+        var dto = {
+            'user_id': id,
+            'user_password': password,
+        };
+        $('#dologin').text("登录中...").attr("disabled", "disabled").addClass("layui-disabled");
+        $.ajax({
+            url: WebPath + "/users/login",
+            type: "POST",
+            dataType: "json",
+            data: dto,
+            success: function (result) {
+                $('#dologin').text("登录").removeAttr("disabled", "disabled").removeClass("layui-disabled");
+                if (result.code == 0) {
+                    localStorage.setItem('userId', result.data.userId);
+                    localStorage.setItem('userName', result.data.userName);
+                    localStorage.setItem('userRole', result.data.role);
+                    localStorage.setItem('userPassword', result.data.userPassword);
+                    localStorage.setItem('data', result.data);
+                    window.location.href = "home.html";
+                } else {
+                    layer.msg("<span class='layui-icon layui-icon-face-surprised' style='color:#FF5722;font-size: 20px'></span>" + result.message, {
+                        time: 3000
+                    });
+                    $('#dologin').text("登录").removeAttr("disabled", "disabled").removeClass("layui-disabled");
+                }
+            }
+        });
+    };
+
+    //表单输入效果
+    $(".loginBody .input-item").click(function (e) {
+        e.stopPropagation();
+        $(this).addClass("layui-input-focus").find(".lay").focus();
+    });
+    $(".loginBody .layui-form-item .lay").focus(function () {
+        $(this).parent().addClass("layui-input-focus");
+    });
+    $(".loginBody .layui-form-item .layui-input").focus(function () {
+        $(this).parent().addClass("layui-input-focus");
+    });
+    $(".loginBody .layui-form-item .lay").blur(function () {
+        $(this).parent().removeClass("layui-input-focus");
+        if ($(this).val() != '') {
+            $(this).parent().addClass("layui-input-active");
+        } else {
+            $(this).parent().removeClass("layui-input-active");
+        }
+    });
+
+
+    function createCode() {
+        var code = "";
+        var codeLength = 4;
+        var span = document.getElementById("code_span");
+        var random = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "D", "E", "F", "G", "H", "K", "L", "N",
+            "P", "Q", "R", "T", "V", "X", "Y");
+        for (var i = 0; i < codeLength; i++) {
+            var index = Math.floor(Math.random() * 26);
+            code += random[index];
+        }
+        // span.innerHTML = code;
+        span.innerHTML = "1111"
+    }
+
+    $(function () {
+        createCode();
+    });
+
+</script>
+</body>
+</html>

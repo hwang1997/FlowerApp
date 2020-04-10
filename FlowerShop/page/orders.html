@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="../layui/css/layui.css">
+<!--搜索栏开始-->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>查询条件</legend>
+</fieldset>
+<form action="" class="layui-form" method="post">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">编号:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="id" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">用户名:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label" style="line-height: 50px">角色:</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="sex" value="1" title="普通用户">
+                <input type="radio" name="sex" value="0" title="后台管理员">
+            </div>
+        </div>
+        <div class="layui-input-inline" style="float: right">
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
+                    id="doSearch">查询
+            </button>
+            <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置</button>
+        </div>
+    </div>
+</form>
+<!--搜索栏结束-->
+
+<!--表格操作列开始-->
+<table class="layui-hide" id="userTable" lay-filter="userTable"></table>
+<div style="display: none;" id="userToolBar">
+    <button type="button" class="layui-btn layui-btn-sm" lay-event="add">增加</button>
+    <button type="button" class="layui-btn layui-btn-sm" lay-event="batchDelete">批量删除</button>
+</div>
+<div id="userBar" style="display: none;">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</div>
+<!--表头操作结束-->
+<!-- 添加和修改的弹出层开始 -->
+<div style="display: none;padding: 20px" id="saveOrUpdateDiv">
+    <form class="layui-form " action="" lay-filter="dataFrm">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">编号:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="id" lay-verify="required" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">密码:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="id" lay-verify="required" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">性别:</label>
+                <div class="layui-input-inline">
+                    <input type="radio" name="sex" value="1" checked="checked" title="男">
+                    <input type="radio" name="sex" value="0" title="女">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!-- 添加和修改的弹出层结束 -->
+
+<script src="../layui/layui.all.js"></script>
+<script>
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    var form = layui.form;
+    var table = layui.table;
+    var laydate = layui.laydate;
+    table.render({
+        elem: "#userTable",
+        title: '用户表',
+        height: "full-170",
+        limit: 5,
+        limits: ['5', '10', '15'],
+        url: 'http://127.0.0.1:8089/users/getUsersInfoBylimit',
+        page: true,
+        cellMinWidth: 100,
+        toolbar: '#userToolBar',
+        cols: [[
+            {type: 'checkbox', fixed: 'left'},
+            {field: 'userId', title: 'ID', sort: true, fixed: 'left', align: 'center'},
+            {field: 'userName', title: '用户名', align: 'center'},
+            {field: 'userPassword', title: '密码', align: 'center'},
+            {
+                field: 'role', title: '角色', align: 'center', templet: function (d) {
+                    return d.role == "1" ? "普通用户" : "后台管理员";
+                }
+            },
+            {fixed: 'right', title: '操作', toolbar: '#userBar', width: 220, align: 'center'}
+        ]]
+
+    });
+    //监听头部工具栏事件
+    table.on("toolbar(userTable)", function (obj) {
+        switch (obj.event) {
+            case 'add':
+                alert("1111");
+                openAddUser();
+                break;
+            case 'batchDelete':
+                layer.msg('批量删除');
+                break;
+        }
+        ;
+    })
+
+    //打开添加页面
+    function openAddUser() {
+        layer.open({
+            type: 1,
+            title: '添加用户',
+            content: $("#saveOrUpdateDiv"),
+            area: ['800px'],
+            btnAlign: 'c',
+            btn: ['<div class="layui-icon layui-icon-release">保存</div>', '<div class="layui-icon layui-icon-close">关闭</div>'],
+            yes: function (index, layero) {
+                layer.msg("保存");
+
+            },
+            btn2: function (index, layero) {
+                layer.msg("关闭");
+                return true;
+            }
+        });
+    }
+
+    //监听行工具事件
+    table.on('tool(userTable)', function (obj) {
+        var data = obj.data; //获得当前行数据
+        var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+        if (layEvent === 'del') { //删除
+            layer.msg("删除");
+            layer.confirm('真的删除行么', function (index) {
+                layer.close(index);
+                //向服务端发送删除指令
+            });
+        } else if (layEvent === 'edit') { //编辑
+            //do something
+            layer.msg("修改")
+        }
+    });
+</script>
+
+
+
+
