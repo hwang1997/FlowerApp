@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="添加JAVA后台接口">
+    <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -415,7 +415,7 @@
       <workItem from="1586486706518" duration="2550000" />
       <workItem from="1586580543851" duration="14630000" />
       <workItem from="1586599005406" duration="5959000" />
-      <workItem from="1586606287391" duration="243000" />
+      <workItem from="1586606287391" duration="506000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -438,11 +438,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586605820691</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加idea文件">
+      <created>1586606782828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586606782828</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43059000" />
+    <option name="totallyTimeSpent" value="43322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -472,7 +479,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32815734" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49840087" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49840087" visible="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984463" />
@@ -492,7 +499,8 @@
     <MESSAGE value="添加JAVA后台接口" />
     <MESSAGE value="添加lib文件夹" />
     <MESSAGE value="修改JAVA后台接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改JAVA后台接口" />
+    <MESSAGE value="添加idea文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加idea文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62e82ad7-626c-4771-b54b-a0e923f5b70e/console.sql">
