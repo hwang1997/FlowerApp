@@ -22,7 +22,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">编号:</label>
             <div class="layui-input-inline">
-                <input type="text" name="id" id="userId" autocomplete="off" class="layui-input">
+                <input type="text" name="userId" id="userId" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
@@ -112,20 +112,30 @@
     var layer = layui.layer;
     var form = layui.form;
     var table = layui.table;
+
+    //表格请求
     if (userId != '' && userId != null) {
         var tableIns = table.render({
             elem: "#userTable",
             title: '用户表',
             height: "569",
             text: {
-                none: '暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+                none:'暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
             },
             limit: 10,
             limits: ['10', '20', '30'],
-            url: WebPath + '/users/getUsersInfoBylimit',
+            url: WebPath + '/users/selectByPage',
             page: true,
             cellMinWidth: 100,
             toolbar: '#userToolBar',
+            parseData:function (res){
+              return{
+                  "code":res.code,
+                  "msg":res.message,
+                  "count": res.data.totalCount, //解析数据长度
+                  "data": res.data.items //解析数据列表
+              }
+            },
             cols: [[
                 {type: 'checkbox', fixed: 'left'},
                 {field: 'userId', title: 'ID', sort: true, align: 'center'},
@@ -137,8 +147,7 @@
                     }
                 },
                 {fixed: 'right', title: '操作', toolbar: '#userBar', width: 220, align: 'center'}
-            ]],
-            id: 'userReload'
+            ]]
         });
     } else {
         $('#page404').removeClass("layui-hide");
@@ -146,43 +155,52 @@
     }
 
     //监听头部搜索按钮
-
+    $('#doSearch').on('click',function () {
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : "";
+    });
     var active = {
-        reload: function () {
-            var userId = $('#userId');
+        reload:function () {
+            var userId = $('#userId').val();
+                var index = layer.msg("查询中，请稍后……",{
+                    icon:6,
+                    time:false,
+                    shade:0
+                });
+                if (userId == ""){
+                    setTimeout(function () {
+                        table.reload('userTable',{
+                            url:WebPath + "/users/selectByPage",
+                            parseData:function (res) {
+                                return{
+                                    "code":res.code,
+                                    "msg":res.message,
+                                    "count": res.data.totalCount, //解析数据长度
+                                    "data": res.data.items //解析数据列表
+                                }
+                            }
+                        });
+                        layer.close(index);
+                    },800);
+                } else {
+                    setTimeout(function () {
+                        table.reload('userTable',{
+                            url:WebPath + '/users/userDoSearch?userId='+ userId,
+                            parseData:function (res) {
+                                return{
+                                    "code":res.code,
+                                    "msg":res.message,
+                                    "count": 1, //解析数据长度
+                                    "data": res.data //解析数据列表
+                                }
+                            }
+                        });
+                        layer.close(index);
+                    },800);
 
-            //执行重载
-            table.reload('userReload', {
-                page: {
-                    curr: 1 //重新从第 1 页开始
                 }
-                , where: {
-                    key: {
-                        id: userId.val()
-                    }
-                }
-            }, 'data');
         }
     };
-
-    $('#doSearch').on('click', function () {
-        var type = $(this).data('type');
-        alert(type);
-        active[type] ? active[type].call(this) : '';
-    });
-
-
-    // tableIns.reload('userTable',{
-    //     url:WebPath + "/users/userDoSearch",
-    //     where:{
-    //         user_id:userIdSearch
-    //     },
-    //     method:'post',
-    //     page:{
-    //         curr:1
-    //     }
-    // });
-
 
     //监听头部工具栏事件
     table.on("toolbar(userTable)", function (obj) {
@@ -200,7 +218,6 @@
                     for (var i in data) {
                         usersId.push(data[i].userId);
                     }
-                    alert(usersId);
                     $.ajax({
                         url: WebPath + "/users/batchDelete?userId=" + usersId,
                         type: "DELETE",
@@ -209,22 +226,25 @@
                             if (result.code == 0) {
                                 layer.msg("批量删除" + result.message, {
                                     icon: 6,
-                                    time: 2000
+                                    time: 1000
                                 });
                             } else {
                                 layer.msg("批量删除" + result.message, {
                                     icon: 5,
-                                    time: 2000
+                                    time: 1000
                                 });
                             }
                         }
                     });
                     //刷新数据表格
-                    tableIns.reload(WebPath + "/users/getUsersInfoBylimit");
+                    // setTimeout(function () {
+                        tableIns.reload(WebPath + "/users/selectByPage");
+                    // },3000);
+
                 } else {
                     layer.msg("你还没选批量删除的数据", {
                         icon: 5,
-                        time: 2000
+                        time: 1000
                     });
                 }
 
@@ -239,9 +259,9 @@
                 break;
             case 'reloadTable':
                 // table.read("userTable",{
-                //     url:'http://127.0.0.1:8089/users/getUsersInfoBylimit'
+                //     url:'http://127.0.0.1:8089/users/selectByPage'
                 // })
-                tableIns.reload(WebPath + "/users/getUsersInfoBylimit");
+                tableIns.reload(WebPath + "/users/selectByPage");
                 break;
         }
         ;
@@ -265,19 +285,19 @@
                         if (result.code == 0) {
                             layer.msg("删除" + result.message, {
                                 icon: 6,
-                                time: 2000
+                                time: 1000
                             });
                         } else {
                             layer.msg("删除" + result.message, {
                                 icon: 5,
-                                time: 2000
+                                time: 1000
                             });
                         }
                     }
                 })
                 layer.close(index);
                 //刷新表格
-                tableIns.reload(WebPath + "/users/getUsersInfoBylimit");
+                tableIns.reload(WebPath + "/users/selectByPage");
             });
         } else if (layEvent === 'edit') { //编辑
             //do something
@@ -331,21 +351,22 @@
                 if (result.code == 0) {
                     layer.msg(value + result.message, {
                         icon: 6,
-                        time: 2000
+                        time: 1000
                     });
                     $('#reset').click();
                 } else {
                     layer.msg(value + result.message, {
                         icon: 5,
-                        time: 2000
+                        time: 1000
                     });
                 }
+                tableIns.reload(WebPath + "/users/selectByPage");
             }
         });
         //关闭弹出层
         layer.close(mainIndex);
         //刷新表格
-        tableIns.reload(WebPath + "/users/getUsersInfoBylimit");
+        tableIns.reload(WebPath + "/users/selectByPage");
     });
 
     //监听单元格的单击事件
@@ -369,14 +390,15 @@
                 if (result.code == 0) {
                     layer.msg("修改" + result.message, {
                         icon: 6,
-                        time: 2000
+                        time: 1000
                     });
                 } else {
                     layer.msg("修改" + result.message, {
                         icon: 5,
-                        time: 2000
+                        time: 1000
                     });
                 }
+                tableIns.reload(WebPath + "/users/selectByPage");
             }
         });
 

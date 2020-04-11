@@ -61,8 +61,6 @@
 
     //监听提交
     form.on('submit(*)', function (data) {
-
-        alert(data.field);
         if (!data.field.role) {
             layer.msg('角色不能为空', {icon: 5})
         }
