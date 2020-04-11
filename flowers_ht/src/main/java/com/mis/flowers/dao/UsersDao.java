@@ -46,7 +46,7 @@ public interface UsersDao {
      *
      * @return 对象列表
      */
-    List<Users> queryAll();
+    List<Users> selectAll();
 
     /**
      * 新增数据
@@ -71,5 +71,6 @@ public interface UsersDao {
      * @return 影响行数
      */
     int deleteById(Integer userId);
+
 
 }

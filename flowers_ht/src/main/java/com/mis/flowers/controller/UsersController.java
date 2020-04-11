@@ -3,11 +3,14 @@ package com.mis.flowers.controller;
 import com.mis.flowers.dto.*;
 import com.mis.flowers.entity.Users;
 import com.mis.flowers.service.UsersService;
+import com.mis.flowers.util.MD5Util;
 import com.mis.flowers.util.Page;
 import com.mis.flowers.util.Result;
 import com.mis.flowers.util.ResultCode;
 import lombok.Generated;
+import lombok.SneakyThrows;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -36,14 +39,16 @@ public class UsersController {
      * @return 单条数据
      */
     //web登录
+    @SneakyThrows
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public Result<Users> login(UserDto dto) {
+        String password = MD5Util.md5Encode(dto.getUser_password());
         Users user = this.usersService.queryById(dto.getUser_id());
         if (user == null) {
             return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
         } else if (user.getRole() == 1) {
             return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "无权限");
-        } else if (!user.getUserPassword().equals(dto.getUser_password())) {
+        } else if (!user.getUserPassword().equals(password)) {
             return Result.createFailUre(ResultCode.Fail.code(), "密码错误！");
         } else {
             return Result.createSuccess(user);
@@ -51,21 +56,22 @@ public class UsersController {
     }
 
     /**
-     * 通过userId/username查询单条数据
+     * 通过userId查询单条数据
      *
-     * @param dto 主键
+     * @param userId 主键
      * @return 单条数据
      */
-    @RequestMapping(value = "userDoSearch", method = RequestMethod.POST)
-    public Result<Users> userDoSearch(UserSearchDto dto) {
+    @RequestMapping(value = "userDoSearch", method = RequestMethod.GET)
+    public Result<List<Users>> userDoSearch(String userId) {
+            List<Users> users = new ArrayList<>();
+            Users users1 = this.usersService.queryById(Integer.parseInt(userId));
+            if (users1 != null){
+                users.add(users1);
+                return Result.createSuccess(users);
+            }else {
+                return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+            }
 
-        String userId = dto.getUser_id() + "";
-        if (userId == null && "".equals(userId.trim())) {
-            return Result.createSuccess();
-
-        } else {
-            return Result.createSuccess(this.usersService.queryById(dto.getUser_id()));
-        }
     }
 
     /**
@@ -82,27 +88,32 @@ public class UsersController {
             this.usersService.queryAll(users);
         }
         return Result.createSuccess(usersList);
-//        return Result.createSuccess(this.usersService.queryAll(users));
     }
 
-    @RequestMapping(value = "getUsersInfoBylimit", method = RequestMethod.GET)
-    public Result<List<Users>> getUsersInfoBylimit(int page, int limit) {
-        return Result.createSuccess(this.usersService.queryAllByLimit(page - 1, limit));
+    @RequestMapping(value = "getUserAll",method = RequestMethod.GET)
+    public Result<List<Users>> getUserAll(){
+        List<Users> list = new ArrayList<Users>() ;
+        for (int i = 0; i < this.usersService.selectAll().size();i++) {
+            list.add(this.usersService.selectAll().get(i));
+        }
+        return Result.createSuccess(list);
     }
 
     //插入
+    @SneakyThrows
     @RequestMapping(value = "insertUsers", method = RequestMethod.POST)
     public Result<Integer> insertUsers(addUserDto dto) {
-        Users users = new Users();
-        users.setUserName(dto.getUserName());
-        users.setUserPassword(dto.getUserPassword());
-        users.setRole(dto.getRole());
-        this.usersService.insert(users);
-        if (this.usersService.queryAll(users) != null) {
-            return Result.createSuccess();
-        } else {
-            return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
-        }
+            Users users = new Users();
+            users.setUserName(dto.getUserName());
+            String password = MD5Util.md5Encode(dto.getUserPassword());
+            users.setUserPassword(password);
+            users.setRole(dto.getRole());
+            this.usersService.insert(users);
+            if (this.usersService.queryAll(users) != null) {
+                return Result.createSuccess();
+            } else {
+                return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
+            }
     }
 
     //删除
@@ -133,12 +144,14 @@ public class UsersController {
     }
 
     //修改
+    @SneakyThrows//MD5
     @RequestMapping(value = "updateUsers", method = RequestMethod.POST)
     public Result<Users> updateUsers(updateUserDto dto) {
+        String password = MD5Util.md5Encode(dto.getUserPassword());
         Users users = new Users();
         users.setUserId(dto.getUserId());
         users.setUserName(dto.getUserName());
-        users.setUserPassword(dto.getUserPassword());
+        users.setUserPassword(password);
         users.setRole(dto.getRole());
         this.usersService.update(users);
         if (this.usersService.update(users) != null) {
@@ -146,7 +159,14 @@ public class UsersController {
         } else {
             return Result.createFailUre(ResultCode.Fail.code(), "修改失败！");
         }
+    }
 
-
+    //分页
+    @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
+    public Result<Page<Users>> selectByPage(int page, int limit) {
+        List<Users> list = this.usersService.queryAllByLimit((page-1)*limit,limit);;
+        Integer count = this.usersService.selectAll().size();
+        Page<Users> usersPage = new Page<Users>(list,count);
+        return Result.createSuccess(usersPage);
     }
 }

@@ -23,6 +23,7 @@ public class Result<T> implements Serializable {
         this.message = message;
     }
 
+
     public T getData() {
         return data;
     }
@@ -45,8 +46,6 @@ public class Result<T> implements Serializable {
         result.setMessage(resultCode.message());
         return result;
     }
-
-
     //    返回成功结果，无data
     public static <T> Result<T> createSuccess() {
         return createResult(ResultCode.SUCCESS);

@@ -33,6 +33,15 @@ public class UsersServiceImpl implements UsersService {
     /**
      * 通过实体作为筛选条件查询
      *
+     * @return 对象列表
+     */
+    @Override
+    public List<Users> selectAll() {
+        return this.usersDao.selectAll();
+    }
+    /**
+     * 通过实体作为筛选条件查询
+     *
      * @param users 实例对象
      * @return 对象列表
      */

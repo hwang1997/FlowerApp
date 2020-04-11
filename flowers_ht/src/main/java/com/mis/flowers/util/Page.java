@@ -45,18 +45,23 @@ public class Page<T> implements Serializable {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
+        //计算总页数
+        this.totalPage = (int) (Math.ceil((this.totalCount*1.0/this.pageSize)));
     }
 
     public Integer getTotalPage() {
-        if (totalCount % pageSize == 0) {
-            totalPage = totalCount / pageSize;
-        } else {
-            totalPage = totalCount / pageSize + 1;
-        }
         return totalPage;
     }
 
     public void setTotalPage(Integer totalPage) {
         this.totalPage = totalPage;
+    }
+
+    public Page(List<T> items, int totalCount){
+        this.items =items;
+        this.totalCount =totalCount;
+    }
+    public Page(){
+
     }
 }

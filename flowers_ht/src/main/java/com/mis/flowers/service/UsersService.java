@@ -30,6 +30,12 @@ public interface UsersService {
     List<Users> queryAll(Users users);
 
     /**
+     * 通过实体作为筛选条件查询
+     *
+     * @return 对象列表
+     */
+    List<Users> selectAll();
+    /**
      * 查询多条数据
      *
      * @param offset 查询起始位置
