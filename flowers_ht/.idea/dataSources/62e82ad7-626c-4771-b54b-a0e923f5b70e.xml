@@ -532,10 +532,60 @@
       <Charset>utf8</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="134" parent="2" name="users">
+    <table id="134" parent="2" name="goods">
+      <Comment>商品表</Comment>
+    </table>
+    <table id="135" parent="2" name="users">
       <Comment>用户表</Comment>
     </table>
-    <column id="135" parent="134" name="user_id">
+    <column id="136" parent="134" name="goodsId">
+      <Position>1</Position>
+      <Comment>商品编号</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="137" parent="134" name="goodsName">
+      <Position>2</Position>
+      <Comment>商品名称</Comment>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="138" parent="134" name="goodsPrice">
+      <Position>3</Position>
+      <Comment>商品价格</Comment>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="139" parent="134" name="goodsCount">
+      <Position>4</Position>
+      <Comment>商品数量</Comment>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="140" parent="134" name="goodsDes">
+      <Position>5</Position>
+      <Comment>花语</Comment>
+      <DataType>varchar(200)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="141" parent="134" name="goodsImg">
+      <Position>6</Position>
+      <Comment>商品图片</Comment>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="142" parent="134" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>goodsId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="143" parent="135" name="user_id">
       <Position>1</Position>
       <Comment>用户编号</Comment>
       <DataType>int(11)|0s</DataType>
@@ -543,7 +593,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="136" parent="134" name="user_name">
+    <column id="144" parent="135" name="user_name">
       <Position>2</Position>
       <Comment>用户名</Comment>
       <DataType>varchar(32)|0s</DataType>
@@ -551,7 +601,7 @@
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="137" parent="134" name="user_password">
+    <column id="145" parent="135" name="user_password">
       <Position>3</Position>
       <Comment>用户密码</Comment>
       <DataType>varchar(60)|0s</DataType>
@@ -559,7 +609,7 @@
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="138" parent="134" name="role">
+    <column id="146" parent="135" name="role">
       <Position>4</Position>
       <Comment>用户角色（0：管理员，1：用户）</Comment>
       <DataType>int(11)|0s</DataType>
@@ -567,7 +617,7 @@
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="139" parent="134" name="PRIMARY">
+    <key id="147" parent="135" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>

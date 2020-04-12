@@ -85,6 +85,16 @@ public class UsersServiceImpl implements UsersService {
         this.usersDao.update(users);
         return this.queryById(users.getUserId());
     }
+    /**
+     * 修改数据
+     *
+     * @param userId 实例对象
+     * @return 实例对象
+     */
+    @Override
+    public boolean updatePwd(Integer userId, String pwd) {
+       return this.usersDao.updatePwd(userId,pwd);
+    }
 
     /**
      * 通过主键删除数据

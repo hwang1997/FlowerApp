@@ -67,6 +67,10 @@
         </set>
         where user_id = #{userId}
     </update>
+    <!--通过主键修改数据-->
+    <update id="updatePwd">
+        update flowers.users set user_password = #{pwd} where user_id = #{userId}
+    </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">

@@ -63,6 +63,13 @@ public interface UsersDao {
      * @return 影响行数
      */
     int update(Users users);
+    /**
+     * 修改数据
+     *
+     * @param userId 实例对象
+     * @return 影响行数
+     */
+    boolean updatePwd(Integer userId, String pwd);
 
     /**
      * 通过主键删除数据

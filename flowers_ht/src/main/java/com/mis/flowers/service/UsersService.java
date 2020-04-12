@@ -61,6 +61,14 @@ public interface UsersService {
     Users update(Users users);
 
     /**
+     * 修改数据
+     *
+     * @param userId 实例对象
+     * @return 实例对象
+     */
+    boolean updatePwd(Integer userId,String pwd);
+
+    /**
      * 通过主键删除数据
      *
      * @param userId 主键

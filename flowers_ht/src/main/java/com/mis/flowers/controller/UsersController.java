@@ -71,7 +71,6 @@ public class UsersController {
             }else {
                 return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
             }
-
     }
 
     /**
@@ -80,49 +79,51 @@ public class UsersController {
      * @param users 实例对象
      * @return 对象列表
      */
-    @RequestMapping(value = "getUsersInfo", method = RequestMethod.GET)
-    public Result<List<Users>> getUsersInfo(Users users) {
-        List<Users> usersList = new ArrayList<Users>();
-        for (int i = 0; i < this.usersService.queryAll(users).size(); i++) {
-            usersList.add(this.usersService.queryAll(users).get(i));
-            this.usersService.queryAll(users);
-        }
-        return Result.createSuccess(usersList);
-    }
+//    @RequestMapping(value = "getUsersInfo", method = RequestMethod.GET)
+//    public Result<List<Users>> getUsersInfo(Users users) {
+//        List<Users> usersList = new ArrayList<Users>();
+//        for (int i = 0; i < this.usersService.queryAll(users).size(); i++) {
+//            usersList.add(this.usersService.queryAll(users).get(i));
+//            this.usersService.queryAll(users);
+//        }
+//        return Result.createSuccess(usersList);
+//    }
 
-    @RequestMapping(value = "getUserAll",method = RequestMethod.GET)
-    public Result<List<Users>> getUserAll(){
-        List<Users> list = new ArrayList<Users>() ;
-        for (int i = 0; i < this.usersService.selectAll().size();i++) {
-            list.add(this.usersService.selectAll().get(i));
-        }
-        return Result.createSuccess(list);
-    }
+//    @RequestMapping(value = "getUserAll",method = RequestMethod.GET)
+//    public Result<List<Users>> getUserAll(){
+//        List<Users> list = new ArrayList<Users>() ;
+//        for (int i = 0; i < this.usersService.selectAll().size();i++) {
+//            list.add(this.usersService.selectAll().get(i));
+//        }
+//        return Result.createSuccess(list);
+//    }
 
     //插入
     @SneakyThrows
     @RequestMapping(value = "insertUsers", method = RequestMethod.POST)
     public Result<Integer> insertUsers(addUserDto dto) {
+        try {
             Users users = new Users();
             users.setUserName(dto.getUserName());
             String password = MD5Util.md5Encode(dto.getUserPassword());
             users.setUserPassword(password);
             users.setRole(dto.getRole());
             this.usersService.insert(users);
-            if (this.usersService.queryAll(users) != null) {
-                return Result.createSuccess();
-            } else {
-                return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
-            }
+            return Result.createSuccess();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
+        }
     }
 
     //删除
     @RequestMapping(value = "deleteUsers", method = RequestMethod.DELETE)
     public Result<Boolean> deleteUsers(Integer userId) {
-        this.usersService.deleteById(userId);
-        if (this.usersService.queryById(userId) == null) {
+        try {
+            this.usersService.deleteById(userId);
             return Result.createSuccess();
-        } else {
+        }catch (Exception e){
+            e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(), "删除失败!");
         }
     }
@@ -131,19 +132,24 @@ public class UsersController {
     @RequestMapping(value = "batchDelete", method = RequestMethod.DELETE)
     public Result<Boolean> batchDelete(int[] userId) {
 
-        for (int i = 0; i < userId.length; i++) {
-            this.usersService.deleteById(userId[i]);
-        }
-        for (int j = 0; j < userId.length; j++) {
-            if (this.usersService.queryById(userId[j]) != null) {
-                return Result.createFailUre(ResultCode.Fail.code(), "删除失败！");
+        if (userId != null){
+            for (int i = 0; i < userId.length; i++) {
+                this.usersService.deleteById(userId[i]);
             }
+            for (int j = 0; j < userId.length; j++) {
+                if (this.usersService.queryById(userId[j]) != null) {
+                    return Result.createFailUre(ResultCode.Fail.code(), "删除失败！");
+                }
+            }
+            return Result.createSuccess();
+        }else {
+            return Result.createFailUre(ResultCode.Fail.code(),"失败！");
         }
-        return Result.createSuccess();
+
 
     }
 
-    //修改
+    //修改用户信息
     @SneakyThrows//MD5
     @RequestMapping(value = "updateUsers", method = RequestMethod.POST)
     public Result<Users> updateUsers(updateUserDto dto) {
@@ -160,11 +166,23 @@ public class UsersController {
             return Result.createFailUre(ResultCode.Fail.code(), "修改失败！");
         }
     }
+    //修改用户信息
+    @SneakyThrows//MD5
+    @RequestMapping(value = "updatePwd", method = RequestMethod.GET)
+    public Result<Boolean> updatePwd(Integer userId, String pwd) {
+        String password = MD5Util.md5Encode(pwd);
+       this.usersService.updatePwd(userId,password);
+        if (this.usersService.updatePwd(userId,password)) {
+            return Result.createSuccess();
+        } else {
+            return Result.createFailUre(ResultCode.Fail.code(), "修改失败！");
+        }
+    }
 
     //分页
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
     public Result<Page<Users>> selectByPage(int page, int limit) {
-        List<Users> list = this.usersService.queryAllByLimit((page-1)*limit,limit);;
+        List<Users> list = this.usersService.queryAllByLimit((page-1)*limit,limit);
         Integer count = this.usersService.selectAll().size();
         Page<Users> usersPage = new Page<Users>(list,count);
         return Result.createSuccess(usersPage);
