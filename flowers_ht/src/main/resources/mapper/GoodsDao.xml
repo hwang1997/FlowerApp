@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mis.flowers.dao.GoodsDao">
+
+    <resultMap type="com.mis.flowers.entity.Goods" id="GoodsMap">
+        <result property="goodsid" column="goodsId" jdbcType="INTEGER"/>
+        <result property="goodsname" column="goodsName" jdbcType="VARCHAR"/>
+        <result property="goodsprice" column="goodsPrice" jdbcType="OTHER"/>
+        <result property="goodscount" column="goodsCount" jdbcType="INTEGER"/>
+        <result property="goodsdes" column="goodsDes" jdbcType="VARCHAR"/>
+        <result property="goodsimg" column="goodsImg" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="GoodsMap">
+        select
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+        from flowers.goods
+        where goodsId = #{goodsid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="GoodsMap">
+        select
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+        from flowers.goods
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="GoodsMap">
+        select
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+        from flowers.goods
+        <where>
+            <if test="goodsid != null">
+                and goodsId = #{goodsid}
+            </if>
+            <if test="goodsname != null and goodsname != ''">
+                and goodsName = #{goodsname}
+            </if>
+            <if test="goodsprice != null">
+                and goodsPrice = #{goodsprice}
+            </if>
+            <if test="goodscount != null">
+                and goodsCount = #{goodscount}
+            </if>
+            <if test="goodsdes != null and goodsdes != ''">
+                and goodsDes = #{goodsdes}
+            </if>
+            <if test="goodsimg != null and goodsimg != ''">
+                and goodsImg = #{goodsimg}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="goodsid" useGeneratedKeys="true">
+        insert into flowers.goods(goodsName, goodsPrice, goodsCount, goodsDes, goodsImg)
+        values (#{goodsname}, #{goodsprice}, #{goodscount}, #{goodsdes}, #{goodsimg})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update flowers.goods
+        <set>
+            <if test="goodsname != null and goodsname != ''">
+                goodsName = #{goodsname},
+            </if>
+            <if test="goodsprice != null">
+                goodsPrice = #{goodsprice},
+            </if>
+            <if test="goodscount != null">
+                goodsCount = #{goodscount},
+            </if>
+            <if test="goodsdes != null and goodsdes != ''">
+                goodsDes = #{goodsdes},
+            </if>
+            <if test="goodsimg != null and goodsimg != ''">
+                goodsImg = #{goodsimg},
+            </if>
+        </set>
+        where goodsId = #{goodsid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from flowers.goods where goodsId = #{goodsid}
+    </delete>
+
+    <!--查询所有-->
+    <select id="selectAll" resultMap="GoodsMap">
+        select
+            goodsid, goodsname, goodsprice, goodscount,goodsdes,goodsimg
+        from flowers.goods
+    </select>
+
+</mapper>

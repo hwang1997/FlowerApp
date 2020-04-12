@@ -1,0 +1,87 @@
+package com.mis.flowers.entity;
+
+import java.io.Serializable;
+
+/**
+ * 商品表(Goods)实体类
+ *
+ * @author wanghuan
+ * @since 2020-04-12 14:45:36
+ */
+public class Goods implements Serializable {
+    private static final long serialVersionUID = -86161660405215665L;
+    /**
+    * 商品编号
+    */
+    private Integer goodsid;
+    /**
+    * 商品名称
+    */
+    private String goodsname;
+    /**
+    * 商品价格
+    */
+    private Object goodsprice;
+    /**
+    * 商品数量
+    */
+    private Integer goodscount;
+    /**
+    * 花语
+    */
+    private String goodsdes;
+    /**
+    * 商品图片
+    */
+    private String goodsimg;
+
+
+    public Integer getGoodsid() {
+        return goodsid;
+    }
+
+    public void setGoodsid(Integer goodsid) {
+        this.goodsid = goodsid;
+    }
+
+    public String getGoodsname() {
+        return goodsname;
+    }
+
+    public void setGoodsname(String goodsname) {
+        this.goodsname = goodsname;
+    }
+
+    public Object getGoodsprice() {
+        return goodsprice;
+    }
+
+    public void setGoodsprice(Object goodsprice) {
+        this.goodsprice = goodsprice;
+    }
+
+    public Integer getGoodscount() {
+        return goodscount;
+    }
+
+    public void setGoodscount(Integer goodscount) {
+        this.goodscount = goodscount;
+    }
+
+    public String getGoodsdes() {
+        return goodsdes;
+    }
+
+    public void setGoodsdes(String goodsdes) {
+        this.goodsdes = goodsdes;
+    }
+
+    public String getGoodsimg() {
+        return goodsimg;
+    }
+
+    public void setGoodsimg(String goodsimg) {
+        this.goodsimg = goodsimg;
+    }
+
+}

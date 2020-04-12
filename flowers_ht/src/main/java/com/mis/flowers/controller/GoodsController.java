@@ -1,0 +1,121 @@
+package com.mis.flowers.controller;
+
+import com.mis.flowers.dto.GoodsDto;
+import com.mis.flowers.entity.Goods;
+import com.mis.flowers.entity.Users;
+import com.mis.flowers.service.GoodsService;
+import com.mis.flowers.util.AppFileUtils;
+import com.mis.flowers.util.Page;
+import com.mis.flowers.util.Result;
+import com.mis.flowers.util.ResultCode;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 商品表(Goods)表控制层
+ *
+ * @author wanghuan
+ * @since 2020-04-12 14:45:36
+ */
+@RestController
+@RequestMapping("goods")
+public class GoodsController {
+    /**
+     * 服务对象
+     */
+    @Resource
+    private GoodsService goodsService;
+
+    //分页查询
+    @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
+    public Result<Page<Goods>> selectByPage(int page, int limit) {
+        List<Goods> list = this.goodsService.queryAllByLimit((page-1)*limit,limit);
+        Integer count = this.goodsService.selectAll().size();
+        Page<Goods> goodsPage = new Page<Goods>(list,count);
+        return Result.createSuccess(goodsPage);
+    }
+    /**
+     * 通过userId查询单条数据
+     *
+     * @param goodsId 主键
+     * @return 单条数据
+     */
+    @RequestMapping(value = "goodsDoSearch", method = RequestMethod.GET)
+    public Result<List<Goods>> userDoSearch(String goodsId) {
+        List<Goods> goods = new ArrayList<>();
+        Goods goods1 = this.goodsService.queryById(Integer.parseInt(goodsId));
+        if (goods1 != null){
+            goods.add(goods1);
+            return Result.createSuccess(goods);
+        }else {
+            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+        }
+    }
+    /**
+     *
+     *添加
+     */
+    @RequestMapping(value = "insertGoods",method = RequestMethod.POST)
+    public Result<Integer> insertUsers(GoodsDto dto) {
+        try {
+            if (dto.getGoodsimg()!=null&&dto.getGoodsimg().endsWith("_temp")){
+               String newName = AppFileUtils.renameFile(dto.getGoodsimg());
+               dto.setGoodsimg(newName);
+            }
+            Goods goods = new Goods();
+            goods.setGoodsname(dto.getGoodsname());
+            goods.setGoodsprice(dto.getGoodsprice());
+            goods.setGoodscount(dto.getGoodscount());
+            goods.setGoodsdes(dto.getGoodsdes());
+            goods.setGoodsimg(dto.getGoodsimg());
+            this.goodsService.insert(goods);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+    }
+    /**
+     *
+     *添加
+     */
+    @RequestMapping(value = "updateGoods",method = RequestMethod.POST)
+    public Result<Boolean> updateGoods(GoodsDto dto) {
+        try {
+            //此时说明是默认图片
+            if (!(dto.getGoodsimg()!=null&&dto.getGoodsimg().equals("images/1.png"))){
+                if (dto.getGoodsimg().endsWith("_temp")){
+                    String newName = AppFileUtils.renameFile(dto.getGoodsimg());
+                    dto.setGoodsimg(newName);
+                    //删除原先图片
+                    String oldPath = this.goodsService.queryById(dto.getGoodsid()).getGoodsimg();
+                    AppFileUtils.removeFileByPath(oldPath);
+                }
+            }
+            this.goodsService.update(dto);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+    }
+    //删除
+    @RequestMapping(value = "deleteGoods", method = RequestMethod.DELETE)
+    public Result<Boolean> deleteUsers(Integer goodsid, String goodsimg) {
+        try {
+            //删除原文件
+            AppFileUtils.renameFile(goodsimg);
+            this.goodsService.deleteById(goodsid);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(), "删除失败!");
+        }
+    }
+
+
+
+}
