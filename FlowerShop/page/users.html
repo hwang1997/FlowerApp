@@ -44,7 +44,6 @@
 <div style="display: none;" id="userToolBar">
     <button type="button" class="layui-btn layui-btn-sm" lay-event="add">增加</button>
     <button type="button" class="layui-btn layui-btn-sm" lay-event="batchDelete">批量删除</button>
-    <button type="button" class="layui-btn layui-btn-sm" lay-event="getSelect">获取选中行</button>
     <button type="button" class="layui-btn layui-btn-sm" lay-event="reloadTable">刷新数据</button>
 
 </div>
@@ -60,14 +59,14 @@
             <div class="layui-inline">
                 <label class="layui-form-label">编号:</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="userId" readonly="readonly" lay-verify="required" autocomplete="off"
-                           class="layui-input" value="用户编号为自增长">
+                    <input type="text" name="userId" id="userId1" readonly="readonly" autocomplete="off"
+                           class="layui-input" placeholder="用户编号为自增长">
                 </div>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">用户名:</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="userName" lay-verify="required" autocomplete="off"
+                    <input type="text" name="userName" id="userName" lay-verify="required" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -76,14 +75,14 @@
             <div class="layui-inline">
                 <label class="layui-form-label">密码:</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="userPassword" lay-verify="required" autocomplete="off"
+                    <input type="text" name="userPassword" id="userPassword" lay-verify="required" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-inline">
                 <label class="layui-form-label">角色:</label>
                 <div class="layui-input-inline">
-                    <input type="radio" name="role" value="1" checked="checked" title="普通用户">
+                    <input type="radio" name="role" value="1" title="普通用户">
                     <input type="radio" name="role" value="0" title="后台管理员">
                 </div>
             </div>
@@ -93,7 +92,7 @@
                 <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
                         lay-submit="" lay-filter="doSubmit">提交
                 </button>
-                <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置
+                <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh" >重置
                 </button>
             </div>
         </div>
@@ -210,7 +209,7 @@
                 break;
             case 'batchDelete':
                 var checkStatus = table.checkStatus('userTable');
-                console.log(checkStatus);//获取选中行的数据
+                // console.log(checkStatus);//获取选中行的数据
                 var data = checkStatus.data;
                 var length = checkStatus.data.length;
                 var usersId = [];
@@ -246,16 +245,7 @@
                         icon: 5,
                         time: 1000
                     });
-                }
-
-
-                break;
-            case 'getSelect':
-                var checkStatus = table.checkStatus('userTable');
-                console.log(checkStatus.data);//获取选中行的数据
-                console.log(checkStatus.data.length);//获取选中的行数量，可作为是否有选中的条件
-                console.log(checkStatus.isAll);//表格是否全选
-
+                };
                 break;
             case 'reloadTable':
                 // table.read("userTable",{
@@ -274,31 +264,38 @@
 
         var deleteId = data.userId;
         if (layEvent === 'del') { //删除
-            layer.msg("删除");
-            layer.confirm('真的删除吗？', function (index) {
-                //向服务端发送删除指令
-                $.ajax({
-                    url: WebPath + "/users/deleteUsers?userId=" + deleteId,
-                    type: "DELETE",
-                    dataType: "json",
-                    success: function (result) {
-                        if (result.code == 0) {
-                            layer.msg("删除" + result.message, {
-                                icon: 6,
-                                time: 1000
-                            });
-                        } else {
-                            layer.msg("删除" + result.message, {
-                                icon: 5,
-                                time: 1000
-                            });
+
+            if(data.role == 1){
+                layer.confirm('真的删除吗？', function (index) {
+                    //向服务端发送删除指令
+                    $.ajax({
+                        url: WebPath + "/users/deleteUsers?userId=" + deleteId,
+                        type: "DELETE",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result.code == 0) {
+                                layer.msg("删除" + result.message, {
+                                    icon: 6,
+                                    time: 1000
+                                });
+                            } else {
+                                layer.msg("删除" + result.message, {
+                                    icon: 5,
+                                    time: 1000
+                                });
+                            }
                         }
-                    }
-                })
-                layer.close(index);
-                //刷新表格
-                tableIns.reload(WebPath + "/users/selectByPage");
-            });
+                    });
+                    layer.close(index);
+                    //刷新表格
+                    tableIns.reload(WebPath + "/users/selectByPage");
+                });
+            }else {
+                layer.msg("超级管理员无法删除！", {
+                    icon: 5,
+                    time: 1000
+                });
+            }
         } else if (layEvent === 'edit') { //编辑
             //do something
             openUpdateUser(data);
@@ -312,7 +309,7 @@
     function openAddUser() {
         mainIndex = layer.open({
             type: 1,
-            title: '添加用户',
+            title: '添加商品',
             content: $("#saveOrUpdateDiv"),
             area: ['800px', '300px'],
             success: function (index) {
@@ -333,6 +330,7 @@
             area: ['800px', '300px'],
             success: function (index) {
                 form.val('dataFrm', data);
+                $('#userPassword').val("");
                 value = "修改";
                 url = WebPath + '/users/updateUsers';//修改接口
             }

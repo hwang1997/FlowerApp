@@ -1,32 +1,33 @@
-<link rel="stylesheet" href="../layui/css/layui.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页--layui后台管理模板 2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../css/public.css" media="all"/>
+</head>
+<body>
 <!--搜索栏开始-->
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend>查询条件</legend>
 </fieldset>
 <form action="" class="layui-form" method="post">
-    <div class="layui-form-item">
+    <div class="layui-form-item" style="position: relative">
         <div class="layui-inline">
-            <label class="layui-form-label">编号:</label>
+            <label class="layui-form-label">商品编号:</label>
             <div class="layui-input-inline">
-                <input type="text" name="id" autocomplete="off" class="layui-input">
+                <input type="text" name="goodsId" id="goodsId1" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-inline">
-            <label class="layui-form-label">用户名:</label>
-            <div class="layui-input-inline">
-                <input type="text" name="username" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-inline">
-            <label class="layui-form-label" style="line-height: 50px">角色:</label>
-            <div class="layui-input-inline">
-                <input type="radio" name="sex" value="1" title="普通用户">
-                <input type="radio" name="sex" value="0" title="后台管理员">
-            </div>
-        </div>
-        <div class="layui-input-inline" style="float: right">
+        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
             <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
-                    id="doSearch">查询
+                    data-type="reload" id="doSearch">查询
             </button>
             <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置</button>
         </div>
@@ -35,48 +36,75 @@
 <!--搜索栏结束-->
 
 <!--表格操作列开始-->
-<table class="layui-hide" id="userTable" lay-filter="userTable"></table>
-<div style="display: none;" id="userToolBar">
+<table class="layui-hide" id="goodsTable" lay-filter="goodsTable"></table>
+
+<iframe src="404.html" class="layui-hide" id="page404" frameborder="0" style="width: 100%;height: 700px;border-top: 1px solid #ccc"></iframe>
+
+<div style="display: none;" id="goodsToolBar">
     <button type="button" class="layui-btn layui-btn-sm" lay-event="add">增加</button>
     <button type="button" class="layui-btn layui-btn-sm" lay-event="batchDelete">批量删除</button>
+    <button type="button" class="layui-btn layui-btn-sm" lay-event="reloadTable">刷新数据</button>
 </div>
-<div id="userBar" style="display: none;">
+<div id="goodsBar" style="display: none;">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" id="del" lay-event="del">删除</a>
 </div>
 <!--表头操作结束-->
 <!-- 添加和修改的弹出层开始 -->
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv">
-    <form class="layui-form " action="" lay-filter="dataFrm">
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">编号:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="id" lay-verify="required" autocomplete="off"
-                           class="layui-input">
+    <form class="layui-form " action="" style="position: relative" id="dataFrm" lay-filter="dataFrm">
+        <div class="layui-col-md12 layui-col-xs12">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md9 layui-col-xs7">
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品编号：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input " name="goodsid" id="goodsid" readonly="readonly"  placeholder="商品编号为自增长">
+                        </div>
+                    </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品名称：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input " name="goodsname" id="goodsname" lay-verify="required" placeholder="请输入商品名称" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品价格：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="goodsprice" id="goodsprice" lay-verify="required" placeholder="请输入商品价格">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-col-md3 layui-col-xs5">
+                    <div class="layui-upload-list thumbBox mag0 magt3" style="border: 1px solid #0C0C0C;">
+                        <input type="hidden" name="goodsimg" id="goodsimg" value="images/1.png">
+                        <img class="layui-upload-img thumbImg"
+                             style="width: 180px;height: 180px;background-size: auto" src="http://127.0.0.1:8089/file/showImageByPath?path=images/1.png">
+                    </div>
                 </div>
             </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">用户名:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="username" autocomplete="off"
-                           class="layui-input">
+            <div class="layui-col-md9 layui-col-xs7">
+                <div class="layui-form-item magt3">
+                    <label class="layui-form-label">商品数量：</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="goodscount" id="goodscount" lay-verify="required" placeholder="请输入商品数量">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">花语</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入花语内容" lay-verify="required" name="goodsdes" id="goodsdes" class="layui-textarea abstract"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">密码:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="id" lay-verify="required" autocomplete="off"
-                           class="layui-input">
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">性别:</label>
-                <div class="layui-input-inline">
-                    <input type="radio" name="sex" value="1" checked="checked" title="男">
-                    <input type="radio" name="sex" value="0" title="女">
+            <div class="layui-form-item" style="position: absolute;left: 10px;bottom: -60px;">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
+                            lay-submit="" lay-filter="doSubmit">提交
+                    </button>
+                    <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置
+                    </button>
                 </div>
             </div>
         </div>
@@ -84,89 +112,289 @@
 
 </div>
 <!-- 添加和修改的弹出层结束 -->
+</body>
+</html>
 
 <script src="../layui/layui.all.js"></script>
 <script>
+    var userId = localStorage.getItem("userId");
     var $ = layui.jquery;
     var layer = layui.layer;
     var form = layui.form;
     var table = layui.table;
-    var laydate = layui.laydate;
-    table.render({
-        elem: "#userTable",
-        title: '用户表',
-        height: "full-170",
-        limit: 5,
-        limits: ['5', '10', '15'],
-        url: 'http://127.0.0.1:8089/users/getUsersInfoBylimit',
-        page: true,
-        cellMinWidth: 100,
-        toolbar: '#userToolBar',
-        cols: [[
-            {type: 'checkbox', fixed: 'left'},
-            {field: 'userId', title: 'ID', sort: true, fixed: 'left', align: 'center'},
-            {field: 'userName', title: '用户名', align: 'center'},
-            {field: 'userPassword', title: '密码', align: 'center'},
-            {
-                field: 'role', title: '角色', align: 'center', templet: function (d) {
-                    return d.role == "1" ? "普通用户" : "后台管理员";
+    var upload = layui.upload;
+    //重置
+    // $('#reset').click(function () {
+    //    $("#goodsimg").val("images/1.png");
+    //    $("#goodsimg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
+    // });
+
+    //上传缩略图
+    upload.render({
+        elem: '.thumbBox',
+        url: WebPath + '/file/uploadFile',
+        method : "POST",
+        acceptMime:'image/*',
+        field:'mf',
+        done: function(res, index, upload){
+            var path =  res.path;
+            $('.thumbImg').attr('src',WebPath+"/file/showImageByPath?path="+path);
+            $('.thumbBox').css("background","#fff");
+            $("#goodsimg").val(path);//给隐藏域赋值
+        }
+    });
+    //表格请求
+    if (userId != '' && userId != null) {
+        var tableIns = table.render({
+            elem: "#goodsTable",
+            title: '商品表',
+            height: "569",
+            text: {
+                none:'暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+            },
+            limit: 10,
+            limits: ['10', '20', '30'],
+            url: WebPath + '/goods/selectByPage',
+            page: true,
+            cellMinWidth: 100,
+            toolbar: '#goodsToolBar',
+            parseData:function (res){
+                return{
+                    "code":res.code,
+                    "msg":res.message,
+                    "count": res.data.totalCount, //解析数据长度
+                    "data": res.data.items //解析数据列表
                 }
             },
-            {fixed: 'right', title: '操作', toolbar: '#userBar', width: 220, align: 'center'}
-        ]]
+            cols: [[
+                {type: 'checkbox', fixed: 'left'},
+                {field: 'goodsid', title: '商品编号', sort: true, fixed: 'left', align: 'center'},
+                {field: 'goodsname', title: '商品名称'},
+                {field: 'goodsprice', title: '商品价格', align: 'center'},
+                {field: 'goodscount', title: '商品数量', align: 'center'},
+                {field: 'goodsdes', title: '花语', align: 'left'},
+                {field: 'goodsimg', title: '图片', align: 'center',templet:function (d) {
+                        return '<img width="40" height="40" src='+WebPath+'/file/showImageByPath?path='+ d.goodsimg+'/>'
+                    }},
+                {fixed: 'right', title: '操作', toolbar: '#goodsBar', width: 220, align: 'center'}
+            ]]
+        });
+    } else {
+        $('#page404').removeClass("layui-hide");
 
+    }
+
+    //监听头部搜索按钮
+    $('#doSearch').on('click',function () {
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : "";
     });
+    var active = {
+        reload:function () {
+            var goodsId1 = $('#goodsId').val();
+            var index = layer.msg("查询中，请稍后……",{
+                icon:6,
+                time:false,
+                shade:0
+            });
+            if (goodsId1 == ""){
+                setTimeout(function () {
+                    table.reload('goodsTable',{
+                        url:WebPath + "/goods/selectByPage",
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": res.data.totalCount, //解析数据长度
+                                "data": res.data.items //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
+            } else {
+                setTimeout(function () {
+                    table.reload('goodsTable',{
+                        url:WebPath + '/goods/goodsDoSearch?goodsId='+ goodsId,
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": 1, //解析数据长度
+                                "data": res.data //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
+
+            }
+        }
+    };
+
     //监听头部工具栏事件
-    table.on("toolbar(userTable)", function (obj) {
+    table.on("toolbar(goodsTable)", function (obj) {
         switch (obj.event) {
             case 'add':
-                alert("1111");
                 openAddUser();
                 break;
             case 'batchDelete':
-                layer.msg('批量删除');
+                var checkStatus = table.checkStatus('goodsTable');
+                // console.log(checkStatus);//获取选中行的数据
+                var data = checkStatus.data;
+                var length = checkStatus.data.length;
+                var usersId = [];
+                if (length > 0) {
+                    for (var i in data) {
+                        usersId.push(data[i].userId);
+                    }
+                    $.ajax({
+                        // url: WebPath + "/users/batchDelete?userId=" + usersId,
+                        type: "DELETE",
+                        dataType: "json",
+                        success: function (result) {
+                            if (result.code == 0) {
+                                layer.msg("批量删除" + result.message, {
+                                    icon: 6,
+                                    time: 1000
+                                });
+                            } else {
+                                layer.msg("批量删除" + result.message, {
+                                    icon: 5,
+                                    time: 1000
+                                });
+                            }
+                        }
+                    });
+                    //刷新数据表格
+                    // setTimeout(function () {
+                    tableIns.reload(WebPath + "/users/selectByPage");
+                    // },3000);
+
+                } else {
+                    layer.msg("你还没选批量删除的数据", {
+                        icon: 5,
+                        time: 1000
+                    });
+                };
+                break;
+            case 'reloadTable':
+                // table.read("userTable",{
+                //     url:'http://127.0.0.1:8089/users/selectByPage'
+                // })
+                tableIns.reload(WebPath + "/goods/selectByPage");
                 break;
         }
         ;
-    })
+    });
 
+    //监听行工具事件
+    table.on('tool(goodsTable)', function (obj) {
+        var data = obj.data; //获得当前行数据
+        var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+        if (layEvent === 'del') { //删除
+            layer.confirm('真的删除吗？', function (index) {
+                //向服务端发送删除指令
+                $.ajax({
+                    url: WebPath + "/goods/deleteGoods?goodsid=" + data.goodsid +"&&goodsimg=" + data.goodsimg,
+                    type: "DELETE",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.code == 0) {
+                            layer.msg("删除" + result.message, {
+                                icon: 6,
+                                time: 1000
+                            });
+                        } else {
+                            layer.msg("删除" + result.message, {
+                                icon: 5,
+                                time: 1000
+                            });
+                        }
+                    }
+                });
+                layer.close(index);
+                //刷新表格
+                tableIns.reload(WebPath + "/goods/selectByPage");
+            });
+        } else if (layEvent === 'edit') { //编辑
+            //do something
+            openUpdateUser(data);
+            layer.msg("修改")
+        }
+    });
+    var url = '';
+    var mainIndex;
+    var value = "";
     //打开添加页面
     function openAddUser() {
-        layer.open({
+        mainIndex = layer.open({
             type: 1,
-            title: '添加用户',
+            title: '添加商品',
             content: $("#saveOrUpdateDiv"),
-            area: ['800px'],
-            btnAlign: 'c',
-            btn: ['<div class="layui-icon layui-icon-release">保存</div>', '<div class="layui-icon layui-icon-close">关闭</div>'],
-            yes: function (index, layero) {
-                layer.msg("保存");
+            area: ['800px', '500px'],
+            success: function (index) {
+                //清空表单数据
+                $('#dataFrm')[0].reset();
+                url = WebPath + '/goods/insertGoods';//添加接口
+                value = "添加";
+                //设置默认图片
+                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path=images/1.png');
+                $('#goodsImg').val('images/1.png');
 
-            },
-            btn2: function (index, layero) {
-                layer.msg("关闭");
-                return true;
+            }
+
+
+        });
+    }
+
+    //打开修改界面
+    function openUpdateUser(data) {
+        mainIndex = layer.open({
+            type: 1,
+            title: '修改用户',
+            content: $("#saveOrUpdateDiv"),
+            area: ['800px', '500px'],
+            success: function (index) {
+                form.val('dataFrm', data);
+                value = "修改";
+                url = WebPath + '/goods/updateGoods';//修改接口
+
+                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
             }
         });
     }
 
-    //监听行工具事件
-    table.on('tool(userTable)', function (obj) {
-        var data = obj.data; //获得当前行数据
-        var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
-        if (layEvent === 'del') { //删除
-            layer.msg("删除");
-            layer.confirm('真的删除行么', function (index) {
-                layer.close(index);
-                //向服务端发送删除指令
-            });
-        } else if (layEvent === 'edit') { //编辑
-            //do something
-            layer.msg("修改")
-        }
+    //保存
+    form.on("submit(doSubmit)", function (obj) {
+        var params = $('#dataFrm').serialize();
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "json",
+            data: params,
+            success: function (result) {
+                if (result.code == 0) {
+                    layer.msg(value + result.message, {
+                        icon: 6,
+                        time: 1000
+                    });
+                    $('#reset').click();
+                } else {
+                    layer.msg(value + result.message, {
+                        icon: 5,
+                        time: 1000
+                    });
+                }
+                tableIns.reload(WebPath + "/users/selectByPage");
+            }
+        });
+        //关闭弹出层
+        layer.close(mainIndex);
+        //刷新表格
+        tableIns.reload(WebPath + "/users/selectByPage");
     });
 </script>
-
 
 
 
