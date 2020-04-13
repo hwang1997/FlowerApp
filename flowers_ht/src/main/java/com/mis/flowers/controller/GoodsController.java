@@ -32,10 +32,15 @@ public class GoodsController {
     //分页查询
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
     public Result<Page<Goods>> selectByPage(int page, int limit) {
-        List<Goods> list = this.goodsService.queryAllByLimit((page-1)*limit,limit);
-        Integer count = this.goodsService.selectAll().size();
-        Page<Goods> goodsPage = new Page<Goods>(list,count);
-        return Result.createSuccess(goodsPage);
+        try {
+            List<Goods> list = this.goodsService.queryAllByLimit((page-1)*limit,limit);
+            Integer count = this.goodsService.selectAll().size();
+            Page<Goods> goodsPage = new Page<Goods>(list,count);
+            return Result.createSuccess(goodsPage);
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败");
+        }
     }
     /**
      * 通过userId查询单条数据
@@ -45,12 +50,12 @@ public class GoodsController {
      */
     @RequestMapping(value = "goodsDoSearch", method = RequestMethod.GET)
     public Result<List<Goods>> userDoSearch(String goodsId) {
-        List<Goods> goods = new ArrayList<>();
-        Goods goods1 = this.goodsService.queryById(Integer.parseInt(goodsId));
-        if (goods1 != null){
-            goods.add(goods1);
+        try {
+            List<Goods> goods = new ArrayList<>();
+            goods.add(this.goodsService.queryById(Integer.parseInt(goodsId)));
             return Result.createSuccess(goods);
-        }else {
+        }catch (Exception e){
+            e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
         }
     }
@@ -115,7 +120,4 @@ public class GoodsController {
             return Result.createFailUre(ResultCode.Fail.code(), "删除失败!");
         }
     }
-
-
-
 }

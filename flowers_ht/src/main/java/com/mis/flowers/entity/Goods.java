@@ -21,7 +21,7 @@ public class Goods implements Serializable {
     /**
     * 商品价格
     */
-    private Object goodsprice;
+    private Float goodsprice;
     /**
     * 商品数量
     */
@@ -52,11 +52,11 @@ public class Goods implements Serializable {
         this.goodsname = goodsname;
     }
 
-    public Object getGoodsprice() {
+    public Float getGoodsprice() {
         return goodsprice;
     }
 
-    public void setGoodsprice(Object goodsprice) {
+    public void setGoodsprice(Float goodsprice) {
         this.goodsprice = goodsprice;
     }
 

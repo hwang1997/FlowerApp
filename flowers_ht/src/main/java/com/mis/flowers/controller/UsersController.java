@@ -42,16 +42,21 @@ public class UsersController {
     @SneakyThrows
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public Result<Users> login(UserDto dto) {
-        String password = MD5Util.md5Encode(dto.getUser_password());
-        Users user = this.usersService.queryById(dto.getUser_id());
-        if (user == null) {
-            return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
-        } else if (user.getRole() == 1) {
-            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "无权限");
-        } else if (!user.getUserPassword().equals(password)) {
-            return Result.createFailUre(ResultCode.Fail.code(), "密码错误！");
-        } else {
-            return Result.createSuccess(user);
+        try {
+            String password = MD5Util.md5Encode(dto.getUser_password());
+            Users user = this.usersService.queryById(dto.getUser_id());
+            if (user == null) {
+                return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
+            } else if (user.getRole() == 1) {
+                return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "无权限");
+            } else if (!user.getUserPassword().equals(password)) {
+                return Result.createFailUre(ResultCode.Fail.code(), "密码错误！");
+            } else {
+                return Result.createSuccess(user);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
         }
     }
 
@@ -63,22 +68,22 @@ public class UsersController {
      */
     @RequestMapping(value = "userDoSearch", method = RequestMethod.GET)
     public Result<List<Users>> userDoSearch(String userId) {
+        try {
             List<Users> users = new ArrayList<>();
-            Users users1 = this.usersService.queryById(Integer.parseInt(userId));
-            if (users1 != null){
-                users.add(users1);
-                return Result.createSuccess(users);
-            }else {
-                return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
-            }
+            users.add(this.usersService.queryById(Integer.parseInt(userId)));
+            return Result.createSuccess(users);
+        }catch (Exception e){
+            e.printStackTrace();
+            return  Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+        }
     }
 
-    /**
-     * 通过实体作为筛选条件查询
-     *
-     * @param users 实例对象
-     * @return 对象列表
-     */
+//    /**
+//     * 通过实体作为筛选条件查询
+//     *
+//     * @param users 实例对象
+//     * @return 对象列表
+//     */
 //    @RequestMapping(value = "getUsersInfo", method = RequestMethod.GET)
 //    public Result<List<Users>> getUsersInfo(Users users) {
 //        List<Users> usersList = new ArrayList<Users>();
@@ -153,38 +158,45 @@ public class UsersController {
     @SneakyThrows//MD5
     @RequestMapping(value = "updateUsers", method = RequestMethod.POST)
     public Result<Users> updateUsers(updateUserDto dto) {
-        String password = MD5Util.md5Encode(dto.getUserPassword());
-        Users users = new Users();
-        users.setUserId(dto.getUserId());
-        users.setUserName(dto.getUserName());
-        users.setUserPassword(password);
-        users.setRole(dto.getRole());
-        this.usersService.update(users);
-        if (this.usersService.update(users) != null) {
+        try {
+            String password = MD5Util.md5Encode(dto.getUserPassword());
+            Users users = new Users();
+            users.setUserId(dto.getUserId());
+            users.setUserName(dto.getUserName());
+            users.setUserPassword(password);
+            users.setRole(dto.getRole());
+            this.usersService.update(users);
             return Result.createSuccess();
-        } else {
-            return Result.createFailUre(ResultCode.Fail.code(), "修改失败！");
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
         }
     }
     //修改用户信息
     @SneakyThrows//MD5
     @RequestMapping(value = "updatePwd", method = RequestMethod.GET)
     public Result<Boolean> updatePwd(Integer userId, String pwd) {
-        String password = MD5Util.md5Encode(pwd);
-       this.usersService.updatePwd(userId,password);
-        if (this.usersService.updatePwd(userId,password)) {
+        try {
+            String password = MD5Util.md5Encode(pwd);
+            this.usersService.updatePwd(userId,password);
             return Result.createSuccess();
-        } else {
-            return Result.createFailUre(ResultCode.Fail.code(), "修改失败！");
+        }catch (Exception e){
+            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
         }
     }
 
     //分页
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
     public Result<Page<Users>> selectByPage(int page, int limit) {
-        List<Users> list = this.usersService.queryAllByLimit((page-1)*limit,limit);
-        Integer count = this.usersService.selectAll().size();
-        Page<Users> usersPage = new Page<Users>(list,count);
-        return Result.createSuccess(usersPage);
+        try {
+            List<Users> list = this.usersService.queryAllByLimit((page-1)*limit,limit);
+            Integer count = this.usersService.selectAll().size();
+            Page<Users> usersPage = new Page<Users>(list,count);
+            return Result.createSuccess(usersPage);
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+
     }
 }
