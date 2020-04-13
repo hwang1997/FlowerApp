@@ -45,10 +45,129 @@
 </div>
 <div id="ordersBar" style="display: none;">
     <a class="layui-btn layui-btn-xs" id="maxImg" lay-event="maxImg">查看图片</a>
-    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" id="del" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="edit">编辑</a>
 </div>
 <!--表头操作结束-->
+<!--修改弹出层开始-->
+<div style="display: none;" id="saveOrUpdateDiv">
+    <form class="layui-form " action="" style="position: relative" id="dataFrm" lay-filter="dataFrm">
+        <div class="layui-col-md12 layui-col-xs12">
+            <div class="layui-row layui-col-space1" style="margin-top: 10px">
+                <div class="layui-col-md9 layui-col-xs7">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">订单编号：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="orderid" id="orderid" readonly="readonly">
+                        </div>
+                    </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">下单人：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input " name="username" id="username" readonly="readonly" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品名称：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="goodsName" id="goodsName" readonly="readonly" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品单价：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="goodsPrice" id="goodsPrice" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md3 layui-col-xs5">
+                    <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 200px">
+                        <input type="hidden" name="goodsimg" id="goodsimg">
+                        <img class="layui-upload-img thumbImg"
+                             style="width:200px;height:200px;">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">购买数量</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="buycount" id="buycount" readonly="readonly">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品总价</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="sumPrice" id="sumPrice" readonly="readonly">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收货人</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="ordername" id="ordername" lay-verify="required" placeholder="请输入收货人姓名">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">手机号码</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="orderphone" id="orderphone" lay-verify="required" placeholder="请输入手机号码">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md16 layui-col-xs16">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收货地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="orderaddress" id="orderaddress" lay-verify="required" placeholder="请输入收货地址">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">支付方式</label>
+                    <div class="layui-input-block">
+                        <select name="pay" id="pay"  lay-verify="required" lay-search="">
+                            <option value="" selected>请选择支付方式</option>
+                            <option value="0">线上支付</option>
+                            <option value="1">货到付款</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6 layui-col-xs6">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">订单状态</label>
+                    <div class="layui-input-block">
+                        <select name="state" id="state" lay-verify="required" lay-search="">
+                            <option value="" id="state1" >请选择订单状态</option>
+                            <option value="0">已完成</option>
+                            <option value="1">待收货</option>
+                            <option value="2">取消订单</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" style="position: absolute;left: 130px;bottom: -100px;">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
+                            lay-submit="" lay-filter="doSubmit">提交
+                    </button>
+                    <button type="button" style="margin-left: 40px" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh" id="reset">重置
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!--修改弹出层结束-->
 <!--查看图片弹出层开始-->
 <div style="display: none;margin:0;padding: 20px" id="openMaxImg">
     <img style="margin: 0;padding: 0;" width=400 height="450px" id="img"/>
@@ -66,14 +185,13 @@
     var table = layui.table;
     var upload = layui.upload;
     //重置
-    // $('#reset').on('click',function () {
-    //     $("#goodsname").val("");
-    //     $("#goodsprice").val("");
-    //     $("#goodscount").val("");
-    //     $("#goodsdes").val("");
-    //     $("#goodsimg").val("images/1.png");
-    //     $(".thumbImg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
-    // });
+    $('#reset').on('click',function () {
+        $("#ordername").val("");
+        $("#orderphone").val("");
+        $("#orderaddress").val("");
+        $("#state1").attr("selected",true);
+        $("#state").val("");
+    });
 
     //表格请求
     if (userId != '' && userId != null) {
@@ -101,10 +219,13 @@
             cols: [[
                 {type: 'checkbox', fixed: 'left'},
                 {field: 'orderid', title: '订单编号', sort: true, fixed: 'left', align: 'center'},
+                {field: 'username', title: '下单人', sort: true, fixed: 'left', align: 'center',templet:function (d) {
+                        return d.users[0].userName;
+                    }},
                 {field: 'goodsName', title: '商品名称', align: 'center',templet:function (d) {
                         return d.goods[0].goodsname;
                     }},
-                {field: 'goodsimg', title: '图片', align: 'center',templet:function (d) {
+                {field: 'goodsimg', title: '图片', align: 'center',width:80,templet:function (d) {
                         return '<img width="40" height="40" src='+WebPath+'/file/showImageByPath?path='+ d.goods[0].goodsimg+'/>'
                     }},
                 {field: 'goodsprice', title: '商品单价', align: 'center',templet:function (d) {
@@ -125,21 +246,20 @@
                         if (d.state == 0){
                             return '已完成';
                         }else if (d.state == 1){
-                            return "已发货";
+                            return "待收货";
                         } else if (d.state == 2){
                             return "待支付";
                         } else if (d.state == 3){
                             return "待发货";
                         } else {
-                            return "待收货";
+                            return "已取消";
                         }
                     }},
-                {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 220, align: 'center'}
+                {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 180, align: 'center'}
             ]]
         });
     } else {
         $('#page404').removeClass("layui-hide");
-
     }
 
     //查看原图
@@ -154,6 +274,20 @@
                 $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
             }
         });
+    }
+    //查看原图
+    function openMaxImgGoods(data){
+        layer.open({
+            type:1,
+            title:"查看图片",
+            content:$("#openMaxImg"),
+            area:['440px','540px'],
+            offset:['100px','200px'],
+            success:function (index) {
+                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
+            }
+        });
+        // layer.close(maxImg);
     }
 
     //监听头部搜索按钮
@@ -217,43 +351,14 @@
     table.on('tool(ordersTable)', function (obj) {
         var data = obj.data; //获得当前行数据
         var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
-        if (layEvent === 'del') { //删除
-            layer.confirm('真的删除吗？', function (index) {
-                //向服务端发送删除指令
-                $.ajax({
-                    url: WebPath + "/goods/deleteGoods?goodsid=" + data.goodsid +"&&goodsimg=" + data.goodsimg,
-                    type: "DELETE",
-                    dataType: "json",
-                    success: function (result) {
-                        if (result.code == 0) {
-                            layer.msg("删除" + result.message, {
-                                icon: 6,
-                                time: 1000
-                            });
-                        } else {
-                            layer.msg("删除" + result.message, {
-                                icon: 5,
-                                time: 1000
-                            });
-                        }
-                    }
-                });
-                layer.close(index);
-                //刷新表格
-                tableIns.reload();
-            });
-        } else if (layEvent === 'edit') { //编辑
-            //do something
+       if (layEvent === 'edit') { //编辑
             openUpdateUser(data);
-            layer.msg("修改")
-        }else if (layEvent === 'maxImg') {
+        }else if (layEvent === 'maxImg') {//查看图片
             openMaxImgGoods(data);
         }
     });
     var url = '';
     var mainIndex;
-    var value = "";
-    //打开添加页面
 
     //打开修改界面
     function openUpdateUser(data) {
@@ -261,30 +366,20 @@
             type: 1,
             title: '修改用户',
             content: $("#saveOrUpdateDiv"),
-            area: ['800px', '500px'],
+            area: ['700px', '670px'],
             success: function (index) {
                 form.val('dataFrm', data);
-                value = "修改";
-                $('#goodsIdHide').removeAttr("style","visibility");
-                url = WebPath + '/goods/updateGoods';//修改接口
-                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+                $('#username').val(data.users[0].userName);
+                $("#goodsName").val(data.goods[0].goodsname);
+                $("#goodsPrice").val(data.goods[0].goodsprice);
+                $("#sumPrice").val((data.goods[0].goodsprice)*(data.buycount));
+                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
+                url = WebPath + '/orders/updateOrders';//修改接口
+
             }
         });
     }
-    //查看原图
-    function openMaxImgGoods(data){
-        layer.open({
-            type:1,
-            title:"查看图片",
-            content:$("#openMaxImg"),
-            area:['440px','540px'],
-            offset:['100px','200px'],
-            success:function (index) {
-                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
-            }
-        });
-        // layer.close(maxImg);
-    }
+
 
     //保存
     form.on("submit(doSubmit)", function (obj) {
@@ -296,21 +391,20 @@
             data: params,
             success: function (result) {
                 if (result.code == 0) {
-                    layer.msg(value + result.message, {
+                    layer.msg("修改" + result.message, {
                         icon: 6,
                         time: 1000
                     });
                     $('#reset').click();
                 } else {
-                    layer.msg(value + result.message, {
+                    layer.msg("修改" + result.message, {
                         icon: 5,
                         time: 1000
                     });
                 }
-                tableIns.reload();
             }
         });
-        //关闭弹出层
+        // 关闭弹出层
         layer.close(mainIndex);
         //刷新表格
         tableIns.reload();
