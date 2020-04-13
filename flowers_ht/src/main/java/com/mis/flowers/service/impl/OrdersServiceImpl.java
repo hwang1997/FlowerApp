@@ -1,5 +1,6 @@
 package com.mis.flowers.service.impl;
 
+import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.entity.Orders;
 import com.mis.flowers.dao.OrdersDao;
 import com.mis.flowers.service.OrdersService;
@@ -66,13 +67,13 @@ public class OrdersServiceImpl implements OrdersService {
     /**
      * 修改数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 实例对象
      */
     @Override
-    public Orders update(Orders orders) {
-        this.ordersDao.update(orders);
-        return this.queryById(orders.getOrderid());
+    public Orders update(OrdersDto dto) {
+        this.ordersDao.update(dto);
+        return this.queryById(dto.getOrderid());
     }
 
     /**

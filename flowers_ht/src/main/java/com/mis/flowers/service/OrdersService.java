@@ -1,5 +1,6 @@
 package com.mis.flowers.service;
 
+import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.entity.Orders;
 import java.util.List;
 
@@ -46,10 +47,10 @@ public interface OrdersService {
     /**
      * 修改数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 实例对象
      */
-    Orders update(Orders orders);
+    Orders update(OrdersDto dto);
 
     /**
      * 通过主键删除数据

@@ -1,5 +1,6 @@
 package com.mis.flowers.controller;
 
+import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.entity.Orders;
 import com.mis.flowers.service.OrdersService;
 import com.mis.flowers.util.Page;
@@ -67,6 +68,16 @@ public class OrdersController {
         }catch (Exception e){
             e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+        }
+    }
+    @RequestMapping(value = "updateOrders",method = RequestMethod.POST)
+    public Result<Boolean> updateGoods(OrdersDto dto) {
+        try {
+            this.ordersService.update(dto);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
         }
     }
 

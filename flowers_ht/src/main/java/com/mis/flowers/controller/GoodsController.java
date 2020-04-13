@@ -85,7 +85,7 @@ public class GoodsController {
     }
     /**
      *
-     *添加
+     *修改
      */
     @RequestMapping(value = "updateGoods",method = RequestMethod.POST)
     public Result<Boolean> updateGoods(GoodsDto dto) {

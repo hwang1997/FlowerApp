@@ -96,18 +96,6 @@
     <update id="update">
         update flowers.orders
         <set>
-            <if test="userid != null">
-                userId = #{userid},
-            </if>
-            <if test="goodsid != null">
-                goodsId = #{goodsid},
-            </if>
-            <if test="buycount != null and buycount != ''">
-                buyCount = #{buycount},
-            </if>
-            <if test="sumprice != null">
-                sumPrice = #{sumprice},
-            </if>
             <if test="ordername != null and ordername != ''">
                 orderName = #{ordername},
             </if>

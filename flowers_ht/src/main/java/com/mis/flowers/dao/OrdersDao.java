@@ -1,5 +1,6 @@
 package com.mis.flowers.dao;
 
+import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.entity.Orders;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -56,10 +57,10 @@ public interface OrdersDao {
     /**
      * 修改数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 影响行数
      */
-    int update(Orders orders);
+    Boolean update(OrdersDto dto);
 
     /**
      * 通过主键删除数据
