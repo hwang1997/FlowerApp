@@ -1,32 +1,33 @@
-<link rel="stylesheet" href="../layui/css/layui.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页--layui后台管理模板 2.0</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../css/public.css" media="all"/>
+</head>
+<body>
 <!--搜索栏开始-->
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <legend>查询条件</legend>
 </fieldset>
 <form action="" class="layui-form" method="post">
-    <div class="layui-form-item">
+    <div class="layui-form-item" style="position: relative">
         <div class="layui-inline">
-            <label class="layui-form-label">编号:</label>
+            <label class="layui-form-label">订单编号:</label>
             <div class="layui-input-inline">
-                <input type="text" name="id" autocomplete="off" class="layui-input">
+                <input type="text" name="ordersId" id="ordersId1" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-inline">
-            <label class="layui-form-label">用户名:</label>
-            <div class="layui-input-inline">
-                <input type="text" name="username" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-inline">
-            <label class="layui-form-label" style="line-height: 50px">角色:</label>
-            <div class="layui-input-inline">
-                <input type="radio" name="sex" value="1" title="普通用户">
-                <input type="radio" name="sex" value="0" title="后台管理员">
-            </div>
-        </div>
-        <div class="layui-input-inline" style="float: right">
+        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
             <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
-                    id="doSearch">查询
+                    data-type="reload" id="doSearch">查询
             </button>
             <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置</button>
         </div>
@@ -35,138 +36,286 @@
 <!--搜索栏结束-->
 
 <!--表格操作列开始-->
-<table class="layui-hide" id="userTable" lay-filter="userTable"></table>
-<div style="display: none;" id="userToolBar">
-    <button type="button" class="layui-btn layui-btn-sm" lay-event="add">增加</button>
-    <button type="button" class="layui-btn layui-btn-sm" lay-event="batchDelete">批量删除</button>
+<table class="layui-hide" id="ordersTable" lay-filter="ordersTable"></table>
+
+<iframe src="404.html" class="layui-hide" id="page404" frameborder="0" style="width: 100%;height: 700px;border-top: 1px solid #ccc"></iframe>
+
+<div style="display: none;" id="ordersToolBar">
+    <button type="button" class="layui-btn layui-btn-sm" lay-event="reloadTable">刷新数据</button>
 </div>
-<div id="userBar" style="display: none;">
+<div id="ordersBar" style="display: none;">
+    <a class="layui-btn layui-btn-xs" id="maxImg" lay-event="maxImg">查看图片</a>
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" id="del" lay-event="del">删除</a>
 </div>
 <!--表头操作结束-->
-<!-- 添加和修改的弹出层开始 -->
-<div style="display: none;padding: 20px" id="saveOrUpdateDiv">
-    <form class="layui-form " action="" lay-filter="dataFrm">
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">编号:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="id" lay-verify="required" autocomplete="off"
-                           class="layui-input">
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">用户名:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="username" autocomplete="off"
-                           class="layui-input">
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">密码:</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="id" lay-verify="required" autocomplete="off"
-                           class="layui-input">
-                </div>
-            </div>
-            <div class="layui-inline">
-                <label class="layui-form-label">性别:</label>
-                <div class="layui-input-inline">
-                    <input type="radio" name="sex" value="1" checked="checked" title="男">
-                    <input type="radio" name="sex" value="0" title="女">
-                </div>
-            </div>
-        </div>
-    </form>
-
+<!--查看图片弹出层开始-->
+<div style="display: none;margin:0;padding: 20px" id="openMaxImg">
+    <img style="margin: 0;padding: 0;" width=400 height="450px" id="img"/>
 </div>
-<!-- 添加和修改的弹出层结束 -->
+<!--查看图片弹出层结束-->
+</body>
+</html>
 
 <script src="../layui/layui.all.js"></script>
 <script>
+    var userId = localStorage.getItem("userId");
     var $ = layui.jquery;
     var layer = layui.layer;
     var form = layui.form;
     var table = layui.table;
-    var laydate = layui.laydate;
-    table.render({
-        elem: "#userTable",
-        title: '用户表',
-        height: "full-170",
-        limit: 5,
-        limits: ['5', '10', '15'],
-        url: 'http://127.0.0.1:8089/users/getUsersInfoBylimit',
-        page: true,
-        cellMinWidth: 100,
-        toolbar: '#userToolBar',
-        cols: [[
-            {type: 'checkbox', fixed: 'left'},
-            {field: 'userId', title: 'ID', sort: true, fixed: 'left', align: 'center'},
-            {field: 'userName', title: '用户名', align: 'center'},
-            {field: 'userPassword', title: '密码', align: 'center'},
-            {
-                field: 'role', title: '角色', align: 'center', templet: function (d) {
-                    return d.role == "1" ? "普通用户" : "后台管理员";
+    var upload = layui.upload;
+    //重置
+    // $('#reset').on('click',function () {
+    //     $("#goodsname").val("");
+    //     $("#goodsprice").val("");
+    //     $("#goodscount").val("");
+    //     $("#goodsdes").val("");
+    //     $("#goodsimg").val("images/1.png");
+    //     $(".thumbImg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
+    // });
+
+    //表格请求
+    if (userId != '' && userId != null) {
+        var tableIns = table.render({
+            elem: "#ordersTable",
+            title: '订单表',
+            height: "569",
+            text: {
+                none:'暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
+            },
+            limit: 10,
+            limits: ['10'],
+            url: WebPath + '/orders/selectByPage',
+            page: true,
+            cellMinWidth: 100,
+            toolbar: '#ordersToolBar',
+            parseData:function (res){
+                return{
+                    "code":res.code,
+                    "msg":res.message,
+                    "count": res.data.totalCount, //解析数据长度
+                    "data": res.data.items, //解析数据列表
                 }
             },
-            {fixed: 'right', title: '操作', toolbar: '#userBar', width: 220, align: 'center'}
-        ]]
+            cols: [[
+                {type: 'checkbox', fixed: 'left'},
+                {field: 'orderid', title: '订单编号', sort: true, fixed: 'left', align: 'center'},
+                {field: 'goodsName', title: '商品名称', align: 'center',templet:function (d) {
+                        return d.goods[0].goodsname;
+                    }},
+                {field: 'goodsimg', title: '图片', align: 'center',templet:function (d) {
+                        return '<img width="40" height="40" src='+WebPath+'/file/showImageByPath?path='+ d.goods[0].goodsimg+'/>'
+                    }},
+                {field: 'goodsprice', title: '商品单价', align: 'center',templet:function (d) {
+                        return d.goods[0].goodsprice+"元";
+                    }},
+                {field: 'buycount', title: '购买数量', align: 'center'},
+                {field: '', title: '商品总价', align: 'center',templet:function (d) {
+                        return (d.goods[0].goodsprice) * (d.buycount)+"元";
 
-    });
-    //监听头部工具栏事件
-    table.on("toolbar(userTable)", function (obj) {
-        switch (obj.event) {
-            case 'add':
-                alert("1111");
-                openAddUser();
-                break;
-            case 'batchDelete':
-                layer.msg('批量删除');
-                break;
-        }
-        ;
-    })
+                    }},
+                {field: 'ordername', title: '收货人', align: 'center'},
+                {field: 'orderphone', title: '电话', align: 'center'},
+                {field: 'orderaddress', title: '地址', align: 'left'},
+                {field: 'pay', title: '付款方式', align: 'center',templet:function (d) {
+                        return d.pay == 0 ? '线上支付' : '货到付款';
+                    }},
+                {field: 'state', title: '订单状态', align: 'center',templet:function (d) {
+                        if (d.state == 0){
+                            return '已完成';
+                        }else if (d.state == 1){
+                            return "已发货";
+                        } else if (d.state == 2){
+                            return "待支付";
+                        } else if (d.state == 3){
+                            return "待发货";
+                        } else {
+                            return "待收货";
+                        }
+                    }},
+                {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 220, align: 'center'}
+            ]]
+        });
+    } else {
+        $('#page404').removeClass("layui-hide");
 
-    //打开添加页面
-    function openAddUser() {
+    }
+
+    //查看原图
+    function openMaxImgGoods(data){
         layer.open({
-            type: 1,
-            title: '添加用户',
-            content: $("#saveOrUpdateDiv"),
-            area: ['800px'],
-            btnAlign: 'c',
-            btn: ['<div class="layui-icon layui-icon-release">保存</div>', '<div class="layui-icon layui-icon-close">关闭</div>'],
-            yes: function (index, layero) {
-                layer.msg("保存");
-
-            },
-            btn2: function (index, layero) {
-                layer.msg("关闭");
-                return true;
+            type:1,
+            title:"查看图片",
+            content:$("#openMaxImg"),
+            area:['440px','540px'],
+            offset:['100px','200px'],
+            success:function (index) {
+                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
             }
         });
     }
 
+    //监听头部搜索按钮
+    $('#doSearch').on('click',function () {
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : "";
+    });
+    var active = {
+        reload:function () {
+            var ordersId = $('#ordersId1').val();
+            var index = layer.msg("查询中，请稍后……",{
+                icon:6,
+                time:false,
+                shade:0
+            });
+            if (ordersId == ""){
+                setTimeout(function () {
+                    table.reload('ordersTable',{
+                        url:WebPath + "/orders/selectByPage",
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": res.data.totalCount, //解析数据长度
+                                "data": res.data.items //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
+            } else {
+                setTimeout(function () {
+                    table.reload('ordersTable',{
+                        url:WebPath + '/orders/ordersDoSearch?ordersId='+ ordersId,
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": 1, //解析数据长度
+                                "data": res.data //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
+
+            }
+        }
+    };
+
+    //监听头部工具栏事件
+    table.on("toolbar(ordersTable)", function (obj) {
+        switch (obj.event) {
+            case 'reloadTable':
+                tableIns.reload();
+                break;
+        }
+    });
+
     //监听行工具事件
-    table.on('tool(userTable)', function (obj) {
+    table.on('tool(ordersTable)', function (obj) {
         var data = obj.data; //获得当前行数据
         var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
         if (layEvent === 'del') { //删除
-            layer.msg("删除");
-            layer.confirm('真的删除行么', function (index) {
-                layer.close(index);
+            layer.confirm('真的删除吗？', function (index) {
                 //向服务端发送删除指令
+                $.ajax({
+                    url: WebPath + "/goods/deleteGoods?goodsid=" + data.goodsid +"&&goodsimg=" + data.goodsimg,
+                    type: "DELETE",
+                    dataType: "json",
+                    success: function (result) {
+                        if (result.code == 0) {
+                            layer.msg("删除" + result.message, {
+                                icon: 6,
+                                time: 1000
+                            });
+                        } else {
+                            layer.msg("删除" + result.message, {
+                                icon: 5,
+                                time: 1000
+                            });
+                        }
+                    }
+                });
+                layer.close(index);
+                //刷新表格
+                tableIns.reload();
             });
         } else if (layEvent === 'edit') { //编辑
             //do something
+            openUpdateUser(data);
             layer.msg("修改")
+        }else if (layEvent === 'maxImg') {
+            openMaxImgGoods(data);
         }
     });
-</script>
+    var url = '';
+    var mainIndex;
+    var value = "";
+    //打开添加页面
 
+    //打开修改界面
+    function openUpdateUser(data) {
+        mainIndex = layer.open({
+            type: 1,
+            title: '修改用户',
+            content: $("#saveOrUpdateDiv"),
+            area: ['800px', '500px'],
+            success: function (index) {
+                form.val('dataFrm', data);
+                value = "修改";
+                $('#goodsIdHide').removeAttr("style","visibility");
+                url = WebPath + '/goods/updateGoods';//修改接口
+                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+            }
+        });
+    }
+    //查看原图
+    function openMaxImgGoods(data){
+        layer.open({
+            type:1,
+            title:"查看图片",
+            content:$("#openMaxImg"),
+            area:['440px','540px'],
+            offset:['100px','200px'],
+            success:function (index) {
+                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
+            }
+        });
+        // layer.close(maxImg);
+    }
+
+    //保存
+    form.on("submit(doSubmit)", function (obj) {
+        var params = $('#dataFrm').serialize();
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "json",
+            data: params,
+            success: function (result) {
+                if (result.code == 0) {
+                    layer.msg(value + result.message, {
+                        icon: 6,
+                        time: 1000
+                    });
+                    $('#reset').click();
+                } else {
+                    layer.msg(value + result.message, {
+                        icon: 5,
+                        time: 1000
+                    });
+                }
+                tableIns.reload();
+            }
+        });
+        //关闭弹出层
+        layer.close(mainIndex);
+        //刷新表格
+        tableIns.reload();
+    });
+</script>
 
 
 

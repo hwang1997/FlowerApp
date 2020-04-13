@@ -46,20 +46,21 @@
     <button type="button" class="layui-btn layui-btn-sm" lay-event="reloadTable">刷新数据</button>
 </div>
 <div id="goodsBar" style="display: none;">
+    <a class="layui-btn layui-btn-xs" id="maxImg" lay-event="maxImg">查看图片</a>
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" id="del" lay-event="del">删除</a>
 </div>
 <!--表头操作结束-->
 <!-- 添加和修改的弹出层开始 -->
-<div style="display: none;padding: 20px" id="saveOrUpdateDiv">
+<div style="display: none;" id="saveOrUpdateDiv">
     <form class="layui-form " action="" style="position: relative" id="dataFrm" lay-filter="dataFrm">
         <div class="layui-col-md12 layui-col-xs12">
             <div class="layui-row layui-col-space10">
                 <div class="layui-col-md9 layui-col-xs7">
-                    <div class="layui-form-item magt3">
+                    <div class="layui-form-item" style="visibility: hidden;" id="goodsIdHide">
                         <label class="layui-form-label">商品编号：</label>
                         <div class="layui-input-block">
-                            <input type="text" class="layui-input " name="goodsid" id="goodsid" readonly="readonly"  placeholder="商品编号为自增长">
+                            <input type="text" class="layui-input" name="goodsid" id="goodsid" readonly="readonly"  placeholder="商品编号为自增长">
                         </div>
                     </div>
                     <div class="layui-form-item magt3">
@@ -74,23 +75,22 @@
                             <input type="text" class="layui-input" name="goodsprice" id="goodsprice" lay-verify="required" placeholder="请输入商品价格">
                         </div>
                     </div>
-
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">商品数量：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="goodscount" id="goodscount" lay-verify="required" placeholder="请输入商品数量">
+                        </div>
+                    </div>
                 </div>
                 <div class="layui-col-md3 layui-col-xs5">
-                    <div class="layui-upload-list thumbBox mag0 magt3" style="border: 1px solid #0C0C0C;">
+                    <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 300px">
                         <input type="hidden" name="goodsimg" id="goodsimg" value="images/1.png">
                         <img class="layui-upload-img thumbImg"
-                             style="width: 180px;height: 180px;background-size: auto" src="http://127.0.0.1:8089/file/showImageByPath?path=images/1.png">
+                             style="width:200px;height:200px;background-size: auto" src="http://127.0.0.1:8089/file/showImageByPath?path=images/1.png">
                     </div>
                 </div>
             </div>
             <div class="layui-col-md9 layui-col-xs7">
-                <div class="layui-form-item magt3">
-                    <label class="layui-form-label">商品数量：</label>
-                    <div class="layui-input-block">
-                        <input type="text" class="layui-input" name="goodscount" id="goodscount" lay-verify="required" placeholder="请输入商品数量">
-                    </div>
-                </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">花语</label>
                     <div class="layui-input-block">
@@ -103,7 +103,7 @@
                     <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
                             lay-submit="" lay-filter="doSubmit">提交
                     </button>
-                    <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置
+                    <button type="button" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh" id="reset">重置
                     </button>
                 </div>
             </div>
@@ -112,6 +112,11 @@
 
 </div>
 <!-- 添加和修改的弹出层结束 -->
+<!--查看图片弹出层开始-->
+<div style="display: none;margin:0;padding: 20px" id="openMaxImg">
+    <img style="margin: 0;padding: 0;" width=400 height="450px" id="img"/>
+</div>
+<!--查看图片弹出层结束-->
 </body>
 </html>
 
@@ -124,10 +129,15 @@
     var table = layui.table;
     var upload = layui.upload;
     //重置
-    // $('#reset').click(function () {
-    //    $("#goodsimg").val("images/1.png");
-    //    $("#goodsimg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
-    // });
+    $('#reset').on('click',function () {
+        $("#goodsname").val("");
+        $("#goodsprice").val("");
+        $("#goodscount").val("");
+        $("#goodsdes").val("");
+        $("#goodsimg").val("images/1.png");
+        $(".thumbImg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
+    });
+
 
     //上传缩略图
     upload.render({
@@ -170,7 +180,7 @@
                 {type: 'checkbox', fixed: 'left'},
                 {field: 'goodsid', title: '商品编号', sort: true, fixed: 'left', align: 'center'},
                 {field: 'goodsname', title: '商品名称'},
-                {field: 'goodsprice', title: '商品价格', align: 'center'},
+                {field: 'goodsprice', title: '商品价格(元)', align: 'center'},
                 {field: 'goodscount', title: '商品数量', align: 'center'},
                 {field: 'goodsdes', title: '花语', align: 'left'},
                 {field: 'goodsimg', title: '图片', align: 'center',templet:function (d) {
@@ -239,44 +249,48 @@
                 openAddUser();
                 break;
             case 'batchDelete':
-                var checkStatus = table.checkStatus('goodsTable');
-                // console.log(checkStatus);//获取选中行的数据
-                var data = checkStatus.data;
-                var length = checkStatus.data.length;
-                var usersId = [];
-                if (length > 0) {
-                    for (var i in data) {
-                        usersId.push(data[i].userId);
-                    }
-                    $.ajax({
-                        // url: WebPath + "/users/batchDelete?userId=" + usersId,
-                        type: "DELETE",
-                        dataType: "json",
-                        success: function (result) {
-                            if (result.code == 0) {
-                                layer.msg("批量删除" + result.message, {
-                                    icon: 6,
-                                    time: 1000
-                                });
-                            } else {
-                                layer.msg("批量删除" + result.message, {
-                                    icon: 5,
-                                    time: 1000
-                                });
-                            }
-                        }
-                    });
-                    //刷新数据表格
-                    // setTimeout(function () {
-                    tableIns.reload(WebPath + "/users/selectByPage");
-                    // },3000);
-
-                } else {
-                    layer.msg("你还没选批量删除的数据", {
-                        icon: 5,
-                        time: 1000
-                    });
-                };
+                layer.msg("批量删除", {
+                    icon: 7,
+                    time: 1000
+                });
+                // var checkStatus = table.checkStatus('goodsTable');
+                // // console.log(checkStatus);//获取选中行的数据
+                // var data = checkStatus.data;
+                // var length = checkStatus.data.length;
+                // var usersId = [];
+                // if (length > 0) {
+                //     for (var i in data) {
+                //         usersId.push(data[i].userId);
+                //     }
+                //     $.ajax({
+                //         // url: WebPath + "/users/batchDelete?userId=" + usersId,
+                //         type: "DELETE",
+                //         dataType: "json",
+                //         success: function (result) {
+                //             if (result.code == 0) {
+                //                 layer.msg("批量删除" + result.message, {
+                //                     icon: 6,
+                //                     time: 1000
+                //                 });
+                //             } else {
+                //                 layer.msg("批量删除" + result.message, {
+                //                     icon: 5,
+                //                     time: 1000
+                //                 });
+                //             }
+                //         }
+                //     });
+                //     //刷新数据表格
+                //     // setTimeout(function () {
+                //     tableIns.reload(WebPath + "/users/selectByPage");
+                //     // },3000);
+                //
+                // } else {
+                //     layer.msg("你还没选批量删除的数据", {
+                //         icon: 5,
+                //         time: 1000
+                //     });
+                // };
                 break;
             case 'reloadTable':
                 // table.read("userTable",{
@@ -321,6 +335,8 @@
             //do something
             openUpdateUser(data);
             layer.msg("修改")
+        }else if (layEvent === 'maxImg') {
+            openMaxImgGoods(data);
         }
     });
     var url = '';
@@ -335,7 +351,9 @@
             area: ['800px', '500px'],
             success: function (index) {
                 //清空表单数据
-                $('#dataFrm')[0].reset();
+                // $('#dataFrm')[0].reset();
+                $("#reset").click();
+                $("#goodsid").val("");
                 url = WebPath + '/goods/insertGoods';//添加接口
                 value = "添加";
                 //设置默认图片
@@ -358,11 +376,25 @@
             success: function (index) {
                 form.val('dataFrm', data);
                 value = "修改";
+                $('#goodsIdHide').removeAttr("style","visibility");
                 url = WebPath + '/goods/updateGoods';//修改接口
-
                 $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
             }
         });
+    }
+    //查看原图
+    function openMaxImgGoods(data){
+        layer.open({
+            type:1,
+            title:"查看图片",
+            content:$("#openMaxImg"),
+            area:['440px','540px'],
+            offset:['100px','200px'],
+            success:function (index) {
+                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+            }
+        });
+        // layer.close(maxImg);
     }
 
     //保存
