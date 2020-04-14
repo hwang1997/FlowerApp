@@ -59,6 +59,27 @@ public class UsersController {
             return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
         }
     }
+    //App登录
+    @SneakyThrows
+    @RequestMapping(value = "applogin", method = RequestMethod.POST)
+    public Result<Users> applogin(UserDto dto) {
+        try {
+            String password = MD5Util.md5Encode(dto.getUser_password());
+            Users user = this.usersService.queryById(dto.getUser_id());
+            if (user == null) {
+                return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
+            } else if (user.getRole() == 0) {
+                return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "无权限");
+            } else if (!user.getUserPassword().equals(password)) {
+                return Result.createFailUre(ResultCode.Fail.code(), "密码错误！");
+            } else {
+                return Result.createSuccess(user);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
+        }
+    }
 
     /**
      * 通过userId查询单条数据

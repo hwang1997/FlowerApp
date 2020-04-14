@@ -29,6 +29,17 @@ public class GoodsController {
     @Resource
     private GoodsService goodsService;
 
+    //app显示所有数据
+    @RequestMapping(value = "queryAllForApp",method = RequestMethod.GET)
+    public Result<List<Goods>> queryAllForApp(){
+        try {
+            return Result.createSuccess(this.goodsService.selectAll());
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+    }
+
     //分页查询
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
     public Result<Page<Goods>> selectByPage(int page, int limit) {
