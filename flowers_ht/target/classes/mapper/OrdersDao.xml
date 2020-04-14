@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mis.flowers.dao.OrdersDao">
+    <resultMap type="com.mis.flowers.entity.Orders" id="OrdersMap">
+        <result property="orderid" column="orderId" jdbcType="INTEGER"/>
+        <result property="userid" column="user_id" jdbcType="INTEGER"/>
+        <result property="goodsid" column="goodsId" jdbcType="INTEGER"/>
+        <result property="buycount" column="buyCount" jdbcType="VARCHAR"/>
+        <result property="sumprice" column="sumPrice" jdbcType="OTHER"/>
+        <result property="ordername" column="orderName" jdbcType="VARCHAR"/>
+        <result property="orderphone" column="orderPhone" jdbcType="VARCHAR"/>
+        <result property="orderaddress" column="orderAddress" jdbcType="VARCHAR"/>
+        <result property="pay" column="pay" jdbcType="INTEGER"/>
+        <result property="state" column="state" jdbcType="INTEGER"/>
+        <collection property="users" ofType="com.mis.flowers.entity.Users">
+            <id column="user_id" property="userId"/>
+            <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+            <result column="user_password" property="userPassword" jdbcType="VARCHAR"/>
+            <result column="role" property="role" jdbcType="INTEGER"/>
+        </collection>
+        <collection property="goods" ofType="com.mis.flowers.entity.Goods">
+            <id column="goodsId" property="goodsid"/>
+            <result column="goodsName" property="goodsname" jdbcType="VARCHAR"/>
+            <result column="goodsPrice" property="goodsprice" jdbcType="FLOAT"/>
+            <result column="goodscount" property="goodscount" jdbcType="INTEGER"/>
+            <result column="goodsDes" property="goodsdes" jdbcType="VARCHAR"/>
+            <result column="goodsImg" property="goodsimg" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrdersMap">
+        select t1.orderId,t1.orderPhone,t1.orderAddress,t1.pay,t1.state,t2.user_id,t3.goodsId,t3.goodsImg,t3.goodsName,
+               t3.goodsPrice,t1.buyCount,t1.sumPrice,t1.orderName,t2.user_name,t2.user_password,t2.role,t3.goodsCount,t3.goodsDes
+        from flowers.orders t1,flowers.users t2,flowers.goods t3
+        WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
+            and orderId = #{orderid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrdersMap">
+        select t1.orderId,t1.orderPhone,t1.orderAddress,t1.pay,t1.state,t2.user_id,t3.goodsId,t3.goodsImg,t3.goodsName,
+               t3.goodsPrice,t1.buyCount,t1.sumPrice,t1.orderName,t2.user_name,t2.user_password,t2.role,t3.goodsCount,t3.goodsDes
+        from flowers.orders t1,flowers.users t2,flowers.goods t3
+        WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
+            limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OrdersMap">
+        select
+          orderId, userId, goodsId, buyCount, sumPrice, orderName, orderPhone, orderAddress, pay, state
+        from flowers.orders
+        <where>
+            <if test="orderid != null">
+                and orderId = #{orderid}
+            </if>
+            <if test="userid != null">
+                and userId = #{userid}
+            </if>
+            <if test="goodsid != null">
+                and goodsId = #{goodsid}
+            </if>
+            <if test="buycount != null and buycount != ''">
+                and buyCount = #{buycount}
+            </if>
+            <if test="sumprice != null">
+                and sumPrice = #{sumprice}
+            </if>
+            <if test="ordername != null and ordername != ''">
+                and orderName = #{ordername}
+            </if>
+            <if test="orderphone != null and orderphone != ''">
+                and orderPhone = #{orderphone}
+            </if>
+            <if test="orderaddress != null and orderaddress != ''">
+                and orderAddress = #{orderaddress}
+            </if>
+            <if test="pay != null">
+                and pay = #{pay}
+            </if>
+            <if test="state != null">
+                and state = #{state}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="orderid" useGeneratedKeys="true">
+        insert into flowers.orders(userId, goodsId, buyCount, sumPrice, orderName, orderPhone, orderAddress, pay, state)
+        values (#{userid}, #{goodsid}, #{buycount}, #{sumprice}, #{ordername}, #{orderphone}, #{orderaddress}, #{pay}, #{state})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update flowers.orders
+        <set>
+            <if test="ordername != null and ordername != ''">
+                orderName = #{ordername},
+            </if>
+            <if test="orderphone != null and orderphone != ''">
+                orderPhone = #{orderphone},
+            </if>
+            <if test="orderaddress != null and orderaddress != ''">
+                orderAddress = #{orderaddress},
+            </if>
+            <if test="pay != null">
+                pay = #{pay},
+            </if>
+            <if test="state != null">
+                state = #{state},
+            </if>
+        </set>
+        where orderId = #{orderid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from flowers.orders where orderId = #{orderid}
+    </delete>
+
+    <!--查询所有-->
+    <select id="selectAll" resultMap="OrdersMap">
+        select t1.orderId,t3.goodsImg,t3.goodsName,t3.goodsPrice,t1.buyCount,
+               t1.sumPrice,t1.orderName,t1.orderPhone,t1.orderAddress,t1.pay,
+               t1.state from flowers.orders t1,flowers.users t2,flowers.goods
+              t3 WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
+    </select>
+
+</mapper>

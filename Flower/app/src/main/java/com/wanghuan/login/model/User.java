@@ -1,37 +1,102 @@
 package com.wanghuan.login.model;
 
 public class User {
-    private int user_id;
-    private String name;
-    private String password;
+    /**
+     * code : 0
+     * message : 成功
+     * data : {"userId":201604,"userName":"赵云","userPassword":"202cb962ac59075b964b07152d234b70","role":1}
+     */
 
-    public User(int user_id, String name, String password) {
-        this.user_id = user_id;
-        this.name = name;
-        this.password = password;
+    private int code;
+    private String message;
+    private DataBean data;
+
+    public int getCode() {
+        return code;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public String getMessage() {
+        return message;
     }
 
-    public String getName() {
-        return name;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public DataBean getData() {
+        return data;
     }
 
-    public String getPassword() {
-        return password;
+    public void setData(DataBean data) {
+        this.data = data;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public static class DataBean {
+        /**
+         * userId : 201604
+         * userName : 赵云
+         * userPassword : 202cb962ac59075b964b07152d234b70
+         * role : 1
+         */
+
+        private int userId;
+        private String userName;
+        private String userPassword;
+        private int role;
+
+        public int getUserId() {
+            return userId;
+        }
+
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getUserPassword() {
+            return userPassword;
+        }
+
+        public void setUserPassword(String userPassword) {
+            this.userPassword = userPassword;
+        }
+
+        public int getRole() {
+            return role;
+        }
+
+        public void setRole(int role) {
+            this.role = role;
+        }
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "userId=" + userId +
+                    ", userName='" + userName + '\'' +
+                    ", userPassword='" + userPassword + '\'' +
+                    ", role=" + role +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", data=" + data.toString() +
+                '}';
     }
 }

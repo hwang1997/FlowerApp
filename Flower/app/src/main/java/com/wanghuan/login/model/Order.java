@@ -3,7 +3,7 @@ package com.wanghuan.login.model;
 public class Order {
     private int order_id;
     private User user;
-    private Flowers flowers;
+    private FlowersRes flowers;
     private String amount;
     private String order_name;
     private String phone;
@@ -11,7 +11,7 @@ public class Order {
     private String pay;
     private String state;
 
-//    public Order(int order_id, User user, Flowers flowers, String amount, String order_name, String phone, String address, String pay, String state) {
+//    public Order(int order_id, User user, FlowersRes flowers, String amount, String order_name, String phone, String address, String pay, String state) {
 //        this.order_id = order_id;
 //        this.user = user;
 //        this.flowers = flowers;
@@ -50,11 +50,11 @@ public class Order {
 //        this.user = user;
 //    }
 //
-//    public Flowers getFlowers() {
+//    public FlowersRes getFlowers() {
 //        return flowers;
 //    }
 //
-//    public void setFlowers(Flowers flowers) {
+//    public void setFlowers(FlowersRes flowers) {
 //        this.flowers = flowers;
 //    }
 

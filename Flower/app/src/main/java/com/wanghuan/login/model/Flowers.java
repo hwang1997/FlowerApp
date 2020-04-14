@@ -1,70 +1,80 @@
-package com.wanghuan.login.model;
-
-
-import java.io.Serializable;
-
-public class Flowers implements Serializable {
-    private int good_id;
-    private String good_name;
-    private String price;
-    private String count;
-    private String des;
-    private int pic;
-
-    public Flowers(int good_id, String good_name, String price, String count, String des, int pic) {
-        this.good_id = good_id;
-        this.good_name = good_name;
-        this.price = price;
-        this.count = count;
-        this.des = des;
-        this.pic = pic;
-    }
-
-    public int getGood_id() {
-        return good_id;
-    }
-
-    public void setGood_id(int good_id) {
-        this.good_id = good_id;
-    }
-
-    public String getGood_name() {
-        return good_name;
-    }
-
-    public void setGood_name(String good_name) {
-        this.good_name = good_name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getCount() {
-        return count;
-    }
-
-    public void setCount(String count) {
-        this.count = count;
-    }
-
-    public String getDes() {
-        return des;
-    }
-
-    public void setDes(String des) {
-        this.des = des;
-    }
-
-    public int getPic() {
-        return pic;
-    }
-
-    public void setPic(int pic) {
-        this.pic = pic;
-    }
-}
+//package com.wanghuan.login.model;
+//
+//public class Flowers {
+//
+//    /**
+//     * goodsid : 20200001
+//     * goodsname : 手心的挚爱-11朵红玫瑰生日花束
+//     * goodsprice : 138.6
+//     * goodscount : 21
+//     * goodsdes : 热恋、希望与你泛起激情的爱
+//     * goodsimg : 2020-04-12/E674D891094C4224A6E4F5B195B08B01.jpg
+//     */
+//
+//    private int goodsid;
+//    private String goodsname;
+//    private double goodsprice;
+//    private int goodscount;
+//    private String goodsdes;
+//    private String goodsimg;
+//
+//    public int getGoodsid() {
+//        return goodsid;
+//    }
+//
+//    public void setGoodsid(int goodsid) {
+//        this.goodsid = goodsid;
+//    }
+//
+//    public String getGoodsname() {
+//        return goodsname;
+//    }
+//
+//    public void setGoodsname(String goodsname) {
+//        this.goodsname = goodsname;
+//    }
+//
+//    public double getGoodsprice() {
+//        return goodsprice;
+//    }
+//
+//    public void setGoodsprice(double goodsprice) {
+//        this.goodsprice = goodsprice;
+//    }
+//
+//    public int getGoodscount() {
+//        return goodscount;
+//    }
+//
+//    public void setGoodscount(int goodscount) {
+//        this.goodscount = goodscount;
+//    }
+//
+//    public String getGoodsdes() {
+//        return goodsdes;
+//    }
+//
+//    public void setGoodsdes(String goodsdes) {
+//        this.goodsdes = goodsdes;
+//    }
+//
+//    public String getGoodsimg() {
+//        return goodsimg;
+//    }
+//
+//    public void setGoodsimg(String goodsimg) {
+//        this.goodsimg = goodsimg;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Flowers{" +
+//                "goodsid=" + goodsid +
+//                ", goodsname='" + goodsname + '\'' +
+//                ", goodsprice=" + goodsprice +
+//                ", goodscount=" + goodscount +
+//                ", goodsdes='" + goodsdes + '\'' +
+//                ", goodsimg='" + goodsimg + '\'' +
+//                '}';
+//    }
+//}

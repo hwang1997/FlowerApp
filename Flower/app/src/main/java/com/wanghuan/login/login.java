@@ -7,62 +7,31 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URLEncoder;
+import com.google.gson.Gson;
+import com.wanghuan.login.model.User;
+import com.wanghuan.login.util.HttpUtil;
+
+import org.json.JSONArray;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class login extends AppCompatActivity {
-    private EditText username;
-    private EditText password;
-    private String usernameStr;
-    private String passwordStr;
-    private final int LOGINSUCCESS = 0;
-    private final int LOGINNOTFOUND = 1;
-    private final int LOGINEXCEPT = 2;
-    private final int REGISTERSUCCESS = 3;
-    private final int REGISTERNOTFOUND = 4;
-    private final int REGISTEREXCEPT = 5;
-
-    @SuppressLint("Handlerleak")
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case LOGINSUCCESS:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-                case LOGINNOTFOUND:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-                case LOGINEXCEPT:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-                case REGISTERSUCCESS:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-                case REGISTERNOTFOUND:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-                case REGISTEREXCEPT:
-                    Toast.makeText(getApplicationContext(), (String) msg.obj, Toast.LENGTH_LONG).show();
-                    break;
-            }
-        }
-    };
+    private EditText usernameStr;
+    private EditText passwordStr;
+    private Button loginBtn;
+    private JSONArray jsonArray;
 
     public void register(View view) {
         Intent intent = new Intent(getApplicationContext(), register.class);
         startActivity(intent);
     }
 
-    public void login(View view) {
-        Intent intent = new Intent(getApplicationContext(), home.class);
-        startActivity(intent);
-    }
 
     protected void onDestroy() {
         super.onDestroy();
@@ -72,48 +41,72 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = (EditText) findViewById(R.id.et_user_name);
-        password = (EditText) findViewById(R.id.et_psw);
+        usernameStr = (EditText) findViewById(R.id.et_user_name);
+        passwordStr = (EditText) findViewById(R.id.et_psw);
+
+        loginBtn = (Button) findViewById(R.id.btn_login);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //登录校验
+                if (validate()) {
+                    //如果登录成功
+                    //获取用户名、密码
+                    String username = usernameStr.getText().toString();
+                    String password = passwordStr.getText().toString();
+                    try {
+                        User user = query(username, password);
+                        if (user.getCode() == 0) {
+                            Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_SHORT).show();
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(getApplicationContext(), home.class);
+                                    intent.putExtra("userId", user.getData().getUserId());
+                                    intent.putExtra("userName", user.getData().getUserName());
+                                    startActivity(intent);
+                                }
+                            }, 1000);
+                        }
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), "用户名或密码错误，请重新输入！", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
-//    public void login(View v){
-//        usernameStr = username.getText().toString().trim();
-//        passwordStr = password.getText().toString().trim();
-//
-//        if (usernameStr.equals("") || passwordStr.equals("")){
-//            Toast.makeText(login.this, "用户名或密码不能为空",Toast.LENGTH_LONG).show();
-//        } else {
-//          new Thread()  {
-//              private HttpURLConnection connection;
-//              @Override
-//              public void run(){
-//                  try {
-//                      String data2 = "username" + URLEncoder.encode(usernameStr,"utf-8")+"&password="+URLEncoder.encode(passwordStr,"utf-8")+"&sign="+URLEncoder.encode("1","utf-8");
-//                      connection = HttpConnectionUtils.getConnection(data2);
-////                      int code = connection.getResponseCode();
-//                      int code = 200;
-//                      if (code == 200){
-//                          InputStream inputStream = connection.getInputStream();
-//                          String str = StreamChangeStrUtils.toChange(inputStream);
-//                          Message message = Message.obtain();
-//                          message.obj = str;
-//                          message.what = REGISTERSUCCESS;
-//                          handler.sendMessage(message);
-//                      }else {
-//                          Message message = Message.obtain();
-//                          message.what = REGISTERNOTFOUND;
-//                          message.obj = "注册异常……请稍后再试";
-//                          handler.sendMessage(message);
-//                      }
-//                  }catch (Exception e){
-//                      e.printStackTrace();
-//                      Message message = Message.obtain();
-//                      message.what = REGISTEREXCEPT;
-//                      message.obj = "服务器异常……请稍后再试";
-//                      handler.sendMessage(message);
-//                  }
-//              }
-//          }.start();
-//        }
-//    }
+    //对用户名、密码进行校验
+    private boolean validate(){
+        String username = usernameStr.getText().toString().trim();
+        String password = passwordStr.getText().toString().trim();
+
+        if (username.equals("")){
+            Toast.makeText(getApplicationContext(),"用户名是必填项！",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (password.equals("")){
+            Toast.makeText(getApplicationContext(),"密码是必填项！",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+    //定义发送请求的方法
+    private User query(String username, String password) throws Exception{
+        //使用map封装请求参数
+        Map<String, String> map = new HashMap<>();
+        map.put("user_id", username);
+        map.put("user_password", password);
+        //定义发送请求的URL
+        String url = HttpUtil.BASE_URL + "users/applogin";
+        String result = HttpUtil.login(url,map);
+        Gson gson = new Gson();
+        User user = gson.fromJson(result,User.class);
+        return user;
+
+    }
+
 }

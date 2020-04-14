@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wanghuan.login.R;
 import com.wanghuan.login.frist_Page.goodsInfoActivity;
+//import com.wanghuan.login.model.Flowers;
+import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.model.Flowers;
 
 import java.util.List;
@@ -58,22 +59,22 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
 
 //        holder.flowerImage.setImageResource((Integer.parseInt(flowers.getPic())));
 //        holder.flowerId.setText(flowers.getGood_id());
-        holder.flowerName.setText(flowers.getGood_name());
-        holder.flowerPrice.setText(flowers.getPrice());
+//        holder.flowerName.setText(flowers.getGoodsname());
+//        holder.flowerPrice.setText(flowers.getGoodsprice());
 //        holder.flowerDes.setText(flowers.getDes());
-        holder.flowerImage.setImageResource(flowers.getPic());
+//        holder.flowerImage.setImageURI(HttpUtil.BASE_URL+"/upload/showImageByPath?paht"+flowers.getGoodsimg());
 
         holder.flower_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, goodsInfoActivity.class);
-                intent.putExtra("goodsImage", flowers.getPic());
-                intent.putExtra("goodsId", flowers.getGood_id() + "");
-                intent.putExtra("goodsName", flowers.getGood_name());
-                intent.putExtra("goodsPrice", flowers.getPrice());
-                intent.putExtra("goodsCount", flowers.getCount());
-                intent.putExtra("goodsDes", flowers.getDes());
-                intent.putExtra("flowerList", mFlowerList.get(position));
+//                intent.putExtra("goodsImage", flowers.getPic());
+//                intent.putExtra("goodsId", flowers.getGood_id() + "");
+//                intent.putExtra("goodsName", flowers.getGood_name());
+//                intent.putExtra("goodsPrice", flowers.getPrice());
+//                intent.putExtra("goodsCount", flowers.getCount());
+//                intent.putExtra("goodsDes", flowers.getDes());
+//                intent.putExtra("flowerList", mFlowerList.get(position));
                 context.startActivity(intent);
 //                Toast.makeText(context,flowers.getGood_name(),Toast.LENGTH_SHORT).show();
             }

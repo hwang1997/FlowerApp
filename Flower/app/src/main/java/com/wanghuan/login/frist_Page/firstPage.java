@@ -12,47 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class firstPage extends AppCompatActivity {
-    //    private List<Flowers> flowersList = new ArrayList<>();
-    private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         Toast.makeText(getApplicationContext(), "111", Toast.LENGTH_SHORT).show();
-
-
-//        initFruits();
-//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_fst);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        FruitAdapter adapter = new FruitAdapter(fruitList);
-//        recyclerView.setAdapter(adapter);
-//        Toast.makeText(getApplicationContext(),"111",Toast.LENGTH_SHORT).show();
-//        initFlowers();
-//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_fst);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        FlowerAdapter adapter = new FlowerAdapter(flowersList);
-//        recyclerView.setAdapter(adapter);
-//        Toast.makeText(getApplicationContext(),flowersList.size(),Toast.LENGTH_SHORT).show();
     }
-//    private void initFlowers(){
-//        for (int i = 0; i < 10; i++){
-//            Flowers flower1 = new Flowers(
-//                    202001,"xkzcnj","145.9","34","热情","flower");
-//            flowersList.add(flower1);
-//            Flowers flower2 = new Flowers(
-//                    202002,"dsadsd","145.9","34","热情","flower1");
-//            flowersList.add(flower2);
-//        }
-//    }
-//    private void initFruits(){
-//        for (int i = 0; i < 10; i++){
-//            Fruit apple = new Fruit("Apple", R.mipmap.flower);
-//            fruitList.add(apple);
-//            Fruit banana = new Fruit("Banana", R.mipmap.flower1);
-//            fruitList.add(banana);
-//        }
-//    }
 }
