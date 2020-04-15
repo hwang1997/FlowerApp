@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-arry name="select">
+        <item value="0">线上支付</item>
+        <item value="1">货到付款</item>
+    </string-arry>
+</resources>
