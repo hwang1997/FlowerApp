@@ -64,11 +64,14 @@ public class login extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     Intent intent = new Intent(getApplicationContext(), home.class);
-                                    intent.putExtra("userId", user.getData().getUserId());
+                                    intent.putExtra("userId", user.getData().getUserId()+"");
                                     intent.putExtra("userName", user.getData().getUserName());
                                     startActivity(intent);
+                                    finish();
                                 }
                             }, 1000);
+                        }else{
+                            Toast.makeText(getApplicationContext(), user.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "用户名或密码错误，请重新输入！", Toast.LENGTH_SHORT).show();

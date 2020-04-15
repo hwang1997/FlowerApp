@@ -9,8 +9,10 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -39,6 +41,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
     private ImageButton mImgFst;
     private ImageButton mImgBus;
     private ImageButton mImgMy;
+
 
     public void MyUsername(View view) {
         Intent intent = new Intent(getApplicationContext(), my_username.class);
@@ -78,6 +81,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
         initDatas();
 
     }
+
 
 
     @Override

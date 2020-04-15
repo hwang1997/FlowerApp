@@ -3,7 +3,7 @@ package com.wanghuan.login.model;
 public class Order {
     private int order_id;
     private User user;
-    private FlowersRes flowers;
+    private Flowers flowers;
     private String amount;
     private String order_name;
     private String phone;

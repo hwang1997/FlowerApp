@@ -25,10 +25,11 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+        android:layout_marginTop="10dp"
             android:hint="账号"
             android:textSize="20sp"
             android:maxLength="15"
-            android:maxLines="1"
+            android:inputType="text"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
     <!--输入框-->

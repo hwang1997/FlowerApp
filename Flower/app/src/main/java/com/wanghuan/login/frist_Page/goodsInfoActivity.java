@@ -10,11 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
 import com.wanghuan.login.model.Bus;
+import com.wanghuan.login.model.Flowers;
+import com.wanghuan.login.util.HttpUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class goodsInfoActivity extends AppCompatActivity {
     private ImageView goodsImage;
@@ -36,7 +40,6 @@ public class goodsInfoActivity extends AppCompatActivity {
 
     private void initView() {
         Intent intent = getIntent();
-
 //        Toast.makeText(getApplicationContext(),intent.getStringExtra("goodsId"),Toast.LENGTH_SHORT).show();
         goodsImage = (ImageView) findViewById(R.id.iv_goodInfo_image);
         goodsId = (TextView) findViewById(R.id.tv_goodInfo_goodId);
@@ -44,15 +47,20 @@ public class goodsInfoActivity extends AppCompatActivity {
         goodsPrice = (TextView) findViewById(R.id.tv_goodInfo_goodPrice);
         goodsCount = (TextView) findViewById(R.id.tv_goodInfo_goodCount);
         goodsDes = (TextView) findViewById(R.id.tv_goodInfo_goodDes);
+        goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
         joinBus = (Button) findViewById(R.id.btn_goodInfo_bus);
         buyFast = (Button) findViewById(R.id.btn_goodInfo_buy);
 
-        goodsImage.setImageResource(R.mipmap.flower);
-        goodsId.setText(String.valueOf(intent.getStringExtra("goodsId").trim()));
+
+
+        goodsId.setText(String.valueOf(intent.getStringExtra("goodsId")));
         goodsName.setText(intent.getStringExtra("goodsName"));
-        goodsPrice.setText("￥" + intent.getStringExtra("goodsPrice"));
+        goodsPrice.setText("￥"+ intent.getStringExtra("goodsPrice"));
         goodsCount.setText(intent.getStringExtra("goodsCount"));
         goodsDes.setText(intent.getStringExtra("goodsDes"));
+        Glide.with(getApplicationContext()).load(HttpUtil.BASE_URL+"file/showImageByPath?path="
+                +intent.getStringExtra("goodsImage"))
+                .error(R.drawable.ic_launcher).into(goodsImage);
     }
 
     @Override
@@ -62,6 +70,12 @@ public class goodsInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "立即购买", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
+                intent.putExtra("goodsId",goodsId.getText());
+                intent.putExtra("goodsName",goodsName.getText());
+                intent.putExtra("goodsPrice",goodsPrice.getText());
+                intent.putExtra("goodsBuyCount",goodsBuyCount.getText());
+                startActivity(intent);
             }
         });
         joinBus.setOnClickListener(new View.OnClickListener() {

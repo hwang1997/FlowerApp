@@ -14,7 +14,6 @@ import com.google.gson.Gson;
 import com.wanghuan.login.R;
 import com.wanghuan.login.adapter.FlowerAdapter;
 import com.wanghuan.login.model.Flowers;
-import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.util.HttpUtil;
 
 import java.util.ArrayList;
@@ -26,7 +25,6 @@ public class FstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_first, container, false);
         recycle_fst = view.findViewById(R.id.recycle_fst);
-
         return view;
     }
 
@@ -34,11 +32,15 @@ public class FstFragment extends Fragment {
     public void onResume() {
         super.onResume();
         recycle_fst.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        List<Flowers> flowersList = new ArrayList<>();
+        List<Flowers.DataBean> flowersList = new ArrayList<>();
         try {
             Flowers str = query();
             if (str.getCode() == 0){
-
+                for (int i = 0;i<str.getData().size();i++) {
+                    flowersList.add(str.getData().get(i));
+                }
+                System.out.println(flowersList);
+                recycle_fst.setAdapter(new FlowerAdapter(getContext(), flowersList));
 
             }else {
                 Toast.makeText(getContext(),"获取商品信息失败！",Toast.LENGTH_SHORT).show();
@@ -47,7 +49,6 @@ public class FstFragment extends Fragment {
             e.printStackTrace();
             Toast.makeText(getContext(),"服务器异常！",Toast.LENGTH_SHORT).show();
         }
-        recycle_fst.setAdapter(new FlowerAdapter(getContext(), flowersList));
     }
     private Flowers query() throws Exception{
         //定义发送请求的URL

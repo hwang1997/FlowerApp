@@ -3,7 +3,7 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#ffffff">
+              android:background="@color/bgColor">
 
 
     <LinearLayout
@@ -13,7 +13,7 @@
                 android:id="@+id/recycle_fst"
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-
                 android:scrollbars="vertical"/>
+
     </LinearLayout>
 </LinearLayout>

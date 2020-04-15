@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +12,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
 import com.wanghuan.login.frist_Page.goodsInfoActivity;
 //import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.model.Flowers;
+import com.wanghuan.login.model.Goods;
+import com.wanghuan.login.util.HttpUtil;
 
 import java.util.List;
+import java.util.Locale;
+
+import okhttp3.Cookie;
 
 
 public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder> {
     private Context context;
-    private List<Flowers> mFlowerList;
+    private List<Flowers.DataBean> mFlowerList;
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView flowerId;
@@ -42,9 +49,9 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
 
     }
 
-    public FlowerAdapter(Context context, List<Flowers> flowersList) {
+    public FlowerAdapter(Context context, List<Flowers.DataBean> flowerList) {
         this.context = context;
-        mFlowerList = flowersList;
+        mFlowerList = flowerList;
     }
 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -54,29 +61,29 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
     }
 
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-        final Flowers flowers = mFlowerList.get(position);
-
+        final Flowers.DataBean flowers = mFlowerList.get(position);
 
 //        holder.flowerImage.setImageResource((Integer.parseInt(flowers.getPic())));
-//        holder.flowerId.setText(flowers.getGood_id());
-//        holder.flowerName.setText(flowers.getGoodsname());
-//        holder.flowerPrice.setText(flowers.getGoodsprice());
+//          holder.flowerId.setText(flowers.getGoodsid());
+          holder.flowerName.setText(flowers.getGoodsname());
+          holder.flowerPrice.setText(String.format(Locale.getDefault(),"%1.2f元",flowers.getGoodsprice()));
+//          holder.flowerImage.setImageResource(Integer.parseInt(flowers.getGoodsimg()));
 //        holder.flowerDes.setText(flowers.getDes());
-//        holder.flowerImage.setImageURI(HttpUtil.BASE_URL+"/upload/showImageByPath?paht"+flowers.getGoodsimg());
-
+//        holder.flowerImage.setImageURI();
+        Glide.with(context).load(HttpUtil.BASE_URL+"file/showImageByPath?path="+flowers.getGoodsimg()).error(R.drawable.ic_launcher).into(holder.flowerImage);
         holder.flower_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, goodsInfoActivity.class);
-//                intent.putExtra("goodsImage", flowers.getPic());
-//                intent.putExtra("goodsId", flowers.getGood_id() + "");
-//                intent.putExtra("goodsName", flowers.getGood_name());
-//                intent.putExtra("goodsPrice", flowers.getPrice());
-//                intent.putExtra("goodsCount", flowers.getCount());
-//                intent.putExtra("goodsDes", flowers.getDes());
-//                intent.putExtra("flowerList", mFlowerList.get(position));
+                intent.putExtra("goodsId", flowers.getGoodsid()+"");
+                intent.putExtra("goodsName", flowers.getGoodsname());
+                intent.putExtra("goodsPrice", flowers.getGoodsprice()+"");
+                intent.putExtra("goodsCount", flowers.getGoodscount()+"");
+                intent.putExtra("goodsDes", flowers.getGoodsdes());
+                intent.putExtra("goodsImage", flowers.getGoodsimg());
+
+//                intent.putExtra("flowerList", flowers);
                 context.startActivity(intent);
-//                Toast.makeText(context,flowers.getGood_name(),Toast.LENGTH_SHORT).show();
             }
         });
 

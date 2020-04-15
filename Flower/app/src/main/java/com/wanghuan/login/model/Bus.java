@@ -1,19 +1,19 @@
 package com.wanghuan.login.model;
 
 public class Bus {
-    private FlowersRes flowers;
+    private Flowers flowers;
     private String buyCount;
 
-    public Bus(FlowersRes flowers, String buyCount) {
+    public Bus(Flowers flowers, String buyCount) {
         this.flowers = flowers;
         this.buyCount = buyCount;
     }
 
-    public FlowersRes getFlowers() {
+    public Flowers getFlowers() {
         return flowers;
     }
 
-    public void setFlowers(FlowersRes flowers) {
+    public void setFlowers(Flowers flowers) {
         this.flowers = flowers;
     }
 

@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.wanghuan.login">
+    package="com.wanghuan.login">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:allowBackup="true"
-            android:icon="@drawable/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@drawable/splash"
-            android:networkSecurityConfig="@xml/network_config"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".login"/>
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@drawable/splash"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".login" />
         <activity android:name=".util.splash">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register"/>
-        <activity android:name=".home"/>
-        <activity android:name=".frist_Page.firstPage"/>
-        <activity android:name=".bus_Page.busPage"/>
-        <activity android:name=".my_Page.myPage"/>
-        <activity android:name=".my_Page.my_username"/>
-        <activity android:name=".my_Page.my_pwd"/>
-        <activity android:name=".my_Page.my_addr"/>
-        <activity android:name=".my_Page.update_addr"/>
-        <activity android:name=".my_Page.add_addr"/>
-        <activity android:name=".my_Page.my_order"/>
-        <activity android:name=".my_Page.show_order"/>
-        <activity android:name=".frist_Page.goodsInfoActivity"></activity>
+        <activity android:name=".register" />
+        <activity android:name=".home" />
+        <activity android:name=".frist_Page.firstPage" />
+        <activity android:name=".bus_Page.busPage" />
+        <activity android:name=".my_Page.myPage" />
+        <activity android:name=".my_Page.my_username" />
+        <activity android:name=".my_Page.my_pwd" />
+        <activity android:name=".my_Page.my_addr" />
+        <activity android:name=".my_Page.update_addr" />
+        <activity android:name=".my_Page.add_addr" />
+        <activity android:name=".my_Page.my_order" />
+        <activity android:name=".my_Page.show_order" />
+        <activity android:name=".frist_Page.goodsInfoActivity" />
+        <activity android:name=".frist_Page.makeOrderActivity"></activity>
     </application>
 
 </manifest>
