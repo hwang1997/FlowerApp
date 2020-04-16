@@ -92,8 +92,18 @@ public class UsersServiceImpl implements UsersService {
      * @return 实例对象
      */
     @Override
+    public boolean changeUsername(Integer userId, String newUsername) {
+       return this.usersDao.changeUsername(userId,newUsername);
+    }
+    /**
+     * 修改数据
+     *
+     * @param userId 实例对象
+     * @return 实例对象
+     */
+    @Override
     public boolean updatePwd(Integer userId, String pwd) {
-       return this.usersDao.updatePwd(userId,pwd);
+        return this.usersDao.updatePwd(userId,pwd);
     }
 
     /**

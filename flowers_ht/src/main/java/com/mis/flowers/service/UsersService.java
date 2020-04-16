@@ -76,4 +76,5 @@ public interface UsersService {
      */
     boolean deleteById(Integer userId);
 
+    boolean changeUsername(Integer userId, String newUsername);
 }

@@ -1,8 +1,13 @@
 package com.mis.flowers.controller;
 
 import com.mis.flowers.dto.OrdersDto;
+import com.mis.flowers.dto.makeOrdersDto;
+import com.mis.flowers.entity.Goods;
 import com.mis.flowers.entity.Orders;
+import com.mis.flowers.entity.Users;
+import com.mis.flowers.service.GoodsService;
 import com.mis.flowers.service.OrdersService;
+import com.mis.flowers.service.UsersService;
 import com.mis.flowers.util.Page;
 import com.mis.flowers.util.Result;
 import com.mis.flowers.util.ResultCode;
@@ -26,6 +31,8 @@ public class OrdersController {
      */
     @Resource
     private OrdersService ordersService;
+    private UsersService usersService;
+    private GoodsService goodsService;
 
     /**
      * 通过主键查询单条数据
@@ -74,6 +81,30 @@ public class OrdersController {
     public Result<Boolean> updateGoods(OrdersDto dto) {
         try {
             this.ordersService.update(dto);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+    }
+
+    @RequestMapping(value = "makeOrders",method = RequestMethod.POST)
+    public Result<Integer> makeOrders(makeOrdersDto dto) {
+        try {
+            Orders orders = new Orders();
+            orders.setOrderid(0);
+            orders.setGoodsid(dto.getGoodsid());
+            orders.setUserid(dto.getUserid());
+            orders.setBuycount(dto.getBuycount());
+            orders.setSumprice(dto.getSumprice());
+            orders.setOrdername(dto.getOrdername());
+            orders.setOrderphone(dto.getOrderphone());
+            orders.setOrderaddress(dto.getOrderaddress());
+            orders.setPay(dto.getPay());
+            orders.setState(dto.getState());
+            orders.setUsers((List<Users>) this.usersService.queryById(dto.getUserid()));
+            orders.setGoods((List<Goods>) this.goodsService.queryById(dto.getGoodsid()));
+            this.ordersService.insert(orders);
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();

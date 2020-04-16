@@ -80,6 +80,25 @@ public class UsersController {
             return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
         }
     }
+    //锁屏验证
+    @SneakyThrows
+    @RequestMapping(value = "checkPwd", method = RequestMethod.POST)
+    public Boolean checkPwd(UserDto dto) {
+        try {
+            String password = MD5Util.md5Encode(dto.getUser_password());
+            Users user = this.usersService.queryById(dto.getUser_id());
+            if (user == null){
+                return false;
+            }else if (!user.getUserPassword().equals(password)) {
+                return false;
+            } else {
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     /**
      * 通过userId查询单条数据
@@ -193,13 +212,37 @@ public class UsersController {
             return Result.createFailUre(ResultCode.Fail.code(), "失败！");
         }
     }
-    //修改用户信息
+    //APP修改用户名
+    @RequestMapping(value = "changeUsername", method = RequestMethod.POST)
+    public Result<Users> changeUsername(String userId, String user_name) {
+        try {
+            this.usersService.changeUsername(Integer.parseInt(userId),user_name);
+            Users users = this.usersService.queryById(Integer.parseInt(userId));
+            return Result.createSuccess(users);
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+        }
+    }
+    //修改用户密码
     @SneakyThrows//MD5
     @RequestMapping(value = "updatePwd", method = RequestMethod.GET)
     public Result<Boolean> updatePwd(Integer userId, String pwd) {
         try {
             String password = MD5Util.md5Encode(pwd);
             this.usersService.updatePwd(userId,password);
+            return Result.createSuccess();
+        }catch (Exception e){
+            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+        }
+    }
+    //修改用户密码APP
+    @SneakyThrows//MD5
+    @RequestMapping(value = "changePwd", method = RequestMethod.POST)
+    public Result<Boolean> changePwd(String userId, String pwd) {
+        try {
+            String password = MD5Util.md5Encode(pwd);
+            this.usersService.updatePwd(Integer.parseInt(userId),password);
             return Result.createSuccess();
         }catch (Exception e){
             return Result.createFailUre(ResultCode.Fail.code(), "失败！");
