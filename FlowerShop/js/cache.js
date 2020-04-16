@@ -2,11 +2,8 @@ var cacheStr = window.sessionStorage.getItem("cache"),
     oneLoginStr = window.sessionStorage.getItem("oneLogin")
 changeRefreshStr = window.sessionStorage.getItem("changeRefreshStr")
     , userName = localStorage.getItem('userName')
-    , userPassword = localStorage.getItem('userPassword');
-
-window.onload = function () {
-    $('#lockUserName').html(userName);
-};
+    , userPassword = localStorage.getItem('userPassword'),
+    userId = localStorage.getItem('userId');
 
 layui.use(['form', 'jquery', "layer"], function () {
     var form = layui.form,
@@ -76,8 +73,7 @@ layui.use(['form', 'jquery', "layer"], function () {
             type: 1,
             content: '<div class="admin-header-lock" id="lock-box">' +
                 '<div class="admin-header-lock-img"><img src="../images/login_face.jpeg" class="userAvatar"/></div>' +
-                '<div class="admin-header-lock-name" id="lockUserName"></div>' +
-                '<div class="input_btn">' +
+                '<div class="input_btn" style="margin-top: 20px">' +
                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />' +
                 '<button class="layui-btn" id="unlock">解锁</button>' +
                 '</div>' +
@@ -109,14 +105,37 @@ layui.use(['form', 'jquery', "layer"], function () {
             layer.msg("请输入解锁密码！");
             $(this).siblings(".admin-header-lock-input").focus();
         } else {
-            if ($(this).siblings(".admin-header-lock-input").val() == userPassword) {
-                window.sessionStorage.setItem("lockcms", false);
-                $(this).siblings(".admin-header-lock-input").val('');
-                layer.closeAll("page");
-            } else {
-                layer.msg("密码错误，请重新输入！");
-                $(this).siblings(".admin-header-lock-input").val('').focus();
-            }
+            var pwd = $(this).siblings(".admin-header-lock-input").val();
+            var param = {
+                'user_id': userId,
+                'user_password': pwd,
+            };
+            $.ajax({
+               url:WebPath + '/users/checkPwd',
+                type: "POST",
+                dataType: "json",
+                data: param,
+                success: function (result) {
+                    if (result == true){
+                        window.sessionStorage.setItem("lockcms", false);
+                        $(this).siblings(".admin-header-lock-input").val('');
+                        layer.closeAll("page");
+                    } else {
+                        layer.msg("密码错误，请重新输入！");
+                        $(this).siblings(".admin-header-lock-input").val('').focus();
+                    }
+               }
+            });
+
+
+            // if ($(this).siblings(".admin-header-lock-input").val() == userPassword) {
+            //     window.sessionStorage.setItem("lockcms", false);
+            //     $(this).siblings(".admin-header-lock-input").val('');
+            //     layer.closeAll("page");
+            // } else {
+            //     layer.msg("密码错误，请重新输入！");
+            //     $(this).siblings(".admin-header-lock-input").val('').focus();
+            // }
         }
     });
     $(document).on('keydown', function (event) {
