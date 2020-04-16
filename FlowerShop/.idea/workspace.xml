@@ -13,12 +13,17 @@
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/HttpUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/UsersController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,8 +54,8 @@
       <file leaf-file-name="goods.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1480">
-              <caret line="74" column="101" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="144" />
+            <state relative-caret-position="600">
+              <caret line="347" column="37" lean-forward="true" selection-start-line="347" selection-start-column="37" selection-end-line="347" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -66,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="orders.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="orders.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/orders.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7700">
-              <caret line="385" column="47" selection-start-line="385" selection-start-column="47" selection-end-line="385" selection-end-column="47" />
+            <state relative-caret-position="567">
+              <caret line="370" column="36" lean-forward="true" selection-start-line="370" selection-start-column="36" selection-end-line="370" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -101,7 +106,7 @@
       <file leaf-file-name="updateUsers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
+            <state relative-caret-position="741">
               <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
             </state>
           </provider>
@@ -119,7 +124,7 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
+            <state relative-caret-position="741">
               <caret line="93" column="78" lean-forward="true" selection-start-line="93" selection-start-column="78" selection-end-line="93" selection-end-column="78" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
@@ -140,24 +145,10 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="441">
               <caret line="124" column="22" lean-forward="true" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cache.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/cache.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" selection-start-line="7" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,10 +243,10 @@
         <option value="$USER_HOME$/Desktop/【springboot+layui+mybatisplus+shiro】仓库管理系统【雷哥】/07项目/01/0520ERP/src/main/resources/static/resources/page/news/newsAdd.html" />
         <option value="$PROJECT_DIR$/page/home.html" />
         <option value="$PROJECT_DIR$/page/users.html" />
-        <option value="$PROJECT_DIR$/page/goods.html" />
         <option value="$PROJECT_DIR$/layui/css/layui.css" />
-        <option value="$PROJECT_DIR$/page/orders.html" />
         <option value="$PROJECT_DIR$/js/cache.js" />
+        <option value="$PROJECT_DIR$/page/goods.html" />
+        <option value="$PROJECT_DIR$/page/orders.html" />
       </list>
     </option>
   </component>
@@ -280,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,7 +298,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,7 +370,8 @@
       <workItem from="1586916387544" duration="602000" />
       <workItem from="1586963758802" duration="464000" />
       <workItem from="1586966174127" duration="297000" />
-      <workItem from="1586997663454" duration="1500000" />
+      <workItem from="1586997663454" duration="1671000" />
+      <workItem from="1587000558290" duration="1064000" />
     </task>
     <task id="LOCAL-00001" summary="花店后台前端页面">
       <created>1586490790728</created>
@@ -430,14 +422,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586784298025</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="花店后台前端页面">
+      <created>1586999331934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586999331934</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275222000" />
+    <option name="totallyTimeSpent" value="276457000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="189" width="1856" height="947" extended-state="0" />
+    <frame x="10" y="75" width="1856" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13206522" />
@@ -706,13 +705,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/goodsAdd.js" />
-    <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layui/layui.all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -733,9 +725,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layui/css/layui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="8" column="46382" selection-start-line="8" selection-start-column="46382" selection-end-line="8" selection-end-column="46382" />
+          <folding>
+            <element signature="e#64256#64395#2" expanded="true" />
+            <element signature="e#65849#65988#2" expanded="true" />
+            <element signature="e#66536#66675#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="124" column="22" lean-forward="true" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="85" column="9" lean-forward="true" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/page/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
+        <state relative-caret-position="741">
           <caret line="93" column="78" lean-forward="true" selection-start-line="93" selection-start-column="78" selection-end-line="93" selection-end-column="78" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
@@ -745,8 +773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1480">
-          <caret line="74" column="101" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="144" />
+        <state relative-caret-position="600">
+          <caret line="347" column="37" lean-forward="true" selection-start-line="347" selection-start-column="37" selection-end-line="347" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -761,22 +789,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layui/css/layui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="8" column="46382" selection-start-line="8" selection-start-column="46382" selection-end-line="8" selection-end-column="46382" />
-          <folding>
-            <element signature="e#64256#64395#2" expanded="true" />
-            <element signature="e#65849#65988#2" expanded="true" />
-            <element signature="e#66536#66675#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/orders.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7700">
-          <caret line="385" column="47" selection-start-line="385" selection-start-column="47" selection-end-line="385" selection-end-column="47" />
+        <state relative-caret-position="567">
+          <caret line="370" column="36" lean-forward="true" selection-start-line="370" selection-start-column="36" selection-end-line="370" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -785,28 +801,6 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#0;n#div#8;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="124" column="22" lean-forward="true" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/cache.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" selection-start-line="7" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

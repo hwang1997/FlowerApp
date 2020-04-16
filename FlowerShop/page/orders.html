@@ -148,8 +148,9 @@
                             <option value="" id="state1" >请选择订单状态</option>
                             <option value="0">已完成</option>
                             <option value="1">待收货</option>
-                            <option value="2">取消订单</option>
-
+                            <option value="2">待支付</option>
+                            <option value="3">待发货</option>
+                            <option value="4">取消订单</option>
                         </select>
                     </div>
                 </div>
@@ -251,8 +252,8 @@
                             return "待支付";
                         } else if (d.state == 3){
                             return "待发货";
-                        } else {
-                            return "已取消";
+                        } else if (d.state == 4) {
+                            return "取消订单";
                         }
                     }},
                 {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 180, align: 'center'}
@@ -366,7 +367,8 @@
             type: 1,
             title: '修改用户',
             content: $("#saveOrUpdateDiv"),
-            area: ['700px', '670px'],
+            area: ['700px', '750px'],
+            offset:['20px','300px'],
             success: function (index) {
                 form.val('dataFrm', data);
                 $('#username').val(data.users[0].userName);

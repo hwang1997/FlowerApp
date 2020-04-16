@@ -163,7 +163,7 @@
                 none:'暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
             },
             limit: 10,
-            limits: ['10', '20', '30'],
+            limits: ['10'],
             url: WebPath + '/goods/selectByPage',
             page: true,
             cellMinWidth: 100,
@@ -247,50 +247,6 @@
         switch (obj.event) {
             case 'add':
                 openAddUser();
-                break;
-            case 'batchDelete':
-                layer.msg("批量删除", {
-                    icon: 7,
-                    time: 1000
-                });
-                // var checkStatus = table.checkStatus('goodsTable');
-                // // console.log(checkStatus);//获取选中行的数据
-                // var data = checkStatus.data;
-                // var length = checkStatus.data.length;
-                // var usersId = [];
-                // if (length > 0) {
-                //     for (var i in data) {
-                //         usersId.push(data[i].userId);
-                //     }
-                //     $.ajax({
-                //         // url: WebPath + "/users/batchDelete?userId=" + usersId,
-                //         type: "DELETE",
-                //         dataType: "json",
-                //         success: function (result) {
-                //             if (result.code == 0) {
-                //                 layer.msg("批量删除" + result.message, {
-                //                     icon: 6,
-                //                     time: 1000
-                //                 });
-                //             } else {
-                //                 layer.msg("批量删除" + result.message, {
-                //                     icon: 5,
-                //                     time: 1000
-                //                 });
-                //             }
-                //         }
-                //     });
-                //     //刷新数据表格
-                //     // setTimeout(function () {
-                //     tableIns.reload(WebPath + "/users/selectByPage");
-                //     // },3000);
-                //
-                // } else {
-                //     layer.msg("你还没选批量删除的数据", {
-                //         icon: 5,
-                //         time: 1000
-                //     });
-                // };
                 break;
             case 'reloadTable':
                 // table.read("userTable",{
