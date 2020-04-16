@@ -56,7 +56,7 @@
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv">
     <form class="layui-form " action="" lay-filter="dataFrm" id="dataFrm">
         <div class="layui-form-item">
-            <div class="layui-inline" style="visibility: hidden" id="userIdHidden" >
+            <div class="layui-inline" id="userIdHidden" >
                 <label class="layui-form-label">编号:</label>
                 <div class="layui-input-block">
                     <input type="text" name="userId" id="userId1" readonly="readonly" autocomplete="off"
@@ -308,7 +308,6 @@
         } else if (layEvent === 'edit') { //编辑
             //do something
             openUpdateUser(data);
-            layer.msg("修改")
         }
     });
     var url = '';
@@ -324,6 +323,7 @@
             success: function (index) {
                 //清空表单数据
                 $('#reset').click();
+                $('#userIdHidden').attr("style","display:none");
                 value = "添加";
                 url = WebPath + '/users/insertUsers';//添加接口
             }
@@ -340,7 +340,7 @@
             success: function (index) {
                 form.val('dataFrm', data);
                 $('#userPassword').val("");
-                $('#userIdHidden').removeAttr("style","visibility");
+                $('#userIdHidden').removeAttr("style","display:none");
                 value = "修改";
                 url = WebPath + '/users/updateUsers';//修改接口
             }

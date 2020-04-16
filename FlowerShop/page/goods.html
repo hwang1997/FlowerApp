@@ -57,7 +57,7 @@
         <div class="layui-col-md12 layui-col-xs12">
             <div class="layui-row layui-col-space10">
                 <div class="layui-col-md9 layui-col-xs7">
-                    <div class="layui-form-item" style="visibility: hidden;" id="goodsIdHide">
+                    <div class="layui-form-item" style="" id="goodsIdHide">
                         <label class="layui-form-label">商品编号：</label>
                         <div class="layui-input-block">
                             <input type="text" class="layui-input" name="goodsid" id="goodsid" readonly="readonly"  placeholder="商品编号为自增长">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="layui-col-md3 layui-col-xs5">
-                    <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 300px">
+                    <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 200px">
                         <input type="hidden" name="goodsimg" id="goodsimg" value="images/1.png">
                         <img class="layui-upload-img thumbImg"
                              style="width:200px;height:200px;background-size: auto" src="http://127.0.0.1:8089/file/showImageByPath?path=images/1.png">
@@ -290,7 +290,6 @@
         } else if (layEvent === 'edit') { //编辑
             //do something
             openUpdateUser(data);
-            layer.msg("修改")
         }else if (layEvent === 'maxImg') {
             openMaxImgGoods(data);
         }
@@ -305,12 +304,14 @@
             title: '添加商品',
             content: $("#saveOrUpdateDiv"),
             area: ['800px', '500px'],
+            offset:['20px','300px'],
             success: function (index) {
                 //清空表单数据
                 // $('#dataFrm')[0].reset();
                 $("#reset").click();
                 $("#goodsid").val("");
                 url = WebPath + '/goods/insertGoods';//添加接口
+                $('#goodsIdHide').attr("style","display:none");
                 value = "添加";
                 //设置默认图片
                 $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path=images/1.png');
@@ -329,10 +330,11 @@
             title: '修改用户',
             content: $("#saveOrUpdateDiv"),
             area: ['800px', '500px'],
+            offset:['20px','300px'],
             success: function (index) {
                 form.val('dataFrm', data);
                 value = "修改";
-                $('#goodsIdHide').removeAttr("style","visibility");
+                $('#goodsIdHide').removeAttr("style","display:none");
                 url = WebPath + '/goods/updateGoods';//修改接口
                 $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
             }
