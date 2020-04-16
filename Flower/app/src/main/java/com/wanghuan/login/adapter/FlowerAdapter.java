@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +16,10 @@ import com.wanghuan.login.R;
 import com.wanghuan.login.frist_Page.goodsInfoActivity;
 //import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.model.Flowers;
-import com.wanghuan.login.model.Flowers;
-import com.wanghuan.login.model.Goods;
 import com.wanghuan.login.util.HttpUtil;
 
 import java.util.List;
 import java.util.Locale;
-
-import okhttp3.Cookie;
 
 
 public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder> {
@@ -63,14 +58,9 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final Flowers.DataBean flowers = mFlowerList.get(position);
 
-//        holder.flowerImage.setImageResource((Integer.parseInt(flowers.getPic())));
-//          holder.flowerId.setText(flowers.getGoodsid());
           holder.flowerName.setText(flowers.getGoodsname());
           holder.flowerPrice.setText(String.format(Locale.getDefault(),"%1.2f元",flowers.getGoodsprice()));
-//          holder.flowerImage.setImageResource(Integer.parseInt(flowers.getGoodsimg()));
-//        holder.flowerDes.setText(flowers.getDes());
-//        holder.flowerImage.setImageURI();
-        Glide.with(context).load(HttpUtil.BASE_URL+"file/showImageByPath?path="+flowers.getGoodsimg()).error(R.drawable.ic_launcher).into(holder.flowerImage);
+        Glide.with(context).load(HttpUtil.BASE_URL+"file/showImageByPath?path="+flowers.getGoodsimg()).error(R.drawable.default_img).into(holder.flowerImage);
         holder.flower_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

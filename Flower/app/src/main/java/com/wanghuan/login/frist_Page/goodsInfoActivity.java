@@ -13,12 +13,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
 import com.wanghuan.login.model.Bus;
-import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.util.HttpUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class goodsInfoActivity extends AppCompatActivity {
     private ImageView goodsImage;
@@ -60,7 +58,7 @@ public class goodsInfoActivity extends AppCompatActivity {
         goodsDes.setText(intent.getStringExtra("goodsDes"));
         Glide.with(getApplicationContext()).load(HttpUtil.BASE_URL+"file/showImageByPath?path="
                 +intent.getStringExtra("goodsImage"))
-                .error(R.drawable.ic_launcher).into(goodsImage);
+                .error(R.drawable.default_img).into(goodsImage);
     }
 
     @Override
