@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#fff">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
     <com.wanghuan.login.util.TitleLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     </com.wanghuan.login.util.TitleLayout>
 
     <ImageView
-            android:id="@+id/iv_goodInfo_image"
+        android:id="@+id/iv_goodInfo_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/flower"
+        android:scaleType="fitXY"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:src="@mipmap/flower"
-            android:scaleType="fitXY"/>
-    <LinearLayout
+            android:text="商品编号："
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_goodInfo_goodId"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="商品编号："
-                android:textSize="16dp"
-                android:textStyle="bold"/>
-        <TextView
-                android:id="@+id/tv_goodInfo_goodId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="12dp"
-                android:gravity="right"
-                android:text="202004010001"
-                android:textSize="12dp"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="12dp"
+            android:gravity="right"
+            android:text="202004010001"
+            android:textSize="12dp"/>
     </LinearLayout>
     <TextView
             android:layout_width="match_parent"
@@ -53,23 +53,23 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="商品名称："
-                android:textSize="16dp"
-                android:textStyle="bold"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="商品名称："
+            android:textSize="16dp"
+            android:textStyle="bold"/>
         <TextView
-                android:id="@+id/tv_goodInfo_goodName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="12dp"
-                android:gravity="right"
-                android:text="花蛤哎"
-                android:textSize="12dp"/>
+            android:id="@+id/tv_goodInfo_goodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="12dp"
+            android:gravity="right"
+            android:text="花蛤哎"
+            android:textSize="12dp"/>
     </LinearLayout>
-    <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -82,23 +82,23 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="商品价格："
-                android:textSize="16dp"
-                android:textStyle="bold"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="商品价格："
+            android:textSize="16dp"
+            android:textStyle="bold"/>
         <TextView
-                android:id="@+id/tv_goodInfo_goodPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="20dp"
-                android:gravity="right"
-                android:text="123.4"
-                android:textSize="12dp"/>
+            android:id="@+id/tv_goodInfo_goodPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="20dp"
+            android:gravity="right"
+            android:text="123.4"
+            android:textSize="12dp"/>
     </LinearLayout>
-    <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -113,24 +113,24 @@
             android:layout_marginRight="10dp">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="剩余数量："
-                android:textSize="16dp"
-                android:textStyle="bold"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="剩余数量："
+            android:textSize="16dp"
+            android:textStyle="bold"/>
 
         <TextView
-                android:id="@+id/tv_goodInfo_goodCount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="right"
-                android:paddingRight="20dp"
-                android:text="20"
-                android:textSize="12dp"/>
+            android:id="@+id/tv_goodInfo_goodCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:paddingRight="20dp"
+            android:text="20"
+            android:textSize="12dp"/>
     </LinearLayout>
-    <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -172,12 +172,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="请输入购买数量，限购5，购买数量不能大于剩余数量,默认为1"
-                android:textSize="13dp"
-                android:textColor="#ff6700"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="请输入购买数量，限购5，购买数量不能大于剩余数量,默认为1"
+            android:textSize="13dp"
+            android:textColor="#ff6700"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
@@ -233,7 +233,5 @@
             android:textSize="16dp"
             android:textColor="#ffffff"/>
     </LinearLayout>
-
-
 </LinearLayout>
 

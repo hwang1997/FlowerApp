@@ -69,13 +69,15 @@ public class goodsInfoActivity extends AppCompatActivity {
         buyFast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "立即购买", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
-                intent.putExtra("goodsId",goodsId.getText());
-                intent.putExtra("goodsName",goodsName.getText());
-                intent.putExtra("goodsPrice",goodsPrice.getText());
-                intent.putExtra("goodsBuyCount",goodsBuyCount.getText());
-                startActivity(intent);
+                if (validate()){
+//                    Toast.makeText(getApplicationContext(), "立即购买", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
+                    intent.putExtra("goodsId",goodsId.getText()+"");
+                    intent.putExtra("goodsName",goodsName.getText());
+                    intent.putExtra("goodsPrice",goodsPrice.getText().subSequence(1,goodsPrice.length()).toString());
+                    intent.putExtra("goodsBuyCount",goodsBuyCount.getText()+"");
+                    startActivity(intent);
+                }
             }
         });
         joinBus.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +91,16 @@ public class goodsInfoActivity extends AppCompatActivity {
                 String goodsBuyCount1 = goodsBuyCount.getText().toString();
 
 
-                Toast.makeText(getApplicationContext(), "加入购物车", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "该功能正在开发中，敬请期待……", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private boolean validate(){
+        String goodsBuyCountStr = goodsBuyCount.getText().toString();
+        if ("".equals(goodsBuyCountStr)){
+            Toast.makeText(getApplicationContext(),"购买数量不能为空！",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }

@@ -57,6 +57,5 @@ public class FstFragment extends Fragment {
         Gson gson = new Gson();
         Flowers flowers = gson.fromJson(result,Flowers.class);
         return flowers;
-
     }
 }

@@ -47,7 +47,6 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/button_circle_shape"
             android:text="确定"
-            android:textColor="#ffffff"
-            android:onClick="my_username_okBtn"/>
+            android:textColor="#ffffff" />
 
 </LinearLayout>

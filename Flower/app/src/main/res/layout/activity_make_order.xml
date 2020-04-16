@@ -141,7 +141,7 @@
             android:textSize="16dp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/tv_goodInfo_orderName"
+            android:id="@+id/tv_makeOrder_orderName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -170,7 +170,7 @@
             android:textSize="16dp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/tv_goodInfo_orderPhone"
+            android:id="@+id/tv_makeOrder_orderPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -198,7 +198,7 @@
             android:textSize="16dp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/tv_goodInfo_orderAddress"
+            android:id="@+id/tv_makeOrder_orderAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -236,7 +236,7 @@
             android:textSize="16dp"
             android:textStyle="bold"/>
         <EditText
-            android:id="@+id/tv_goodInfo_pay"
+            android:id="@+id/tv_makeOrder_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -246,6 +246,34 @@
             android:maxLength="1"
             android:digits="01"
             android:text="0"
+            android:textSize="12dp"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:theme="@style/MyEditText"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="支付状态："
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/tv_makeOrder_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="20dp"
+            android:gravity="right"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:digits="01234"
+            android:text="2"
             android:textSize="12dp"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
@@ -260,7 +288,7 @@
 
 
         <Button
-            android:id="@+id/btn_goodInfo_buy"
+            android:id="@+id/btn_makeOrder_submit"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_circle_shape"

@@ -1,7 +1,9 @@
 package com.wanghuan.login;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +27,6 @@ public class login extends AppCompatActivity {
     private EditText usernameStr;
     private EditText passwordStr;
     private Button loginBtn;
-    private JSONArray jsonArray;
 
     public void register(View view) {
         Intent intent = new Intent(getApplicationContext(), register.class);
@@ -64,8 +65,10 @@ public class login extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     Intent intent = new Intent(getApplicationContext(), home.class);
-                                    intent.putExtra("userId", user.getData().getUserId()+"");
-                                    intent.putExtra("userName", user.getData().getUserName());
+                                    SharedPreferences.Editor editor = getSharedPreferences("user",Context.MODE_PRIVATE).edit();
+                                    editor.putInt("userId",user.getData().getUserId());
+                                    editor.putString("userName",user.getData().getUserName());
+                                    editor.commit();
                                     startActivity(intent);
                                     finish();
                                 }
@@ -74,7 +77,7 @@ public class login extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), user.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "用户名或密码错误，请重新输入！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "服务器异常，请重新登录！", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }
@@ -105,7 +108,7 @@ public class login extends AppCompatActivity {
         map.put("user_password", password);
         //定义发送请求的URL
         String url = HttpUtil.BASE_URL + "users/applogin";
-        String result = HttpUtil.login(url,map);
+        String result = HttpUtil.getInfo(url,map);
         Gson gson = new Gson();
         User user = gson.fromJson(result,User.class);
         return user;

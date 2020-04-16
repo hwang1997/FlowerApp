@@ -1,7 +1,10 @@
 package com.wanghuan.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -45,12 +48,18 @@ public class home extends FragmentActivity implements View.OnClickListener {
 
     public void MyUsername(View view) {
         Intent intent = new Intent(getApplicationContext(), my_username.class);
-        startActivity(intent);
+        TextView userId = (TextView) findViewById(R.id.tv_userId);
+        TextView userName = (TextView) findViewById(R.id.tv_userName);
+        intent.putExtra("userId", userId.getText().toString());
+        startActivityForResult(intent, 100);
     }
 
     public void MyPsw(View view) {
         Intent intent = new Intent(getApplicationContext(), my_pwd.class);
+        TextView userId = (TextView) findViewById(R.id.tv_userId);
+        intent.putExtra("userId", userId.getText().toString());
         startActivity(intent);
+
     }
 
     public void MyAddr(View view) {
@@ -64,6 +73,8 @@ public class home extends FragmentActivity implements View.OnClickListener {
     }
 
     public void logout(View view) {
+        SharedPreferences.Editor editor = getSharedPreferences("user", Context.MODE_PRIVATE).edit();
+        editor.clear();
         Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);
         finish();
@@ -81,7 +92,6 @@ public class home extends FragmentActivity implements View.OnClickListener {
         initDatas();
 
     }
-
 
 
     @Override
@@ -109,11 +119,14 @@ public class home extends FragmentActivity implements View.OnClickListener {
         super.onDestroy();
     }
 
+    MyFragment myFragment;
+
     private void initDatas() {
         mFragments = new ArrayList<>();
         mFragments.add(new FstFragment());
         mFragments.add(new BusFragment());
-        mFragments.add(new MyFragment());
+        myFragment = new MyFragment();
+        mFragments.add(myFragment);
 
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -205,4 +218,12 @@ public class home extends FragmentActivity implements View.OnClickListener {
         mImgMy.setImageResource(R.mipmap.tab_my_normal);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100 && data != null) {
+            String n = data.getStringExtra("name");
+            myFragment.setTv_userName(n);
+        }
+    }
 }
