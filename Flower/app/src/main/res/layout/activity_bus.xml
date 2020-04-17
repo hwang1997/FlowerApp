@@ -3,19 +3,30 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/bgColor">
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:text="购物车"/>
+              android:background="#fdfdfe">
 
-    <ListView
-            android:id="@+id/list_view_bus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-    </ListView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/java"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="功能模块正在开发中，敬请期待~"/>
+
+
+    <!--<ListView-->
+            <!--android:id="@+id/list_view_bus"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+    <!--</ListView>-->
 
 
 </LinearLayout>

@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
 import com.wanghuan.login.frist_Page.goodsInfoActivity;
-//import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.model.Flowers;
 import com.wanghuan.login.util.HttpUtil;
 
@@ -27,10 +26,8 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
     private List<Flowers.DataBean> mFlowerList;
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView flowerId;
         TextView flowerName;
         TextView flowerPrice;
-        TextView flowerDes;
         ImageView flowerImage;
         LinearLayout flower_item;
 

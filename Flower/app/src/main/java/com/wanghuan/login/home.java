@@ -198,15 +198,12 @@ public class home extends FragmentActivity implements View.OnClickListener {
         switch (i) {
             case 0:
                 mImgFst.setImageResource(R.mipmap.tab_fst_pressed);
-                Toast.makeText(getApplicationContext(), "111", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
                 mImgBus.setImageResource(R.mipmap.tab_bus_pressed);
-                Toast.makeText(getApplicationContext(), "222", Toast.LENGTH_SHORT).show();
                 break;
             case 2:
                 mImgMy.setImageResource(R.mipmap.tab_my_pressed);
-                Toast.makeText(getApplicationContext(), "333", Toast.LENGTH_SHORT).show();
                 break;
         }
         mViewPager.setCurrentItem(i);

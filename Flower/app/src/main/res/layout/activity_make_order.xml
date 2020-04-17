@@ -30,8 +30,7 @@
             android:layout_gravity="center"
             android:paddingRight="12dp"
             android:gravity="right"
-            android:text="202004010001"
-            android:textSize="12dp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,7 +52,7 @@
             android:paddingRight="12dp"
             android:gravity="right"
             android:text="花蛤哎"
-            android:textSize="12dp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,8 +73,7 @@
             android:layout_gravity="center"
             android:paddingRight="20dp"
             android:gravity="right"
-            android:text="123.4"
-            android:textSize="12dp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -99,8 +97,7 @@
             android:layout_gravity="center"
             android:gravity="right"
             android:paddingRight="20dp"
-            android:text="20"
-            android:textSize="12dp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,8 +120,7 @@
             android:layout_gravity="center"
             android:gravity="right"
             android:paddingRight="20dp"
-            android:text="20"
-            android:textSize="12dp"/>
+            android:textSize="14dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -150,7 +146,7 @@
             android:maxLines="1"
             android:maxLength="15"
             android:hint="请输入收货人姓名"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
     </LinearLayout>
@@ -179,7 +175,7 @@
             android:maxLines="1"
             android:maxLength="11"
             android:hint="请输入手机号"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
     </LinearLayout>
@@ -207,7 +203,7 @@
             android:maxLines="1"
             android:maxLength="30"
             android:hint="请输入收货地址"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
     </LinearLayout>
@@ -246,7 +242,7 @@
             android:maxLength="1"
             android:digits="01"
             android:text="0"
-            android:textSize="12dp"
+            android:textSize="14dp"
             android:textCursorDrawable="@drawable/cursor_color"
             android:theme="@style/MyEditText"/>
     </LinearLayout>

@@ -34,6 +34,8 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:layout_marginBottom="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="王五六七"
                 android:textSize="12dp"
                 android:textFontWeight="500"

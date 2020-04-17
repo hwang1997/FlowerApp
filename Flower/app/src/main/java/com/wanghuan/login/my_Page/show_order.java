@@ -8,7 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
+import com.wanghuan.login.util.HttpUtil;
 
 public class show_order extends AppCompatActivity {
     private TextView orderId;
@@ -27,26 +29,53 @@ public class show_order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_order);
         initView();
-        initEven();
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initEven();
     }
 
     public void initEven() {
         Intent intent = getIntent();
 
-        orderId.setText(String.valueOf(intent.getStringExtra("orderId").trim()));
-
-//        goodsImage.setImageResource();
-        price.setText("185.2");
-        amount.setText(intent.getStringExtra("amount"));
-
-        sumPrice.setText(String.valueOf((Float.parseFloat(price.getText().toString())
-                * Integer.parseInt(amount.getText().toString()))));
+        orderId.setText(String.valueOf(intent.getStringExtra("orderId")));
+        Glide.with(getApplicationContext()).load(HttpUtil.BASE_URL+"file/showImageByPath?path="
+                +intent.getStringExtra("goodsImg"))
+                .error(R.drawable.default_img).into(goodsImage);
+        price.setText(intent.getStringExtra("goodsPrice"));
+        amount.setText(intent.getStringExtra("buyCount"));
+        sumPrice.setText(intent.getStringExtra("sumPrice"));
         orderName.setText(intent.getStringExtra("orderName"));
-        orderTel.setText(intent.getStringExtra("tel"));
-        orderAddress.setText(intent.getStringExtra("address"));
-        orderPay.setText(intent.getStringExtra("pay"));
-        orderState.setText(intent.getStringExtra("state"));
+        orderTel.setText(intent.getStringExtra("orderPhone"));
+        orderAddress.setText(intent.getStringExtra("orderAddress"));
+
+        Integer orderPayStr = Integer.parseInt(intent.getStringExtra("orderPay"));
+        if (orderPayStr == 0){
+            orderPay.setText("线上支付");
+        }
+        if (orderPayStr == 1){
+            orderPay.setText("货到付款");
+        }
+        Integer orderStateStr = Integer.parseInt(intent.getStringExtra("orderState"));
+        if (orderStateStr == 0){
+            orderState.setText("已完成");
+        }
+        if (orderStateStr == 1){
+            orderState.setText("已发货");
+        }
+        if (orderStateStr == 2){
+            orderState.setText("待支付");
+        }
+        if (orderStateStr == 3){
+            orderState.setText("待发货");
+        }
+        if (orderStateStr == 4){
+            orderState.setText("待收货");
+        }
     }
 
     public void initView() {

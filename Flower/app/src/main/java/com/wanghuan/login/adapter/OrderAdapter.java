@@ -11,22 +11,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
 import com.wanghuan.login.model.Order;
+import com.wanghuan.login.util.HttpUtil;
 
 import java.util.List;
 
-public class OrderAdapter extends ArrayAdapter<Order> {
+public class OrderAdapter extends ArrayAdapter<Order.DataBean> {
     private int resourceId;
 
-    public OrderAdapter(Context context, int textViewResourceId, List<Order> objects) {
-        super(context, textViewResourceId, objects);
+    public OrderAdapter(Context context, int textViewResourceId, List<Order.DataBean> dataBeanList) {
+        super(context, textViewResourceId, dataBeanList);
         resourceId = textViewResourceId;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        final Order order = getItem(position);
+        final Order.DataBean dataBean = getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
@@ -37,28 +39,30 @@ public class OrderAdapter extends ArrayAdapter<Order> {
             viewHolder.goodsPrice = (TextView) view.findViewById(R.id.tv_order_item_price);
             viewHolder.orderName = (TextView) view.findViewById(R.id.tv_order_item_orderName);
             viewHolder.orderTel = (TextView) view.findViewById(R.id.tv_order_item_tel);
-            viewHolder.order_delete = (Button) view.findViewById(R.id.btn_order_delete);
+//            viewHolder.order_delete = (Button) view.findViewById(R.id.btn_order_delete);
             view.setTag(viewHolder);
         } else {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.order_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(getItem(position));
-                Toast.makeText(getContext(), "删除" + order.getOrder_name(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        viewHolder.goodsName.setText(order.getOrder_name());
-//        viewHolder.goodsImage.setImageResource();
-        viewHolder.goodsPrice.setText("123.02");
-        viewHolder.orderName.setText(order.getOrder_name());
-        viewHolder.orderTel.setText(order.getPhone());
-//        goodsImage.setImageResource(Integer.parseInt(order.getGood_id().getPic()));
-//        goodsPrice.setText(order.getGood_id().getPrice());
+//        viewHolder.order_delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                remove(getItem(position));
+////                Toast.makeText(getContext(), "删除" + order.getOrder_name(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
-        return view;
+
+            viewHolder.goodsName.setText(dataBean.getGoods().get(0).getGoodsname());
+            Glide.with(getContext()).load(HttpUtil.BASE_URL + "file/showImageByPath?path="
+                    + dataBean.getGoods().get(0).getGoodsimg())
+                    .error(R.drawable.default_img).into(viewHolder.goodsImage);
+            viewHolder.goodsPrice.setText(String.valueOf("￥"+Integer.parseInt(dataBean.getBuycount()) * (dataBean.getGoods().get(0).getGoodsprice())));
+            viewHolder.orderName.setText(dataBean.getOrdername());
+            viewHolder.orderTel.setText(dataBean.getOrderphone());
+            return view;
+
 
     }
 
