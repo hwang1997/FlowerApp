@@ -111,5 +111,38 @@ public class OrdersController {
             return Result.createFailUre(ResultCode.Fail.code(),"失败");
         }
     }
+    /**
+     * 通过userId查询单条数据
+     *
+     * @param userId 主键
+     * @return 单条数据
+     */
+    @RequestMapping(value = "selectBuyUserId", method = RequestMethod.POST)
+    public Result<List<Orders>> selectBuyUserId(String userId) {
+        try {
+            List<Orders> orders = this.ordersService.selectBuyUserId(Integer.parseInt(userId));
+            return Result.createSuccess(orders);
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
+        }
+    }
+
+    /**
+     * 通过userId查询单条数据
+     *
+     * @param userId 主键
+     * @return 单条数据
+     */
+    @RequestMapping(value = "ordersDoSearchByUserId", method = RequestMethod.GET)
+    public Result<List<Orders>> ordersDoSearchByUserId(String userId) {
+        try {
+            List<Orders> orders = this.ordersService.selectBuyUserId(Integer.parseInt(userId));
+            return Result.createSuccess(orders);
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+        }
+    }
 
 }

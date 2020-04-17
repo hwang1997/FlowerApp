@@ -20,6 +20,9 @@ public interface OrdersService {
      */
     Orders queryById(Integer orderid);
 
+
+    List<Orders> selectBuyUserId(Integer userId);
+
     /**
      * 查询多条数据
      *

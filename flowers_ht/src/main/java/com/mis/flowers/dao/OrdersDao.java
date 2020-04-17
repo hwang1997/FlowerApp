@@ -21,6 +21,9 @@ public interface OrdersDao {
      */
     Orders queryById(Integer orderid);
 
+
+    List<Orders> selectBuyUserId(Integer userId);
+
     /**
      * 查询指定行数据
      *

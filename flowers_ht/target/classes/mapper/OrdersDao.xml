@@ -128,4 +128,12 @@
               t3 WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
     </select>
 
+    <!--查询所有-->
+    <select id="selectBuyUserId" resultMap="OrdersMap">
+        select t1.orderId,t1.orderPhone,t1.orderAddress,t1.pay,t1.state,t2.user_id,t3.goodsId,t3.goodsImg,t3.goodsName,
+               t3.goodsPrice,t1.buyCount,t1.sumPrice,t1.orderName,t2.user_name,t2.user_password,t2.role,t3.goodsCount,t3.goodsDes
+        from flowers.orders t1,flowers.users t2,flowers.goods t3
+        WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
+            and t2.user_id = #{userId}
+    </select>
 </mapper>

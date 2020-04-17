@@ -31,6 +31,11 @@ public class OrdersServiceImpl implements OrdersService {
         return this.ordersDao.queryById(orderid);
     }
 
+
+    public List<Orders> selectBuyUserId(Integer userId) {
+        return this.ordersDao.selectBuyUserId(userId);
+    }
+
     /**
      * 通过实体作为筛选条件查询
      *
