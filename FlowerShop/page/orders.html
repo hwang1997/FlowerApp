@@ -25,7 +25,13 @@
                 <input type="text" name="ordersId" id="ordersId1" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
+        <div class="layui-inline">
+            <label class="layui-form-label">用户编号:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="userId1" id="userId1" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 700px">
             <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
                     data-type="reload" id="doSearch">查询
             </button>
@@ -299,12 +305,13 @@
     var active = {
         reload:function () {
             var ordersId = $('#ordersId1').val();
+            var usersId = $('#userId1').val();
             var index = layer.msg("查询中，请稍后……",{
                 icon:6,
                 time:false,
                 shade:0
             });
-            if (ordersId == ""){
+            if (ordersId == "" && usersId == ""){
                 setTimeout(function () {
                     table.reload('ordersTable',{
                         url:WebPath + "/orders/selectByPage",
@@ -319,7 +326,7 @@
                     });
                     layer.close(index);
                 },800);
-            } else {
+            } else if (ordersId != "" && usersId == "") {
                 setTimeout(function () {
                     table.reload('ordersTable',{
                         url:WebPath + '/orders/ordersDoSearch?ordersId='+ ordersId,
@@ -335,6 +342,36 @@
                     layer.close(index);
                 },800);
 
+            }else if(ordersId == "" && usersId != ""){
+                setTimeout(function () {
+                    table.reload('ordersTable',{
+                        url:WebPath + '/orders/ordersDoSearchByUserId?userId='+ usersId,
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": 1, //解析数据长度
+                                "data": res.data //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
+            }else {
+                setTimeout(function () {
+                    table.reload('ordersTable',{
+                        url:WebPath + '/orders/ordersDoSearchByUserId?userId='+ usersId,
+                        parseData:function (res) {
+                            return{
+                                "code":res.code,
+                                "msg":res.message,
+                                "count": 1, //解析数据长度
+                                "data": res.data //解析数据列表
+                            }
+                        }
+                    });
+                    layer.close(index);
+                },800);
             }
         }
     };
