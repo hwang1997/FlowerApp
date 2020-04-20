@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/util/ordersIdUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/my_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/my_order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/HttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_show_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_show_order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dao/OrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dao/OrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/OrdersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/OrdersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/makeOrdersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/makeOrdersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrdersDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/GoodsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/OrdersController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/dao/OrdersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/dao/OrdersDao.class" afterDir="false" />
@@ -425,7 +396,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587380821850" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587380827508" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/下载文件/mysql_word" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -508,7 +479,7 @@
       <workItem from="1587083936708" duration="10837000" />
       <workItem from="1587223773759" duration="569000" />
       <workItem from="1587224414018" duration="218000" />
-      <workItem from="1587342398730" duration="25198000" />
+      <workItem from="1587342398730" duration="25256000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -622,11 +593,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587120730129</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="新增java商品类接口文件">
+      <created>1587380857197</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587380857197</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171129000" />
+    <option name="totallyTimeSpent" value="171187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -638,7 +616,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="135" y="862" width="1676" height="1092" extended-state="0" />
+    <frame x="143" y="132" width="1676" height="1092" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.20544554" />
       <window_info id="Structure" order="1" sideWeight="0.50087875" side_tool="true" weight="0.24984463" />
