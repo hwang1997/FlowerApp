@@ -9,6 +9,7 @@ import com.mis.flowers.util.Page;
 import com.mis.flowers.util.Result;
 import com.mis.flowers.util.ResultCode;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class GoodsController {
      * 服务对象
      */
     @Resource
-    private GoodsService goodsService;
+    public GoodsService goodsService;
 
     //app显示所有数据
     @RequestMapping(value = "queryAllForApp",method = RequestMethod.GET)
@@ -111,6 +112,16 @@ public class GoodsController {
                     AppFileUtils.removeFileByPath(oldPath);
                 }
             }
+            this.goodsService.update(dto);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+        }
+    }
+    @RequestMapping(value = "updateGoodsCount",method = RequestMethod.POST)
+    public Result<Boolean> updateGoodsCount(GoodsDto dto) {
+        try {
             this.goodsService.update(dto);
             return Result.createSuccess();
         }catch (Exception e){

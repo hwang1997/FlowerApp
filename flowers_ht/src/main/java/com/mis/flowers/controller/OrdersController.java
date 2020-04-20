@@ -1,5 +1,6 @@
 package com.mis.flowers.controller;
 
+import com.mis.flowers.dto.GoodsDto;
 import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.dto.makeOrdersDto;
 import com.mis.flowers.entity.Goods;
@@ -31,19 +32,8 @@ public class OrdersController {
      */
     @Resource
     private OrdersService ordersService;
-    private UsersService usersService;
-    private GoodsService goodsService;
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping("selectOne")
-    public Orders selectOne(Integer id) {
-        return this.ordersService.queryById(id);
-    }
+    public UsersService usersService;
+    public GoodsService goodsService;
 
     //分页查询
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
@@ -70,7 +60,7 @@ public class OrdersController {
     public Result<List<Orders>> userDoSearch(String ordersId) {
         try {
             List<Orders> orders = new ArrayList<>();
-            orders.add(this.ordersService.queryById(Integer.parseInt(ordersId)));
+            orders.add(this.ordersService.queryById(ordersId));
             return Result.createSuccess(orders);
         }catch (Exception e){
             e.printStackTrace();
@@ -91,20 +81,9 @@ public class OrdersController {
     @RequestMapping(value = "makeOrders",method = RequestMethod.POST)
     public Result<Integer> makeOrders(makeOrdersDto dto) {
         try {
-            Orders orders = new Orders();
-            orders.setOrderid(0);
-            orders.setGoodsid(dto.getGoodsid());
-            orders.setUserid(dto.getUserid());
-            orders.setBuycount(dto.getBuycount());
-            orders.setSumprice(dto.getSumprice());
-            orders.setOrdername(dto.getOrdername());
-            orders.setOrderphone(dto.getOrderphone());
-            orders.setOrderaddress(dto.getOrderaddress());
-            orders.setPay(dto.getPay());
-            orders.setState(dto.getState());
-            orders.setUsers((List<Users>) this.usersService.queryById(dto.getUserid()));
-            orders.setGoods((List<Goods>) this.goodsService.queryById(dto.getGoodsid()));
-            this.ordersService.insert(orders);
+            makeOrdersDto makeOrdersDto = new makeOrdersDto();
+            makeOrdersDto.setOrderid(dto.getOrderid());
+            this.ordersService.insert(dto);
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();
@@ -142,6 +121,35 @@ public class OrdersController {
         }catch (Exception e){
             e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+        }
+    }
+    /**
+     * 通过orderId删除单条数据
+     *
+     * @param orderId 主键
+     * @return 单条数据
+     */
+    @RequestMapping(value = "deleteByOrderId", method = RequestMethod.POST)
+    public Result<Boolean> deleteByOrderId(String orderId){
+        try {
+            this.ordersService.deleteById(orderId);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
+        }
+    }
+    @RequestMapping(value = "updateOrdersState",method = RequestMethod.POST)
+    public Result<Boolean> updateOrdersState(String orderId, String state) {
+        try {
+            OrdersDto dto = new OrdersDto();
+            dto.setOrderid(orderId);
+            dto.setState(Integer.parseInt(state));
+            this.ordersService.update(dto);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(),"失败");
         }
     }
 

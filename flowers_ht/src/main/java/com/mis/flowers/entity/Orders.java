@@ -14,7 +14,7 @@ public class Orders implements Serializable {
     /**
     * 订单编号
     */
-    private Integer orderid;
+    private String orderid;
     /**
     * 用户编号
     */
@@ -62,11 +62,11 @@ public class Orders implements Serializable {
     private List<Users> users;
 
 
-    public Integer getOrderid() {
+    public String getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
+    public void setOrderid(String orderid) {
         this.orderid = orderid;
     }
 

@@ -1,6 +1,7 @@
 package com.mis.flowers.service;
 
 import com.mis.flowers.dto.OrdersDto;
+import com.mis.flowers.dto.makeOrdersDto;
 import com.mis.flowers.entity.Orders;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface OrdersService {
      * @param orderid 主键
      * @return 实例对象
      */
-    Orders queryById(Integer orderid);
+    Orders queryById(String orderid);
 
 
     List<Orders> selectBuyUserId(Integer userId);
@@ -42,10 +43,10 @@ public interface OrdersService {
     /**
      * 新增数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 实例对象
      */
-    Orders insert(Orders orders);
+    Boolean insert(makeOrdersDto dto);
 
     /**
      * 修改数据
@@ -61,6 +62,6 @@ public interface OrdersService {
      * @param orderid 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer orderid);
+    boolean deleteById(String orderid);
 
 }

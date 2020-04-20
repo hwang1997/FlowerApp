@@ -591,9 +591,8 @@
     <column id="144" parent="135" name="orderId">
       <Position>1</Position>
       <Comment>订单编号</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="145" parent="135" name="userId">
@@ -610,19 +609,19 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="147" parent="135" name="buyCount">
+    <column id="147" parent="135" name="sumPrice">
       <Position>4</Position>
+      <Comment>商品总价</Comment>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="148" parent="135" name="buyCount">
+      <Position>5</Position>
       <Comment>购买数量（大于等于1）</Comment>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="148" parent="135" name="sumPrice">
-      <Position>5</Position>
-      <Comment>商品总价</Comment>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="149" parent="135" name="orderName">

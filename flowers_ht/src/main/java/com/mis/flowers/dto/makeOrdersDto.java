@@ -3,7 +3,7 @@ public class makeOrdersDto {
     /**
      * 订单编号
      */
-    private Integer orderid;
+    private String orderid;
     /**
      * 用户编号
      */
@@ -41,11 +41,11 @@ public class makeOrdersDto {
      */
     private Integer state;
 
-    public Integer getOrderid() {
+    public String getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
+    public void setOrderid(String orderid) {
         this.orderid = orderid;
     }
 

@@ -3,7 +3,16 @@ public class OrdersDto {
     /**
      * 订单编号
      */
-    private Integer orderid;
+    private String orderid;
+    /**
+     * 商品编号
+     */
+    private String goodsid;
+    /**
+     * 商品编号
+     */
+    private Integer buycount;
+
     /**
      * 收货人姓名
      */
@@ -25,12 +34,28 @@ public class OrdersDto {
      */
     private Integer state;
 
-    public Integer getOrderid() {
+    public String getOrderid() {
         return orderid;
     }
 
-    public void setOrderid(Integer orderid) {
+    public void setOrderid(String orderid) {
         this.orderid = orderid;
+    }
+
+    public String getGoodsid() {
+        return goodsid;
+    }
+
+    public void setGoodsid(String goodsid) {
+        this.goodsid = goodsid;
+    }
+
+    public Integer getBuycount() {
+        return buycount;
+    }
+
+    public void setBuycount(Integer buycount) {
+        this.buycount = buycount;
     }
 
     public String getOrdername() {

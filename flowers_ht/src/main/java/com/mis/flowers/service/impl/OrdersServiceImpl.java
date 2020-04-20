@@ -1,6 +1,7 @@
 package com.mis.flowers.service.impl;
 
 import com.mis.flowers.dto.OrdersDto;
+import com.mis.flowers.dto.makeOrdersDto;
 import com.mis.flowers.entity.Orders;
 import com.mis.flowers.dao.OrdersDao;
 import com.mis.flowers.service.OrdersService;
@@ -27,7 +28,7 @@ public class OrdersServiceImpl implements OrdersService {
      * @return 实例对象
      */
     @Override
-    public Orders queryById(Integer orderid) {
+    public Orders queryById(String orderid) {
         return this.ordersDao.queryById(orderid);
     }
 
@@ -60,13 +61,12 @@ public class OrdersServiceImpl implements OrdersService {
     /**
      * 新增数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 实例对象
      */
     @Override
-    public Orders insert(Orders orders) {
-        this.ordersDao.insert(orders);
-        return orders;
+    public Boolean insert(makeOrdersDto dto) {
+        return this.ordersDao.insert(dto) > 0;
     }
 
     /**
@@ -88,7 +88,7 @@ public class OrdersServiceImpl implements OrdersService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer orderid) {
+    public boolean deleteById(String orderid) {
         return this.ordersDao.deleteById(orderid) > 0;
     }
 }

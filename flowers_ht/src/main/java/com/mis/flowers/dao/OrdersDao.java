@@ -1,6 +1,7 @@
 package com.mis.flowers.dao;
 
 import com.mis.flowers.dto.OrdersDto;
+import com.mis.flowers.dto.makeOrdersDto;
 import com.mis.flowers.entity.Orders;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -19,7 +20,7 @@ public interface OrdersDao {
      * @param orderid 主键
      * @return 实例对象
      */
-    Orders queryById(Integer orderid);
+    Orders queryById(String orderid);
 
 
     List<Orders> selectBuyUserId(Integer userId);
@@ -52,10 +53,10 @@ public interface OrdersDao {
     /**
      * 新增数据
      *
-     * @param orders 实例对象
+     * @param dto 实例对象
      * @return 影响行数
      */
-    int insert(Orders orders);
+    int insert(makeOrdersDto dto);
 
     /**
      * 修改数据
@@ -71,6 +72,6 @@ public interface OrdersDao {
      * @param orderid 主键
      * @return 影响行数
      */
-    int deleteById(Integer orderid);
+    int deleteById(String orderid);
 
 }

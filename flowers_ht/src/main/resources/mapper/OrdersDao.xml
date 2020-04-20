@@ -6,7 +6,7 @@
         <result property="userid" column="user_id" jdbcType="INTEGER"/>
         <result property="goodsid" column="goodsId" jdbcType="INTEGER"/>
         <result property="buycount" column="buyCount" jdbcType="VARCHAR"/>
-        <result property="sumprice" column="sumPrice" jdbcType="OTHER"/>
+        <result column="sumPrice" jdbcType="OTHER"/>
         <result property="ordername" column="orderName" jdbcType="VARCHAR"/>
         <result property="orderphone" column="orderPhone" jdbcType="VARCHAR"/>
         <result property="orderaddress" column="orderAddress" jdbcType="VARCHAR"/>
@@ -87,9 +87,9 @@
     </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="orderid" useGeneratedKeys="true">
-        insert into flowers.orders(userId, goodsId, buyCount, sumPrice, orderName, orderPhone, orderAddress, pay, state)
-        values (#{userid}, #{goodsid}, #{buycount}, #{sumprice}, #{ordername}, #{orderphone}, #{orderaddress}, #{pay}, #{state})
+    <insert id="insert">
+        insert into flowers.orders(orderId,userId, goodsId, buyCount, sumPrice, orderName, orderPhone, orderAddress, pay, state)
+        values (#{orderid},#{userid}, #{goodsid}, #{buycount}, #{sumprice}, #{ordername}, #{orderphone}, #{orderaddress}, #{pay}, #{state})
     </insert>
 
     <!--通过主键修改数据-->
@@ -128,7 +128,7 @@
               t3 WHERE t1.userId = t2.user_id AND t1.goodsId = t3.goodsId
     </select>
 
-    <!--查询所有-->
+    <!--通过userId查询-->
     <select id="selectBuyUserId" resultMap="OrdersMap">
         select t1.orderId,t1.orderPhone,t1.orderAddress,t1.pay,t1.state,t2.user_id,t3.goodsId,t3.goodsImg,t3.goodsName,
                t3.goodsPrice,t1.buyCount,t1.sumPrice,t1.orderName,t2.user_name,t2.user_password,t2.role,t3.goodsCount,t3.goodsDes
