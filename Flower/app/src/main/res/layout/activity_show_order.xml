@@ -38,7 +38,6 @@
                     android:layout_gravity="center"
                     android:paddingRight="20dp"
                     android:gravity="right"
-                    android:text="202003300001"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -72,7 +71,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="108.65"
                     android:textSize="18dp"
                     android:textStyle="bold"/>
             <TextView
@@ -89,7 +87,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="5dp"
-                    android:text="1"
                     android:textSize="18dp"
                     android:textStyle="bold"/>
             <TextView
@@ -106,7 +103,6 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="30dp"
                     android:layout_gravity="right"
-                    android:text="108.65"
                     android:textSize="18dp"
                     android:textStyle="bold"/>
 
@@ -127,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:gravity="left"
-                    android:text="收货人:"
+                    android:text="收 货 人:"
                     android:textSize="18dp"
                     android:textColor="#000"/>
 
@@ -139,7 +135,6 @@
                     android:gravity="right"
                     android:paddingRight="20dp"
                     android:paddingLeft="10dp"
-                    android:text="张三"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -156,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="电话:"
+                    android:text="联系电话:"
                     android:textSize="18dp"
                     android:textColor="#000"/>
 
@@ -168,7 +163,6 @@
                     android:gravity="right"
                     android:paddingRight="20dp"
                     android:paddingLeft="10dp"
-                    android:text="18372608363"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -186,7 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="地址:"
+                    android:text="收货地址:"
                     android:textSize="18dp"
                     android:textColor="#000"/>
 
@@ -198,7 +192,6 @@
                     android:gravity="right"
                     android:paddingRight="20dp"
                     android:paddingLeft="10dp"
-                    android:text="华凯大厦1103"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -227,7 +220,6 @@
                     android:layout_margin="5dp"
                     android:gravity="right"
                     android:paddingRight="20dp"
-                    android:text="线上支付"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -256,7 +248,6 @@
                     android:layout_margin="5dp"
                     android:gravity="right"
                     android:paddingRight="20dp"
-                    android:text="处理中"
                     android:textSize="18dp"/>
         </LinearLayout>
         <TextView
@@ -266,5 +257,63 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/layout_delOrder">
+
+        <Button
+            android:id="@+id/btn_showOrder_del"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/button_circle_shape"
+            android:text="删除订单"
+            android:textSize="16dp"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/layout_okOrder">
+
+        <Button
+            android:id="@+id/btn_showOrder_ok"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/button_circle_shape"
+            android:text="确认收货"
+            android:textSize="16dp"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/layout_goPay">
+
+        <Button
+            android:id="@+id/btn_showOrder_goPay"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/button_circle_shape"
+            android:text="去支付"
+            android:textSize="16dp"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -59,6 +59,10 @@ public class my_order extends AppCompatActivity {
                         Order.DataBean order = orderList.get(position);
                         Intent intent = new Intent(getApplicationContext(),show_order.class);
                         intent.putExtra("orderId",String.valueOf(order.getOrderid()));
+                        intent.putExtra("goodsId",String.valueOf(order.getGoods().get(0).getGoodsid()));
+                        intent.putExtra("goodsCount",String.valueOf(order.getGoods().get(0).getGoodscount()));
+
+                        intent.putExtra("goodsName",order.getGoods().get(0).getGoodsname());
                         intent.putExtra("goodsImg",order.getGoods().get(0).getGoodsimg());
                         intent.putExtra("goodsPrice",String.valueOf(order.getGoods().get(0).getGoodsprice()));
                         intent.putExtra("buyCount",order.getBuycount());
@@ -69,6 +73,7 @@ public class my_order extends AppCompatActivity {
                         intent.putExtra("orderPay",String.valueOf(order.getPay()));
                         intent.putExtra("orderState",String.valueOf(order.getState()));
                         startActivity(intent);
+                        finish();
                     }
                 });
             }

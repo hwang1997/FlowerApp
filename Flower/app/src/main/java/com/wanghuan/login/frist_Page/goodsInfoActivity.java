@@ -72,24 +72,28 @@ public class goodsInfoActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
                     intent.putExtra("goodsId",goodsId.getText()+"");
                     intent.putExtra("goodsName",goodsName.getText());
+                    intent.putExtra("goodsCount",goodsCount.getText());
                     intent.putExtra("goodsPrice",goodsPrice.getText().subSequence(1,goodsPrice.length()).toString());
                     intent.putExtra("goodsBuyCount",goodsBuyCount.getText()+"");
                     startActivity(intent);
+                    finish();
                 }
             }
         });
         joinBus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<Bus> busList = new ArrayList<>();
+                if (validate()){
+                    List<Bus> busList = new ArrayList<>();
 
-                goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
+                    goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
 
-                int goodsId1 = Integer.parseInt(goodsId.getText().toString());
-                String goodsBuyCount1 = goodsBuyCount.getText().toString();
+                    int goodsId1 = Integer.parseInt(goodsId.getText().toString());
+                    String goodsBuyCount1 = goodsBuyCount.getText().toString();
 
 
-                Toast.makeText(getApplicationContext(), "该功能正在开发中，敬请期待……", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "该功能正在开发中，敬请期待……", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -97,6 +101,10 @@ public class goodsInfoActivity extends AppCompatActivity {
         String goodsBuyCountStr = goodsBuyCount.getText().toString();
         if ("".equals(goodsBuyCountStr)){
             Toast.makeText(getApplicationContext(),"购买数量不能为空！",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (Integer.parseInt(goodsBuyCountStr) > Integer.parseInt(goodsCount.getText().toString())){
+            Toast.makeText(getApplicationContext(),"商品库存不足！",Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

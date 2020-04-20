@@ -55,7 +55,7 @@ public class Order {
          * users : [{"userId":201603,"userName":"张飞","userPassword":"202cb962ac59075b964b07152d234b70","role":1}]
          */
 
-        private int orderid;
+        private String orderid;
         private int userid;
         private int goodsid;
         private String buycount;
@@ -68,11 +68,11 @@ public class Order {
         private List<GoodsBean> goods;
         private List<UsersBean> users;
 
-        public int getOrderid() {
+        public String getOrderid() {
             return orderid;
         }
 
-        public void setOrderid(int orderid) {
+        public void setOrderid(String orderid) {
             this.orderid = orderid;
         }
 

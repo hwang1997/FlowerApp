@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.wanghuan.login.R;
 import com.wanghuan.login.model.Order;
 import com.wanghuan.login.util.HttpUtil;
+import com.wanghuan.login.util.ordersIdUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +58,7 @@ public class makeOrderActivity extends AppCompatActivity {
         String userIdStr = String.valueOf(getUser.getInt("userId",'0')) ;
         String goodsIdStr = intent.getStringExtra("goodsId");
         String goodsNameStr = intent.getStringExtra("goodsName");
+        String goodsCount = intent.getStringExtra("goodsCount");
         String goodsPriceStr = intent.getStringExtra("goodsPrice");
         String goodsBuyCountStr = intent.getStringExtra("goodsBuyCount");
         String sumPriceStr = String.valueOf(Float.parseFloat(goodsPriceStr) * Integer.parseInt(goodsBuyCountStr));
@@ -77,12 +79,32 @@ public class makeOrderActivity extends AppCompatActivity {
                     String orderAddressStr = orderAddress.getText().toString();
                     String orderPayStr = orderPay.getText().toString();
                     String orderStateStr = orderState.getText().toString();
+                    String orderIdStr = ordersIdUtil.getOrderId();
                     try {
-                        Toast.makeText(getApplicationContext(),"111111111！",Toast.LENGTH_SHORT).show();
-                        Order order = query(userIdStr,goodsIdStr,goodsBuyCountStr,sumPriceStr,orderNameStr
+                        Order order = query(orderIdStr,userIdStr,goodsIdStr,goodsBuyCountStr,sumPriceStr,orderNameStr
                                 ,orderPhoneStr,orderAddressStr,orderPayStr,orderStateStr);
+                        if (order.getCode() == 0){
+                            Intent intent1 = new Intent(getApplicationContext(), goodsOrdersActivity.class);
+                            intent1.putExtra("orderId",orderIdStr);
+                            intent1.putExtra("goodsId",goodsId.getText());
+                            intent1.putExtra("goodsName",goodsNameStr);
+                            intent1.putExtra("goodsCount",goodsCount);
+                            intent1.putExtra("goodsPrice",goodsPriceStr);
+                            intent1.putExtra("goodsBuyCount",goodsBuyCountStr);
+                            intent1.putExtra("sumPrice",sumPriceStr);
+                            intent1.putExtra("orderName",orderNameStr);
+                            intent1.putExtra("orderPhone",orderPhoneStr);
+                            intent1.putExtra("orderAddress",orderAddressStr);
+                            intent1.putExtra("orderPay",orderPayStr);
+                            intent1.putExtra("orderState",orderStateStr);
+                            startActivity(intent1);
+                            finish();
+                        }else {
+                            Toast.makeText(getApplicationContext(),"创建订单失败，请重新操作……",Toast.LENGTH_SHORT).show();
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
+                        Toast.makeText(getApplicationContext(),"服务器异常，请重新操作……！",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -103,6 +125,9 @@ public class makeOrderActivity extends AppCompatActivity {
         if ("".equals(orderPhoneStr)){
             Toast.makeText(getApplicationContext(),"手机号不能为空！",Toast.LENGTH_SHORT).show();
             return false;
+        }else if (orderPhoneStr.length() != 11){
+            Toast.makeText(getApplicationContext(),"手机号码为11位！",Toast.LENGTH_SHORT).show();
+            return false;
         }
         if ("".equals(orderAddressStr)){
             Toast.makeText(getApplicationContext(),"地址不能为空！",Toast.LENGTH_SHORT).show();
@@ -116,17 +141,18 @@ public class makeOrderActivity extends AppCompatActivity {
         return true;
     }
     //定义发送请求的方法
-    private Order query(String userId, String goodsId, String buyCount, String sumPrice,
+    private Order query(String orderId,String userId, String goodsId, String buyCount, String sumPrice,
                         String orderName, String orderPhone, String orderAddress, String pay, String state) throws Exception{
         //使用map封装请求参数
         Map<String, String> map = new HashMap<>();
-        map.put("userId", userId);
-        map.put("goodsId", goodsId);
-        map.put("buyCount",buyCount);
-        map.put("sumPrice",sumPrice);
-        map.put("orderName",orderName);
-        map.put("orderPhone",orderPhone);
-        map.put("orderAddress",orderAddress);
+        map.put("orderid",orderId);
+        map.put("userid", userId);
+        map.put("goodsid", goodsId);
+        map.put("buycount",buyCount);
+        map.put("sumprice",sumPrice);
+        map.put("ordername",orderName);
+        map.put("orderphone",orderPhone);
+        map.put("orderaddress",orderAddress);
         map.put("pay",pay);
         map.put("state",state);
         //定义发送请求的URL
