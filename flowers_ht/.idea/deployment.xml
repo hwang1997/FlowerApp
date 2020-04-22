@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="tengxunyun">
+    <serverData>
+      <paths name="tengxunyun">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/usr/local/tomcat/tomcat8/webapps" local="$PROJECT_DIR$" web="/users/login" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

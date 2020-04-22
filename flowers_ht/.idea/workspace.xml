@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/bg_big.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/code_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/login_bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/logo_hema_admin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/layui/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -142,22 +152,22 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/GoodsDto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="das://62e82ad7-626c-4771-b54b-a0e923f5b70e/schema/flowers/table/orders">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -249,9 +259,12 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="297" />
-    <option name="y" value="13" />
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="37" />
+    <option name="y" value="14" />
     <option name="width" value="1676" />
     <option name="height" value="1092" />
   </component>
@@ -263,6 +276,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,7 +327,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +337,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587455590683" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587538190326" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/下载文件/mysql_word" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -334,7 +347,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -408,7 +421,8 @@
       <workItem from="1587223773759" duration="569000" />
       <workItem from="1587224414018" duration="218000" />
       <workItem from="1587342398730" duration="25256000" />
-      <workItem from="1587430614139" duration="3909000" />
+      <workItem from="1587430614139" duration="3911000" />
+      <workItem from="1587526883067" duration="5350000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -533,7 +547,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175096000" />
+    <option name="totallyTimeSpent" value="180448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -545,10 +559,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="297" y="13" width="1676" height="1092" extended-state="0" />
+    <frame x="154" y="0" width="1676" height="1092" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.20792079" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21039604" />
       <window_info id="Structure" order="1" sideWeight="0.50087875" side_tool="true" weight="0.24984463" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -556,10 +570,11 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.32985386" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49968925" weight="0.32815734" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.29749477" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.29749477" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -572,14 +587,14 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32672232" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" weight="0.36221296" />
+      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" visible="true" weight="0.36221296" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984463" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.11819307" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.11819307" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.054455444" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.23886138" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -1075,25 +1090,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://62e82ad7-626c-4771-b54b-a0e923f5b70e/schema/flowers/table/orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mis/flowers/dto/GoodsDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="179">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://62e82ad7-626c-4771-b54b-a0e923f5b70e/schema/flowers/table/orders">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

@@ -46,7 +46,7 @@
     </div>
     <div class="layui-form-item input-item " id="imgCode" style="width:60%;">
         <label for="code">验证码</label>
-        <input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input" lay-verify="required">
+        <input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input lay" lay-verify="required">
         <span id="codeSpan" class="code" style="position: absolute;top: -11px;right: -123px;">
 				<span id="code_span" alt="" onclick="createCode()"></span>
 			</span>
@@ -85,7 +85,7 @@
     function dologin() {
         var id = document.getElementById('userName').value;
         var password = document.getElementById('password').value;
-        var code = document.getElementById("code").value;
+        var code = document.getElementById("code").value.toUpperCase();
         var code1 = document.getElementById("code_span").innerHTML;
         if (id == "") {
             layer.msg("用户名不能为空！");
@@ -173,8 +173,8 @@
             var index = Math.floor(Math.random() * 26);
             code += random[index];
         }
-        // span.innerHTML = code;
-        span.innerHTML = "1111"
+        span.innerHTML = code;
+        // span.innerHTML = "1111"
     }
 
     $(function () {

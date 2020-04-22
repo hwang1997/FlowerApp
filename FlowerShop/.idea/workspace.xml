@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="217277b3-005b-43a5-a60c-7d5b5ce95def" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowers_ht/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flowers_ht/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/admin_login_lift1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/admin_login_lift2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/admin_login_lift3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg_big.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/code_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/login_bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/logo_hema_admin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/addUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/addUsers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="users.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6840">
-              <caret line="342" column="67" selection-start-line="342" selection-start-column="67" selection-end-line="342" selection-end-column="67" />
+            <state relative-caret-position="-60">
+              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -39,8 +54,8 @@
       <file leaf-file-name="goods.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6620">
-              <caret line="331" column="37" selection-start-line="331" selection-start-column="37" selection-end-line="331" selection-end-column="37" />
+            <state relative-caret-position="80">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -55,11 +70,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="orders.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/orders.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="149" column="59" lean-forward="true" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
+            <state relative-caret-position="20">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -74,16 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layui.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layui/css/layui.css">
+      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="8" column="46382" selection-start-line="8" selection-start-column="46382" selection-end-line="8" selection-end-column="46382" />
-              <folding>
-                <element signature="e#64256#64395#2" expanded="true" />
-                <element signature="e#65849#65988#2" expanded="true" />
-                <element signature="e#66536#66675#2" expanded="true" />
-              </folding>
+            <state relative-caret-position="80">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -91,29 +127,8 @@
       <file leaf-file-name="updateUsers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/404.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="7" lean-forward="true" selection-end-line="15" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-360">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -121,8 +136,8 @@
       <file leaf-file-name="bus.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/bus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+            <state relative-caret-position="80">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -133,20 +148,8 @@
       <file leaf-file-name="addUsers.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/addUsers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="13" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/page/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="128" column="71" lean-forward="true" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="80">
+              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -230,21 +233,22 @@
         <option value="$PROJECT_DIR$/html/page/login.html" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/css/public.css" />
-        <option value="$PROJECT_DIR$/layui/layui.all.js" />
-        <option value="$PROJECT_DIR$/page/login.html" />
         <option value="$PROJECT_DIR$/page/1.json.html" />
         <option value="$PROJECT_DIR$/page/1.json" />
         <option value="$PROJECT_DIR$/page/test.html" />
-        <option value="$PROJECT_DIR$/page/addUsers.html" />
         <option value="$PROJECT_DIR$/page/updateUsers.html" />
         <option value="$USER_HOME$/Desktop/【springboot+layui+mybatisplus+shiro】仓库管理系统【雷哥】/07项目/01/0520ERP/src/main/resources/static/resources/page/news/newsAdd.html" />
         <option value="$PROJECT_DIR$/layui/css/layui.css" />
         <option value="$PROJECT_DIR$/js/cache.js" />
-        <option value="$PROJECT_DIR$/page/users.html" />
-        <option value="$PROJECT_DIR$/page/goods.html" />
-        <option value="$PROJECT_DIR$/page/orders.html" />
         <option value="$PROJECT_DIR$/page/home.html" />
         <option value="$PROJECT_DIR$/page/bus.html" />
+        <option value="$PROJECT_DIR$/page/login.html" />
+        <option value="$PROJECT_DIR$/layui/layui.all.js" />
+        <option value="$PROJECT_DIR$/page/goods.html" />
+        <option value="$PROJECT_DIR$/page/404.html" />
+        <option value="$PROJECT_DIR$/page/addUsers.html" />
+        <option value="$PROJECT_DIR$/page/orders.html" />
+        <option value="$PROJECT_DIR$/page/users.html" />
       </list>
     </option>
   </component>
@@ -258,10 +262,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="39" />
-    <option name="y" value="90" />
+    <option name="x" value="-39" />
+    <option name="y" value="49" />
     <option name="width" value="1856" />
-    <option name="height" value="946" />
+    <option name="height" value="887" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -285,12 +289,6 @@
               <item name="FlowerShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="FlowerShop" type="462c0819:PsiDirectoryNode" />
               <item name="layui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FlowerShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FlowerShop" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FlowerShop" type="b2602c69:ProjectViewProjectNode" />
@@ -381,7 +379,8 @@
       <workItem from="1587086442014" duration="34000" />
       <workItem from="1587094040973" duration="1367000" />
       <workItem from="1587364869723" duration="3793000" />
-      <workItem from="1587430754642" duration="7639000" />
+      <workItem from="1587430754642" duration="7700000" />
+      <workItem from="1587526498693" duration="6044000" />
     </task>
     <task id="LOCAL-00001" summary="花店后台前端页面">
       <created>1586490790728</created>
@@ -467,21 +466,28 @@
       <option name="project" value="LOCAL" />
       <updated>1587380906620</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="花店后台前端页面">
+      <created>1587465156615</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587465156616</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290960000" />
+    <option name="totallyTimeSpent" value="297065000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="90" width="1856" height="946" extended-state="0" />
+    <frame x="-39" y="49" width="1856" height="887" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13206522" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13206522" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32902467" />
-      <window_info active="true" anchor="bottom" id="File Transfer" visible="true" weight="0.06987952" />
+      <window_info anchor="bottom" id="File Transfer" order="11" visible="true" weight="0.23605707" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3604651" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -541,37 +547,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/nowDate.js" />
-    <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/page/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/home1.html" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="493" column="33" lean-forward="true" selection-start-line="493" selection-start-column="33" selection-end-line="493" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-3.4.1.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/page/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="44" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/js/bodyTab.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5820" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/page/user/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -668,30 +643,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login.html" />
-    <entry file="file://$PROJECT_DIR$/images/bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/page/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/bg_big.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/login_bg1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/login_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/login_face.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/home_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Desktop/【layui2.5.4】教学视频源码文件【雷哥】/layuicmsMB/WebRoot/resources/js/cache.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,20 +672,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/1.json" />
     <entry file="file://$PROJECT_DIR$/page/test.html" />
-    <entry file="file://$PROJECT_DIR$/page/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/addUsers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/【springboot+layui+mybatisplus+shiro】仓库管理系统【雷哥】/07项目/01/0520ERP/src/main/resources/static/resources/page/news/newsAdd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -737,13 +680,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/goodsAdd.js" />
-    <entry file="file://$PROJECT_DIR$/layui/layui.all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/addGoods.html" />
     <entry file="file://$PROJECT_DIR$/layui/css/layui.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -757,35 +693,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/admin_login_lift1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/admin_login_lift2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/admin_login_lift3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/bg_big.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/code_bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/login_bg1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/logo_hema_admin.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layui/layui.all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/login_face.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/login_bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/icon_logo.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/home_bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/bus.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/cache.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
-          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6840">
-          <caret line="342" column="67" selection-start-line="342" selection-start-column="67" selection-end-line="342" selection-end-column="67" />
+          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
           <folding>
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/addUsers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/bus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6620">
-          <caret line="331" column="37" selection-start-line="331" selection-start-column="37" selection-end-line="331" selection-end-column="37" />
+        <state relative-caret-position="80">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -801,28 +795,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="7" lean-forward="true" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="80">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/bus.html">
+    <entry file="file://$PROJECT_DIR$/page/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="57" lean-forward="true" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+        <state relative-caret-position="80">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/orders.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="149" column="59" lean-forward="true" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
+        <state relative-caret-position="20">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#fieldset#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -836,12 +832,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/login.html">
+    <entry file="file://$PROJECT_DIR$/page/updateUsers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="128" column="71" lean-forward="true" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
+        <state relative-caret-position="-360">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
