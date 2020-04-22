@@ -39,7 +39,7 @@ public class add_addr extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "地址、姓名、电话不能为空", Toast.LENGTH_SHORT).show();
         } else {
 //            Addr addr = new Addr(address, name, tel);
-//            addrList.add(addr);
+//            addrList.sub(addr);
 
 
             Intent intent = new Intent(getApplicationContext(), my_addr.class);

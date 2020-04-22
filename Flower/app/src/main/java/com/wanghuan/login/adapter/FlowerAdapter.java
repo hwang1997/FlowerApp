@@ -57,7 +57,7 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
 
           holder.flowerName.setText(flowers.getGoodsname());
           holder.flowerPrice.setText(String.format(Locale.getDefault(),"%1.2f元",flowers.getGoodsprice()));
-        Glide.with(context).load(HttpUtil.BASE_URL+"file/showImageByPath?path="+flowers.getGoodsimg()).error(R.drawable.default_img).into(holder.flowerImage);
+        Glide.with(context).load(HttpUtil.BASE_URL+"file/showImageByPath?path="+flowers.getGoodsimg()).error(R.drawable.none).into(holder.flowerImage);
         holder.flower_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -5,24 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="217277b3-005b-43a5-a60c-7d5b5ce95def" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/../flowers_ht/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flowers_ht/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/default_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/none.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_my.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_my.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/admin_login_lift1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/admin_login_lift2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/admin_login_lift3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bg_big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/code_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/login_bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo_hema_admin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/addUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/addUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/goods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -41,8 +41,8 @@
       <file leaf-file-name="users.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="1040">
+              <caret line="130" column="26" lean-forward="true" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -262,8 +262,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-39" />
-    <option name="y" value="49" />
+    <option name="x" value="31" />
+    <option name="y" value="62" />
     <option name="width" value="1856" />
     <option name="height" value="887" />
   </component>
@@ -380,7 +380,7 @@
       <workItem from="1587094040973" duration="1367000" />
       <workItem from="1587364869723" duration="3793000" />
       <workItem from="1587430754642" duration="7700000" />
-      <workItem from="1587526498693" duration="6044000" />
+      <workItem from="1587526498693" duration="6782000" />
     </task>
     <task id="LOCAL-00001" summary="花店后台前端页面">
       <created>1586490790728</created>
@@ -473,15 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587465156616</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="花店后台前端页面">
+      <created>1587538509639</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587538509639</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297065000" />
+    <option name="totallyTimeSpent" value="297803000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-39" y="49" width="1856" height="887" extended-state="0" />
-    <editor active="true" />
+    <frame x="31" y="62" width="1856" height="887" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13206522" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -841,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="1040">
+          <caret line="130" column="26" lean-forward="true" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />

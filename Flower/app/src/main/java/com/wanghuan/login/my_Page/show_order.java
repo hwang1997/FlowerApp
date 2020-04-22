@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.wanghuan.login.R;
-import com.wanghuan.login.frist_Page.goodsOrdersActivity;
 import com.wanghuan.login.model.Order;
 import com.wanghuan.login.util.HttpUtil;
 
@@ -62,7 +61,7 @@ public class show_order extends AppCompatActivity {
         String goodsNameStr = intent.getStringExtra("goodsName");
         Glide.with(getApplicationContext()).load(HttpUtil.BASE_URL+"file/showImageByPath?path="
                 +intent.getStringExtra("goodsImg"))
-                .error(R.drawable.default_img).into(goodsImage);
+                .error(R.drawable.none).into(goodsImage);
         price.setText(intent.getStringExtra("goodsPrice"));
         amount.setText(intent.getStringExtra("buyCount"));
         sumPrice.setText(intent.getStringExtra("sumPrice"));

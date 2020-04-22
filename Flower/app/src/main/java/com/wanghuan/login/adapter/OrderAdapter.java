@@ -1,7 +1,6 @@
 package com.wanghuan.login.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.wanghuan.login.R;
@@ -45,19 +43,11 @@ public class OrderAdapter extends ArrayAdapter<Order.DataBean> {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-//        viewHolder.order_delete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                remove(getItem(position));
-////                Toast.makeText(getContext(), "删除" + order.getOrder_name(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
 
             viewHolder.goodsName.setText(dataBean.getGoods().get(0).getGoodsname());
             Glide.with(getContext()).load(HttpUtil.BASE_URL + "file/showImageByPath?path="
                     + dataBean.getGoods().get(0).getGoodsimg())
-                    .error(R.drawable.default_img).into(viewHolder.goodsImage);
+                    .error(R.drawable.none).into(viewHolder.goodsImage);
             viewHolder.goodsPrice.setText(String.valueOf("￥"+Integer.parseInt(dataBean.getBuycount()) * (dataBean.getGoods().get(0).getGoodsprice())));
             viewHolder.orderName.setText(dataBean.getOrdername());
             viewHolder.orderTel.setText(dataBean.getOrderphone());

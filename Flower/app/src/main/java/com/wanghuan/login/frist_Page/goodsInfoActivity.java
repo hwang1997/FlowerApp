@@ -29,6 +29,12 @@ public class goodsInfoActivity extends AppCompatActivity {
     private Button joinBus;
     private Button buyFast;
 
+    private Button btAdd;
+    private Button btSub;
+    private EditText edtNumber;
+
+    int num = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +51,13 @@ public class goodsInfoActivity extends AppCompatActivity {
         goodsPrice = (TextView) findViewById(R.id.tv_goodInfo_goodPrice);
         goodsCount = (TextView) findViewById(R.id.tv_goodInfo_goodCount);
         goodsDes = (TextView) findViewById(R.id.tv_goodInfo_goodDes);
-        goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
+//        goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
         joinBus = (Button) findViewById(R.id.btn_goodInfo_bus);
         buyFast = (Button) findViewById(R.id.btn_goodInfo_buy);
+
+        btAdd = (Button) findViewById(R.id.addbt);
+        btSub = (Button) findViewById(R.id.subbt);
+        edtNumber = (EditText) findViewById(R.id.edt);
 
 
 
@@ -58,7 +68,7 @@ public class goodsInfoActivity extends AppCompatActivity {
         goodsDes.setText(intent.getStringExtra("goodsDes"));
         Glide.with(getApplicationContext()).load(HttpUtil.BASE_URL+"file/showImageByPath?path="
                 +intent.getStringExtra("goodsImage"))
-                .error(R.drawable.default_img).into(goodsImage);
+                .error(R.drawable.none).into(goodsImage);
     }
 
     @Override
@@ -67,46 +77,69 @@ public class goodsInfoActivity extends AppCompatActivity {
         buyFast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validate()){
-//                    Toast.makeText(getApplicationContext(), "立即购买", Toast.LENGTH_SHORT).show();
+//                if (validate()){
                     Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
                     intent.putExtra("goodsId",goodsId.getText()+"");
                     intent.putExtra("goodsName",goodsName.getText());
                     intent.putExtra("goodsCount",goodsCount.getText());
                     intent.putExtra("goodsPrice",goodsPrice.getText().subSequence(1,goodsPrice.length()).toString());
-                    intent.putExtra("goodsBuyCount",goodsBuyCount.getText()+"");
+                    intent.putExtra("goodsBuyCount",edtNumber.getText()+"");
                     startActivity(intent);
                     finish();
-                }
+//                }
             }
         });
         joinBus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validate()){
-                    List<Bus> busList = new ArrayList<>();
-
-                    goodsBuyCount = (EditText) findViewById(R.id.tv_goodInfo_goodBuyCount);
-
-                    int goodsId1 = Integer.parseInt(goodsId.getText().toString());
-                    String goodsBuyCount1 = goodsBuyCount.getText().toString();
-
-
+//                if (validate()){
                     Toast.makeText(getApplicationContext(), "该功能正在开发中，敬请期待……", Toast.LENGTH_SHORT).show();
-                }
+//                }
             }
         });
+        btAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int numString = Integer.parseInt(edtNumber.getText().toString());
+
+                    if (++numString > 5 ){
+                        Toast.makeText(getApplicationContext(),"购买数量必须小于5",Toast.LENGTH_SHORT).show();
+                        num = 5;
+                    }else {
+                        num ++;
+                    }
+
+                edtNumber.setText(String.valueOf(num));
+            }
+        });
+        btSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "222", Toast.LENGTH_SHORT).show();
+                int numString = Integer.parseInt(edtNumber.getText().toString());
+                if (--numString <= 0) {
+                    Toast.makeText(getApplicationContext(), "最低购买数量为1", Toast.LENGTH_SHORT).show();
+                    num = 1;
+                } else {
+                    num--;
+                }
+
+                edtNumber.setText(String.valueOf(num));
+            }
+        });
+
     }
-    private boolean validate(){
-        String goodsBuyCountStr = goodsBuyCount.getText().toString();
-        if ("".equals(goodsBuyCountStr)){
-            Toast.makeText(getApplicationContext(),"购买数量不能为空！",Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (Integer.parseInt(goodsBuyCountStr) > Integer.parseInt(goodsCount.getText().toString())){
-            Toast.makeText(getApplicationContext(),"商品库存不足！",Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
-    }
+
+//    private boolean validate(){
+//        String goodsBuyCountStr = edtNumber.getText().toString();
+//        if ("".equals(goodsBuyCountStr)){
+//            Toast.makeText(getApplicationContext(),"购买数量不能为空！",Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//        if (Integer.parseInt(goodsBuyCountStr) > Integer.parseInt(goodsCount.getText().toString())){
+//            Toast.makeText(getApplicationContext(),"商品库存不足！",Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//        return true;
+//    }
 }

@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/default_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/none.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/admin_login_lift3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/bg_big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/code_bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/login_bg1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/images/logo_hema_admin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -337,7 +340,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587538190326" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587544688542" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/下载文件/mysql_word" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -422,7 +425,7 @@
       <workItem from="1587224414018" duration="218000" />
       <workItem from="1587342398730" duration="25256000" />
       <workItem from="1587430614139" duration="3911000" />
-      <workItem from="1587526883067" duration="5350000" />
+      <workItem from="1587526883067" duration="5995000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -547,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180448000" />
+    <option name="totallyTimeSpent" value="181093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,7 +562,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="154" y="0" width="1676" height="1092" extended-state="0" />
+    <frame x="37" y="14" width="1676" height="1092" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21039604" />
@@ -594,7 +597,7 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.11819307" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.23886138" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.10643564" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />

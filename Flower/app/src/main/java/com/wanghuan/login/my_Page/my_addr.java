@@ -65,7 +65,7 @@ public class my_addr extends AppCompatActivity {
 //        String name = intent.getStringExtra("name");
 //        String tel = intent.getStringExtra("tel");
 //        Addr addr = new Addr(address, name, tel);
-//        addrList.add(addr);
+//        addrList.sub(addr);
 //    }
 
 //    public void my_addr_okBtn(){
