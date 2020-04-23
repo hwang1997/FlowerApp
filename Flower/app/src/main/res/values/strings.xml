@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hippo Flowers</string>
+    <string name="pay">请选择支付方式：</string>
 </resources>

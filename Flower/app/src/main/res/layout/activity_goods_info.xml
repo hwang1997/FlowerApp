@@ -169,36 +169,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="请输入购买数量，限购5，购买数量不能大于剩余数量,默认为1"
+            android:text="一次最多可购买5件商品，且购买数量不能大于剩余数量,默认为1"
             android:textSize="13dp"
             android:textColor="#ff6700"/>
     </LinearLayout>
-    <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="10dp">-->
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:text="购买数量："-->
-            <!--android:textSize="16dp"-->
-            <!--android:textStyle="bold"/>-->
-        <!--<EditText-->
-            <!--android:id="@+id/tv_goodInfo_goodBuyCount"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:paddingRight="20dp"-->
-            <!--android:gravity="right"-->
-            <!--android:maxLines="1"-->
-            <!--android:maxLength="1"-->
-            <!--android:digits="12345"-->
-            <!--android:textSize="14dp"-->
-            <!--android:textCursorDrawable="@drawable/cursor_color"-->
-            <!--android:theme="@style/MyEditText"/>-->
-    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,12 +29,17 @@ public class makeOrderActivity extends AppCompatActivity {
     private TextView goodsPrice;
     private TextView goodsBuyCount;
     private TextView sumPrice;
+    private TextView orderPay;
     private EditText orderName;
     private EditText orderPhone;
     private EditText orderAddress;
-    private EditText orderPay;
     private EditText orderState;
     private Button submitOrder;
+
+    private Spinner spinner;
+    private TextView text_pay;
+    private static final String[] pay = {"线上支付","货到付款"};
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +53,25 @@ public class makeOrderActivity extends AppCompatActivity {
         orderName = (EditText) findViewById(R.id.tv_makeOrder_orderName);
         orderPhone = (EditText) findViewById(R.id.tv_makeOrder_orderPhone);
         orderAddress = (EditText) findViewById(R.id.tv_makeOrder_orderAddress);
-        orderPay = (EditText) findViewById(R.id.tv_makeOrder_pay);
+        orderPay = (TextView) findViewById(R.id.tv_makeOrder_pay);
         orderState = (EditText) findViewById(R.id.tv_makeOrder_state);
         submitOrder = (Button) findViewById(R.id.btn_makeOrder_submit);
+
+        spinner = (Spinner) findViewById(R.id.sp);
+        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,pay);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                orderPay.setText(String.valueOf(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override
@@ -161,6 +185,5 @@ public class makeOrderActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Order order = gson.fromJson(result,Order.class);
         return order;
-
     }
 }

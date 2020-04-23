@@ -2,22 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a89155a-7c7c-495b-a620-e95c36539233" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/select.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/FlowerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/adapter/OrderAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/goodsInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/my_Page/show_order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/default_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/drawable/none.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/frist_Page/makeOrderActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_goods_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/xml/select.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/orders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -162,12 +162,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="1071">
               <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
@@ -266,8 +266,8 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="37" />
-    <option name="y" value="14" />
+    <option name="x" value="130" />
+    <option name="y" value="20" />
     <option name="width" value="1676" />
     <option name="height" value="1092" />
   </component>
@@ -279,7 +279,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,7 +329,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,7 +340,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587544688542" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587547014632" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/下载文件/mysql_word" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -425,7 +425,8 @@
       <workItem from="1587224414018" duration="218000" />
       <workItem from="1587342398730" duration="25256000" />
       <workItem from="1587430614139" duration="3911000" />
-      <workItem from="1587526883067" duration="5995000" />
+      <workItem from="1587526883067" duration="6006000" />
+      <workItem from="1587602049326" duration="676000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -550,7 +551,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181093000" />
+    <option name="totallyTimeSpent" value="181780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,10 +563,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="14" width="1676" height="1092" extended-state="1" />
+    <frame x="130" y="20" width="1676" height="1092" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21039604" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21287128" />
       <window_info id="Structure" order="1" sideWeight="0.50087875" side_tool="true" weight="0.24984463" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -573,7 +574,6 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.32985386" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49968925" weight="0.32815734" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -590,14 +590,15 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32672232" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" visible="true" weight="0.36221296" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" visible="true" weight="0.36221296" />
+      <window_info anchor="bottom" id="File Transfer" order="17" weight="0.32985386" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984463" />
       <window_info anchor="right" id="Maven" order="3" weight="0.11819307" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.10643564" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.10643564" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -1101,12 +1102,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="1071">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="das://62e82ad7-626c-4771-b54b-a0e923f5b70e/schema/flowers/table/orders">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">

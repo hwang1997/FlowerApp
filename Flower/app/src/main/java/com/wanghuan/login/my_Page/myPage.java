@@ -14,14 +14,9 @@ import android.widget.TextView;
 import com.wanghuan.login.R;
 
 public class myPage extends AppCompatActivity {
-//    private TextView tv_userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-//        tv_userName = (TextView) findViewById(R.id.tv_userName);
-//        SharedPreferences getUser = getSharedPreferences("user",Context.MODE_PRIVATE);
-//        tv_userName.setText(getUser.getString("userName",""));
-
     }
 }

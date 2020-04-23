@@ -219,31 +219,61 @@
             android:textColor="#ff6700"/>
     </LinearLayout>
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="支付方式："-->
+            <!--android:textSize="16dp"-->
+            <!--android:textStyle="bold"/>-->
+        <!--<EditText-->
+            <!--android:id="@+id/tv_makeOrder_pay"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:gravity="right"-->
+            <!--android:maxLines="1"-->
+            <!--android:maxLength="1"-->
+            <!--android:digits="01"-->
+            <!--android:textSize="14dp"-->
+            <!--android:textCursorDrawable="@drawable/cursor_color"-->
+            <!--android:theme="@style/MyEditText"/>-->
+    <!--</LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="fill_parent"
             android:text="支付方式："
-            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="14dp"
             android:textStyle="bold"/>
-        <EditText
+        <Spinner
+            android:id="@+id/sp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:paddingLeft="20dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="150dp"
+            android:textAlignment="center"
+            android:spinnerMode="dialog"
+            android:prompt="@string/pay" />
+        <TextView
             android:id="@+id/tv_makeOrder_pay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingRight="20dp"
-            android:gravity="right"
-            android:maxLines="1"
-            android:maxLength="1"
-            android:digits="01"
-            android:textSize="14dp"
-            android:textCursorDrawable="@drawable/cursor_color"
-            android:theme="@style/MyEditText"/>
+            android:visibility="visible"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

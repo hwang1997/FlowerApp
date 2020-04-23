@@ -34,6 +34,12 @@ public class my_order extends AppCompatActivity {
         setContentView(R.layout.activity_my_order);
         linearLayout = (LinearLayout) findViewById(R.id.show_order_none);
         my_order_lauout = (LinearLayout) findViewById(R.id.my_order_lauout);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         initView();
     }
 
