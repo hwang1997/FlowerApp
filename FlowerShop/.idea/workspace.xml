@@ -26,13 +26,6 @@
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_my_username.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_my_username.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_register.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/layui/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/addUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/addUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/updateUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/updateUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" afterDir="false" />
@@ -76,7 +69,7 @@
       <file leaf-file-name="users.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="280">
               <caret line="163" column="90" selection-start-line="163" selection-start-column="90" selection-end-line="163" selection-end-column="90" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -416,7 +409,7 @@
       <workItem from="1587819978900" duration="1070000" />
       <workItem from="1587879204987" duration="3725000" />
       <workItem from="1587892667233" duration="1537000" />
-      <workItem from="1587917025635" duration="1353000" />
+      <workItem from="1587917025635" duration="1403000" />
     </task>
     <task id="LOCAL-00001" summary="花店后台前端页面">
       <created>1586490790728</created>
@@ -523,15 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587918363843</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="花店后台前端页面">
+      <created>1587918414508</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587918414508</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313568000" />
+    <option name="totallyTimeSpent" value="313618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="222" y="35" width="1635" height="888" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15009265" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -864,7 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="280">
           <caret line="163" column="90" selection-start-line="163" selection-start-column="90" selection-end-line="163" selection-end-column="90" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
