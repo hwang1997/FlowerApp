@@ -1,7 +1,6 @@
 package com.mis.flowers.service;
 
 import com.mis.flowers.entity.Users;
-import org.apache.ibatis.annotations.Delete;
 
 import java.util.List;
 
@@ -20,7 +19,13 @@ public interface UsersService {
      * @return 实例对象
      */
     Users queryById(Integer userId);
-
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param loginId 主键
+     * @return 实例对象
+     */
+    Users queryByloginId(String loginId);
     /**
      * 通过实体作为筛选条件查询
      *
@@ -76,5 +81,19 @@ public interface UsersService {
      */
     boolean deleteById(Integer userId);
 
+    /**
+     * 通过主键修改用户名
+     *
+     * @param userId 主键
+     * @return 是否成功
+     */
     boolean changeUsername(Integer userId, String newUsername);
+
+    /**
+     * 通过主键修改登录账号
+     *
+     * @param loginId 主键
+     * @return 是否成功
+     */
+    boolean changeLoginId(Integer userId, String loginId);
 }

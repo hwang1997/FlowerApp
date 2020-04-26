@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class my_username extends AppCompatActivity {
     private EditText newUsername;
-    private Button lout_my_btn;
+    private Button btn_updateUsername;
     Intent intent = null;
 
     @Override
@@ -30,7 +30,7 @@ public class my_username extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_username);
         newUsername = (EditText) findViewById(R.id.et_user_name);
-        lout_my_btn = (Button) findViewById(R.id.lout_my_btn);
+        btn_updateUsername = (Button) findViewById(R.id.btn_updateUsername);
         intent = getIntent();
     }
 
@@ -41,7 +41,7 @@ public class my_username extends AppCompatActivity {
         Intent intent = getIntent();
         String userId = intent.getStringExtra("userId");
 
-        lout_my_btn.setOnClickListener(new View.OnClickListener() {
+        btn_updateUsername.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String newUsernameStr = newUsername.getText().toString();

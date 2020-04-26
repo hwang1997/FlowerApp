@@ -4,6 +4,7 @@
 
     <resultMap type="com.mis.flowers.entity.Users" id="UsersMap">
         <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="loginId" column="login_id" jdbcType="VARCHAR"/>
         <result property="userName" column="user_name" jdbcType="VARCHAR"/>
         <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
         <result property="role" column="role" jdbcType="INTEGER"/>
@@ -12,15 +13,22 @@
     <!--查询单个-->
     <select id="queryById" resultMap="UsersMap">
         select
-        user_id, user_name, user_password, role
+        user_id, login_id, user_name, user_password, role
         from flowers.users
         where user_id = #{userId}
+    </select>
+    <!--查询单个-->
+    <select id="queryByloginId" resultMap="UsersMap">
+        select
+            user_id, login_id, user_name, user_password, role
+        from flowers.users
+        where login_id = #{loginId}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="UsersMap">
         select
-        user_id, user_name, user_password, role
+        user_id, login_id, user_name, user_password, role
         from flowers.users
         limit #{offset}, #{limit}
     </select>
@@ -28,11 +36,14 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="UsersMap">
         select
-        user_id, user_name, user_password, role
+        user_id, login_id, user_name, user_password, role
         from flowers.users
         <where>
             <if test="userId != null">
                 and user_id = #{userId}
+            </if>
+            <if test="loginId != null and loginId != ''">
+                and user_name = #{userName}
             </if>
             <if test="userName != null and userName != ''">
                 and user_name = #{userName}
@@ -47,14 +58,17 @@
     </select>
     <!--新增所有列-->
     <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
-        insert into flowers.users(user_name, user_password, role)
-        values (#{userName}, #{userPassword}, #{role})
+        insert into flowers.users(login_id, user_name, user_password, role)
+        values (#{loginId},#{userName}, #{userPassword}, #{role})
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
         update flowers.users
         <set>
+            <if test="loginId != null and loginId != ''">
+                login_id = #{loginId},
+            </if>
             <if test="userName != null and userName != ''">
                 user_name = #{userName},
             </if>
@@ -75,6 +89,10 @@
     <update id="changeUsername">
         update flowers.users set user_name = #{newUsername} where user_id = #{userId}
     </update>
+    <!--通过主键修改数据-->
+    <update id="changeLoginId">
+        update flowers.users set login_id = #{loginId} where user_id = #{userId}
+    </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
@@ -84,7 +102,7 @@
     <!--查询所有-->
 <select id="selectAll" resultMap="UsersMap">
     select
-        user_id, user_name, user_password, role
+        user_id, login_id, user_name, user_password, role
     from flowers.users
 </select>
 

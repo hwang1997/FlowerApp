@@ -38,12 +38,14 @@ public class User {
     public static class DataBean {
         /**
          * userId : 201604
+         * loginId: 1447081730
          * userName : 赵云
          * userPassword : 202cb962ac59075b964b07152d234b70
          * role : 1
          */
 
         private int userId;
+        private String loginId;
         private String userName;
         private String userPassword;
         private int role;
@@ -54,6 +56,14 @@ public class User {
 
         public void setUserId(int userId) {
             this.userId = userId;
+        }
+
+        public String getLoginId() {
+            return loginId;
+        }
+
+        public void setLoginId(String loginId) {
+            this.loginId = loginId;
         }
 
         public String getUserName() {

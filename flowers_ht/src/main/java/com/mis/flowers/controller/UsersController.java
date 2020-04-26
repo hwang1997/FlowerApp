@@ -44,7 +44,7 @@ public class UsersController {
     public Result<Users> login(UserDto dto) {
         try {
             String password = MD5Util.md5Encode(dto.getUser_password());
-            Users user = this.usersService.queryById(dto.getUser_id());
+            Users user = this.usersService.queryByloginId(dto.getLogin_id());
             if (user == null) {
                 return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
             } else if (user.getRole() == 1) {
@@ -65,7 +65,7 @@ public class UsersController {
     public Result<Users> applogin(UserDto dto) {
         try {
             String password = MD5Util.md5Encode(dto.getUser_password());
-            Users user = this.usersService.queryById(dto.getUser_id());
+            Users user = this.usersService.queryByloginId(dto.getLogin_id());
             if (user == null) {
                 return Result.createFailUre(ResultCode.Fail.code(), "用户不存在！");
             } else if (user.getRole() == 0) {
@@ -103,14 +103,14 @@ public class UsersController {
     /**
      * 通过userId查询单条数据
      *
-     * @param userId 主键
+     * @param loginId 主键
      * @return 单条数据
      */
     @RequestMapping(value = "userDoSearch", method = RequestMethod.GET)
-    public Result<List<Users>> userDoSearch(String userId) {
+    public Result<List<Users>> userDoSearch(String loginId) {
         try {
             List<Users> users = new ArrayList<>();
-            users.add(this.usersService.queryById(Integer.parseInt(userId)));
+            users.add(this.usersService.queryByloginId(loginId));
             return Result.createSuccess(users);
         }catch (Exception e){
             e.printStackTrace();
@@ -148,13 +148,20 @@ public class UsersController {
     @RequestMapping(value = "insertUsers", method = RequestMethod.POST)
     public Result<Integer> insertUsers(addUserDto dto) {
         try {
-            Users users = new Users();
-            users.setUserName(dto.getUserName());
-            String password = MD5Util.md5Encode(dto.getUserPassword());
-            users.setUserPassword(password);
-            users.setRole(dto.getRole());
-            this.usersService.insert(users);
-            return Result.createSuccess();
+            Users users1 = new Users();
+            users1 = this.usersService.queryByloginId(dto.getLoginId());
+            if (users1 != null){
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该账号已存在,无法添加！");
+            }else {
+                Users users = new Users();
+                users.setLoginId(dto.getLoginId());
+                users.setUserName(dto.getUserName());
+                String password = MD5Util.md5Encode(dto.getUserPassword());
+                users.setUserPassword(password);
+                users.setRole(dto.getRole());
+                this.usersService.insert(users);
+                return Result.createSuccess();
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
@@ -176,7 +183,6 @@ public class UsersController {
     //批量删除
     @RequestMapping(value = "batchDelete", method = RequestMethod.DELETE)
     public Result<Boolean> batchDelete(int[] userId) {
-
         if (userId != null){
             for (int i = 0; i < userId.length; i++) {
                 this.usersService.deleteById(userId[i]);
@@ -199,14 +205,33 @@ public class UsersController {
     @RequestMapping(value = "updateUsers", method = RequestMethod.POST)
     public Result<Users> updateUsers(updateUserDto dto) {
         try {
-            String password = MD5Util.md5Encode(dto.getUserPassword());
-            Users users = new Users();
-            users.setUserId(dto.getUserId());
-            users.setUserName(dto.getUserName());
-            users.setUserPassword(password);
-            users.setRole(dto.getRole());
-            this.usersService.update(users);
-            return Result.createSuccess();
+            Users users1 = new Users();
+            users1 = this.usersService.queryByloginId(dto.getLoginId());
+            if (users1 != null){
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该账号已存在，无法修改");
+            }else {
+                String password = MD5Util.md5Encode(dto.getUserPassword());
+                Users users = new Users();
+                users.setUserId(dto.getUserId());
+                users.setLoginId(dto.getLoginId());
+                users.setUserName(dto.getUserName());
+                users.setUserPassword(password);
+                users.setRole(dto.getRole());
+                this.usersService.update(users);
+                return Result.createSuccess();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+        }
+    }
+    //APP修改登陆账号
+    @RequestMapping(value = "changeLoginId", method = RequestMethod.POST)
+    public Result<Users> changeLoginId(String userId, String loginId) {
+        try {
+            this.usersService.changeLoginId(Integer.parseInt(userId),loginId);
+            Users users = this.usersService.queryById(Integer.parseInt(userId));
+            return Result.createSuccess(users);
         }catch (Exception e){
             e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(), "失败！");

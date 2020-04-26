@@ -27,6 +27,39 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="*温馨小提示："
+            android:textColor="#ff6700"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerInParent="true"
+            android:text="登录账号长度为11位，推荐使用QQ号码或手机号注册"
+            android:textSize="14sp"/>
+    </RelativeLayout>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,20 +75,20 @@
                 android:orientation="horizontal">
 
             <EditText
-                    android:id="@+id/et_user_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:hint="账号"
-                    android:maxLength="15"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="12dp"
-                    android:singleLine="true"
-                    android:textSize="18sp"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:theme="@style/MyEditText"/>
+                android:id="@+id/et_loginId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="登录账号"
+                android:maxLength="11"
+                android:paddingLeft="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:theme="@style/MyEditText"/>
         </LinearLayout>
 
         <LinearLayout
@@ -64,20 +97,20 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
             <EditText
-                    android:id="@+id/et_user_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="12dp"
-                    android:paddingLeft="6dp"
-                    android:hint="用户名"
-                    android:singleLine="true"
-                    android:maxLength="15"
-                    android:textSize="18sp"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:theme="@style/MyEditText"/>
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:hint="用户名"
+                android:singleLine="true"
+                android:maxLength="15"
+                android:textSize="18sp"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:theme="@style/MyEditText"/>
         </LinearLayout>
 
 
@@ -87,21 +120,21 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
             <EditText
-                    android:id="@+id/et_psw"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="12dp"
-                    android:paddingLeft="6dp"
-                    android:singleLine="true"
-                    android:hint="请输入密码"
-                    android:inputType="textPassword"
-                    android:maxLength="15"
-                    android:textSize="18sp"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:theme="@style/MyEditText"/>
+                android:id="@+id/et_psw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="6dp"
+                android:singleLine="true"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:textSize="18sp"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:theme="@style/MyEditText"/>
         </LinearLayout>
 
         <LinearLayout
@@ -111,21 +144,21 @@
                 android:orientation="horizontal">
 
             <EditText
-                    android:id="@+id/et_psw_again"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:hint="请再次输入密码"
-                    android:inputType="textPassword"
-                    android:maxLength="15"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="12dp"
-                    android:singleLine="true"
-                    android:textSize="18sp"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:theme="@style/MyEditText"/>
+                android:id="@+id/et_psw_again"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="请再次输入密码"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:paddingLeft="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:textCursorDrawable="@drawable/cursor_color"
+                android:theme="@style/MyEditText"/>
         </LinearLayout>
 
     </LinearLayout>

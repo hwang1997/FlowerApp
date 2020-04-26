@@ -23,6 +23,7 @@ import com.wanghuan.login.bus_Page.BusFragment;
 import com.wanghuan.login.frist_Page.FstFragment;
 import com.wanghuan.login.my_Page.MyFragment;
 import com.wanghuan.login.my_Page.my_addr;
+import com.wanghuan.login.my_Page.my_loginId;
 import com.wanghuan.login.my_Page.my_order;
 import com.wanghuan.login.my_Page.my_pwd;
 import com.wanghuan.login.my_Page.my_username;
@@ -46,6 +47,14 @@ public class home extends FragmentActivity implements View.OnClickListener {
     private ImageButton mImgMy;
 
 
+    public void MyLoginId(View view) {
+        Intent intent = new Intent(getApplicationContext(), my_loginId.class);
+        TextView userId = (TextView) findViewById(R.id.tv_userId);
+        TextView loginId = (TextView) findViewById(R.id.tv_loginId);
+        intent.putExtra("userId", userId.getText().toString());
+        intent.putExtra("loginId", loginId.getText().toString());
+        startActivityForResult(intent, 110);
+    }
     public void MyUsername(View view) {
         Intent intent = new Intent(getApplicationContext(), my_username.class);
         TextView userId = (TextView) findViewById(R.id.tv_userId);
@@ -220,6 +229,10 @@ public class home extends FragmentActivity implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && data != null) {
             String n = data.getStringExtra("name");
+            myFragment.setTv_userName(n);
+        }
+        if (requestCode == 110 && data != null){
+            String n = data.getStringExtra("loginId");
             myFragment.setTv_userName(n);
         }
     }

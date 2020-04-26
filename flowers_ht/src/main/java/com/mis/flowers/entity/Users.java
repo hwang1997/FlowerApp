@@ -15,6 +15,10 @@ public class Users implements Serializable {
      */
     private Integer userId;
     /**
+     * 登录账号
+     */
+    private String loginId;
+    /**
      * 用户名
      */
     private String userName;
@@ -34,6 +38,14 @@ public class Users implements Serializable {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public String getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
     }
 
     public String getUserName() {

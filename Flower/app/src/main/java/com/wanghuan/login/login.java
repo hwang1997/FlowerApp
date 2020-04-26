@@ -67,6 +67,7 @@ public class login extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), home.class);
                                     SharedPreferences.Editor editor = getSharedPreferences("user",Context.MODE_PRIVATE).edit();
                                     editor.putInt("userId",user.getData().getUserId());
+                                    editor.putString("loginId",user.getData().getLoginId());
                                     editor.putString("userName",user.getData().getUserName());
                                     editor.commit();
                                     startActivity(intent);
@@ -104,7 +105,7 @@ public class login extends AppCompatActivity {
     private User query(String username, String password) throws Exception{
         //使用map封装请求参数
         Map<String, String> map = new HashMap<>();
-        map.put("user_id", username);
+        map.put("login_id", username);
         map.put("user_password", password);
         //定义发送请求的URL
         String url = HttpUtil.BASE_URL + "users/applogin";

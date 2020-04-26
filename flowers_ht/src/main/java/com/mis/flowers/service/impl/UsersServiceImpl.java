@@ -31,6 +31,16 @@ public class UsersServiceImpl implements UsersService {
     }
 
     /**
+     * 通过ID查询单条数据
+     *
+     * @param loginId 主键
+     * @return 实例对象
+     */
+    @Override
+    public Users queryByloginId(String loginId) {
+        return this.usersDao.queryByloginId(loginId);
+    }
+    /**
      * 通过实体作为筛选条件查询
      *
      * @return 对象列表
@@ -86,20 +96,30 @@ public class UsersServiceImpl implements UsersService {
         return this.queryById(users.getUserId());
     }
     /**
+     * 修改登录账号
+     *
+     * @param loginId 实例对象
+     * @return 是否成功
+     */
+    @Override
+    public boolean changeLoginId(Integer userId, String loginId) {
+        return this.usersDao.changeLoginId(userId,loginId);
+    }
+    /**
      * 修改数据
      *
      * @param userId 实例对象
-     * @return 实例对象
+     * @return 是否成功
      */
     @Override
     public boolean changeUsername(Integer userId, String newUsername) {
        return this.usersDao.changeUsername(userId,newUsername);
     }
     /**
-     * 修改数据
+     * 修改用户密码
      *
      * @param userId 实例对象
-     * @return 实例对象
+     * @return 是否成功
      */
     @Override
     public boolean updatePwd(Integer userId, String pwd) {

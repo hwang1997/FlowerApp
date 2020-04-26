@@ -24,6 +24,14 @@ public interface UsersDao {
     Users queryById(Integer userId);
 
     /**
+     * 通过ID查询单条数据
+     *
+     * @param loginId 主键
+     * @return 实例对象
+     */
+    Users queryByloginId(String loginId);
+
+    /**
      * 查询指定行数据
      *
      * @param offset 查询起始位置
@@ -77,6 +85,13 @@ public interface UsersDao {
      * @return 影响行数
      */
     boolean changeUsername(Integer userId, String newUsername);
+    /**
+     * 修改登录账号
+     *
+     * @param loginId 实例对象
+     * @return 影响行数
+     */
+    boolean changeLoginId(Integer userId, String loginId);
 
     /**
      * 通过主键删除数据

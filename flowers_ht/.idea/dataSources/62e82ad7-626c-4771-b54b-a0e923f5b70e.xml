@@ -694,31 +694,38 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="160" parent="136" name="user_name">
+    <column id="160" parent="136" name="login_id">
       <Position>2</Position>
-      <Comment>用户名</Comment>
-      <DataType>varchar(32)|0s</DataType>
+      <Comment>登录账号</Comment>
+      <DataType>varchar(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="161" parent="136" name="user_password">
+    <column id="161" parent="136" name="role">
       <Position>3</Position>
-      <Comment>用户密码</Comment>
-      <DataType>varchar(60)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="162" parent="136" name="role">
-      <Position>4</Position>
       <Comment>用户角色（0：管理员，1：用户）</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="163" parent="136" name="PRIMARY">
+    <column id="162" parent="136" name="user_name">
+      <Position>4</Position>
+      <Comment>用户名</Comment>
+      <DataType>varchar(32)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="163" parent="136" name="user_password">
+      <Position>5</Position>
+      <Comment>用户密码</Comment>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="164" parent="136" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>

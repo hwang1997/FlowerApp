@@ -2,6 +2,10 @@ package com.mis.flowers.dto;
 
 public class addUserDto {
     /**
+     * 登陆账号
+     */
+    private String loginId;
+    /**
      * 用户名
      */
     private String userName;
@@ -13,6 +17,14 @@ public class addUserDto {
      * 用户角色（0：管理员，1：用户）
      */
     private Integer role;
+
+    public String getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
+    }
 
     public String getUserName() {
         return userName;

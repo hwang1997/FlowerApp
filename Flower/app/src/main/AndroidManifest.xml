@@ -36,6 +36,7 @@
         <activity android:name=".frist_Page.makeOrderActivity" />
         <activity android:name=".frist_Page.goodsOrdersActivity" />
         <activity android:name=".my_Page.goPayActivity" />
+        <activity android:name=".my_Page.my_loginId"></activity>
     </application>
 
 </manifest>

@@ -1,14 +1,13 @@
 package com.mis.flowers.dto;
 
 public class UserSearchDto {
-    private int user_id;
+    private String login_id;
 
-    public int getUser_id() {
-        return user_id;
+    public String getLogin_id() {
+        return login_id;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setLogin_id(String login_id) {
+        this.login_id = login_id;
     }
-
 }
