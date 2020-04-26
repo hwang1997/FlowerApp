@@ -114,7 +114,7 @@
             return;
         }
         var dto = {
-            'user_id': id,
+            'login_id': id,
             'user_password': password,
         };
         $('#dologin').text("登录中...").attr("disabled", "disabled").addClass("layui-disabled");
@@ -127,6 +127,7 @@
                 $('#dologin').text("登录").removeAttr("disabled", "disabled").removeClass("layui-disabled");
                 if (result.code == 0) {
                     localStorage.setItem('userId', result.data.userId);
+                    localStorage.setItem('loginId', result.data.loginId);
                     localStorage.setItem('userName', result.data.userName);
                     localStorage.setItem('userRole', result.data.role);
                     localStorage.setItem('userPassword', result.data.userPassword);

@@ -20,9 +20,9 @@
 <form action="" class="layui-form" method="post">
     <div class="layui-form-item" style="position: relative">
         <div class="layui-inline">
-            <label class="layui-form-label">编号:</label>
+            <label class="layui-form-label">登录账号:</label>
             <div class="layui-input-inline">
-                <input type="text" name="userId" id="userId" autocomplete="off" class="layui-input">
+                <input type="text" name="loginId1" id="loginId1" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
@@ -66,6 +66,15 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
+                <label class="layui-form-label">登录账号:</label>
+                <div class="layui-input-block">
+                    <input type="text" name="loginId" id="loginId" lay-verify="required" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
                 <label class="layui-form-label">用户名:</label>
                 <div class="layui-input-block">
                     <input type="text" name="userName" id="userName" lay-verify="required" autocomplete="off"
@@ -83,7 +92,7 @@
                 </div>
             </div>
         </div>
-        <div class="layui-form-item">
+        <div class="layui-form-item" style="position: relative">
             <div class="layui-inline">
                 <label class="layui-form-label" style="line-height: 57px">角色:</label>
                 <div class="layui-input-inline">
@@ -93,7 +102,7 @@
             </div>
         </div>
 
-        <div class="layui-form-item" style="position: absolute;left: 15px;top: 300px">
+        <div class="layui-form-item" id="btn_sub" style="">
             <div class="layui-input-block">
                 <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
                         lay-submit="" lay-filter="doSubmit">提交
@@ -121,6 +130,7 @@
     $("#reset").on('click',function () {
        $("#userName").val("");
        $('#userPassword').val("");
+       $('#loginId').val("");
     });
 
     //表格请求
@@ -132,8 +142,8 @@
             text: {
                 none:'暂无相关数据' //默认：无数据。注：该属性为 layui 2.2.5 开始新增
             },
-            limit: 10,
-            limits: ['10', '20', '30'],
+            limit: 8,
+            limits: ['8'],
             url: WebPath + '/users/selectByPage',
             page: true,
             cellMinWidth: 100,
@@ -148,9 +158,10 @@
             },
             cols: [[
                 {type: 'checkbox', fixed: 'left'},
-                {field: 'userId', title: 'ID', sort: true, align: 'center'},
+                {field: 'userId', title: '用户编号', sort: true, align: 'center'},
+                {field: 'loginId', title: '登录账号', sort: true, align: 'center'},
                 {field: 'userName', title: '用户名', align: 'center', edit: true},
-                {field: 'userPassword', title: '密码', align: 'center', edit: true},
+                {field: 'userPassword', title: '密码', align: 'center', edit: true,width: 300},
                 {
                     field: 'role', title: '角色', align: 'center', templet: function (d) {
                         return d.role == "1" ? "普通用户" : "后台管理员";
@@ -171,13 +182,13 @@
     });
     var active = {
         reload:function () {
-            var userId = $('#userId').val();
+            var loginId1 = $('#loginId1').val();
                 var index = layer.msg("查询中，请稍后……",{
                     icon:6,
                     time:false,
                     shade:0
                 });
-                if (userId == ""){
+                if (loginId1 == ""){
                     setTimeout(function () {
                         table.reload('userTable',{
                             url:WebPath + "/users/selectByPage",
@@ -195,7 +206,7 @@
                 } else {
                     setTimeout(function () {
                         table.reload('userTable',{
-                            url:WebPath + '/users/userDoSearch?userId='+ userId,
+                            url:WebPath + '/users/userDoSearch?loginId='+ loginId1,
                             parseData:function (res) {
                                 return{
                                     "code":res.code,
@@ -229,7 +240,7 @@
                         usersId.push(data[i].userId);
                     }
                     $.ajax({
-                        url: WebPath + "/users/batchDelete?userId=" + usersId,
+                        url: WebPath + "/users/batchDelete?loginId=" + loginId,
                         type: "DELETE",
                         dataType: "json",
                         success: function (result) {
@@ -324,6 +335,7 @@
                 //清空表单数据
                 $('#reset').click();
                 $('#userIdHidden').attr("style","display:none");
+                $("#btn_sub").attr("style","position: absolute;left: 15px; top:300px");
                 value = "添加";
                 url = WebPath + '/users/insertUsers';//添加接口
             }
@@ -336,11 +348,12 @@
             type: 1,
             title: '修改用户',
             content: $("#saveOrUpdateDiv"),
-            area: ['450px', '420px'],
+            area: ['450px', '450px'],
             success: function (index) {
                 form.val('dataFrm', data);
                 $('#userPassword').val("");
                 $('#userIdHidden').removeAttr("style","display:none");
+                $("#btn_sub").attr("style","position: absolute;left: 15px; top:350px");
                 value = "修改";
                 url = WebPath + '/users/updateUsers';//修改接口
             }

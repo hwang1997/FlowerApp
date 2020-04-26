@@ -248,7 +248,6 @@
                 {field: 'buycount', title: '购买数量', align: 'center'},
                 {field: '', title: '商品总价', align: 'center',templet:function (d) {
                         return (d.goods[0].goodsprice) * (d.buycount)+"元";
-
                     }},
                 {field: 'ordername', title: '收货人', align: 'center'},
                 {field: 'orderphone', title: '电话', align: 'center'},
@@ -276,19 +275,19 @@
         $('#page404').removeClass("layui-hide");
     }
 
-    //查看原图
-    function openMaxImgGoods(data){
-        layer.open({
-            type:1,
-            title:"查看图片",
-            content:$("#openMaxImg"),
-            area:['440px','540px'],
-            offset:['100px','200px'],
-            success:function (index) {
-                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
-            }
-        });
-    }
+    // //查看原图
+    // function openMaxImgGoods(data){
+    //     layer.open({
+    //         type:1,
+    //         title:"查看图片",
+    //         content:$("#openMaxImg"),
+    //         area:['440px','540px'],
+    //         offset:['100px','200px'],
+    //         success:function (index) {
+    //             $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+    //         }
+    //     });
+    // }
     //查看原图
     function openMaxImgGoods(data){
         layer.open({

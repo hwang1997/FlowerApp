@@ -19,6 +19,13 @@
     </fieldset>
     <form class="layui-form" action="" method="POST" lay-filter="addFrm" id="addFrm">
         <div class="layui-form-item" style="margin-bottom: 20px">
+            <label class="layui-form-label">登录账号</label>
+            <div class="layui-input-inline" style="width: 300px;">
+                <input type="text" name="loginId" required lay-verify="required" placeholder="请输入用户姓名"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-bottom: 20px">
             <label class="layui-form-label">用户姓名</label>
             <div class="layui-input-inline" style="width: 300px;">
                 <input type="text" name="userName" required lay-verify="required" placeholder="请输入用户姓名"
@@ -55,7 +62,6 @@
     //Demo
 
     var form = layui.form;
-    var upload = layui.upload;
     var $ = layui.jquery;
     var layer = layui.layer;
 
@@ -65,6 +71,7 @@
             layer.msg('角色不能为空', {icon: 5})
         }
         var param = {
+            'loginId': data.field.loginId,
             'userName': data.field.userName,
             'userPassword': data.field.userPassword,
             'role': data.field.role

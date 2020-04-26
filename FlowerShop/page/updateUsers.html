@@ -17,10 +17,16 @@
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
         <legend>修改密码</legend>
     </fieldset>
+    <div class="layui-form-item" style="margin-bottom: 20px">
+        <label class="layui-form-label">用户编号：</label>
+        <div class="layui-input-inline" style="width: 300px;">
+            <input type="text" name="userId" id="userId" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+    </div>
         <div class="layui-form-item" style="margin-bottom: 20px">
             <label class="layui-form-label">登录账号：</label>
             <div class="layui-input-inline" style="width: 300px;">
-                <input type="text" name="userId" id="userId" readonly="readonly" autocomplete="off" class="layui-input">
+                <input type="text" name="loginId" id="loginId" readonly="readonly" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item" style="margin-bottom: 20px">
@@ -59,11 +65,13 @@
     var $ = layui.jquery;
     var layer = layui.layer;
 
+    var loginId = localStorage.getItem("loginId");
     var userName = localStorage.getItem('userName');
     var userId = localStorage.getItem('userId');
-    var role = localStorage.getItem("role");
+
     $('#userId').val(userId);
     $('#userName').val(userName);
+    $('#loginId').val(loginId);
 
     //重置密码
     $('#resetInp').on('click', function () {
