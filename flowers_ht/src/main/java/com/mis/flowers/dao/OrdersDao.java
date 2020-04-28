@@ -23,7 +23,7 @@ public interface OrdersDao {
     Orders queryById(String orderid);
 
 
-    List<Orders> selectBuyUserId(Integer userId);
+    List<Orders> selectByUserId(Integer userId);
 
     /**
      * 查询指定行数据

@@ -78,6 +78,7 @@ public class OrdersController {
         }
     }
 
+    //APP创建订单
     @RequestMapping(value = "makeOrders",method = RequestMethod.POST)
     public Result<Integer> makeOrders(makeOrdersDto dto) {
         try {
@@ -96,10 +97,10 @@ public class OrdersController {
      * @param userId 主键
      * @return 单条数据
      */
-    @RequestMapping(value = "selectBuyUserId", method = RequestMethod.POST)
-    public Result<List<Orders>> selectBuyUserId(String userId) {
+    @RequestMapping(value = "selectByUserId", method = RequestMethod.POST)
+    public Result<List<Orders>> selectByUserId(String userId) {
         try {
-            List<Orders> orders = this.ordersService.selectBuyUserId(Integer.parseInt(userId));
+            List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
             return Result.createSuccess(orders);
         }catch (Exception e){
             e.printStackTrace();
@@ -116,7 +117,7 @@ public class OrdersController {
     @RequestMapping(value = "ordersDoSearchByUserId", method = RequestMethod.GET)
     public Result<List<Orders>> ordersDoSearchByUserId(String userId) {
         try {
-            List<Orders> orders = this.ordersService.selectBuyUserId(Integer.parseInt(userId));
+            List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
             return Result.createSuccess(orders);
         }catch (Exception e){
             e.printStackTrace();

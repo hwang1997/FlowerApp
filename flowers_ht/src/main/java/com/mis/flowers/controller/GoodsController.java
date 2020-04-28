@@ -55,8 +55,7 @@ public class GoodsController {
         }
     }
     /**
-     * 通过userId查询单条数据
-     *
+     * 通过goodsId查询单条数据
      * @param goodsId 主键
      * @return 单条数据
      */
@@ -72,7 +71,6 @@ public class GoodsController {
         }
     }
     /**
-     *
      *添加
      */
     @RequestMapping(value = "insertGoods",method = RequestMethod.POST)

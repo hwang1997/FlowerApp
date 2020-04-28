@@ -109,9 +109,14 @@ public class UsersController {
     @RequestMapping(value = "userDoSearch", method = RequestMethod.GET)
     public Result<List<Users>> userDoSearch(String loginId) {
         try {
-            List<Users> users = new ArrayList<>();
-            users.add(this.usersService.queryByloginId(loginId));
-            return Result.createSuccess(users);
+            Users users1 = this.usersService.queryByloginId(loginId);
+            if (users1 == null){
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该用户不存在！");
+            }else {
+                List<Users> users = new ArrayList<>();
+                users.add(this.usersService.queryByloginId(loginId));
+                return Result.createSuccess(users);
+            }
         }catch (Exception e){
             e.printStackTrace();
             return  Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
@@ -229,9 +234,14 @@ public class UsersController {
     @RequestMapping(value = "changeLoginId", method = RequestMethod.POST)
     public Result<Users> changeLoginId(String userId, String loginId) {
         try {
-            this.usersService.changeLoginId(Integer.parseInt(userId),loginId);
-            Users users = this.usersService.queryById(Integer.parseInt(userId));
-            return Result.createSuccess(users);
+            Users users1 = this.usersService.queryById(Integer.parseInt(userId));
+            if (users1 != null){
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该账号已存在！");
+            }else {
+                this.usersService.changeLoginId(Integer.parseInt(userId),loginId);
+                Users users = this.usersService.queryById(Integer.parseInt(userId));
+                return Result.createSuccess(users);
+            }
         }catch (Exception e){
             e.printStackTrace();
             return Result.createFailUre(ResultCode.Fail.code(), "失败！");
@@ -261,7 +271,7 @@ public class UsersController {
             return Result.createFailUre(ResultCode.Fail.code(), "失败！");
         }
     }
-    //修改用户密码APP
+    //APP修改用户密码
     @SneakyThrows//MD5
     @RequestMapping(value = "changePwd", method = RequestMethod.POST)
     public Result<Boolean> changePwd(String userId, String pwd) {

@@ -22,7 +22,7 @@ public interface OrdersService {
     Orders queryById(String orderid);
 
 
-    List<Orders> selectBuyUserId(Integer userId);
+    List<Orders> selectByUserId(Integer userId);
 
     /**
      * 查询多条数据

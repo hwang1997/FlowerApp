@@ -33,8 +33,8 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
 
-    public List<Orders> selectBuyUserId(Integer userId) {
-        return this.ordersDao.selectBuyUserId(userId);
+    public List<Orders> selectByUserId(Integer userId) {
+        return this.ordersDao.selectByUserId(userId);
     }
 
     /**

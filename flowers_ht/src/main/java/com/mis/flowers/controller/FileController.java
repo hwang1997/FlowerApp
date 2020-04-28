@@ -24,7 +24,6 @@ public class FileController {
 
     /**
      * 文件上传
-     *
      */
     @RequestMapping("uploadFile")
     public Map<String,Object> uploadFile(MultipartFile mf){
@@ -53,12 +52,8 @@ public class FileController {
 
         return map;
     }
-
-
-
     /**
      * 文件下载
-     *
      */
     @RequestMapping(value = "showImageByPath",method = RequestMethod.GET)
     public ResponseEntity<Object> showImageByPath(String path){
