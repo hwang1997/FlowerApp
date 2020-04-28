@@ -24,33 +24,8 @@
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/ordersIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/ordersIdUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/dao/OrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/dao/OrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/src/main/resources/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/src/main/resources/mapper/OrdersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/dao/OrdersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/dao/OrdersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/service/OrdersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/service/OrdersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/service/impl/OrdersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/com/mis/flowers/service/impl/OrdersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/classes/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/classes/mapper/OrdersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/flowers-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../flowers_ht/target/flowers-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowers_ht/target/flowers.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -202,7 +177,7 @@
       <find>icon-f</find>
       <find>icon-font</find>
       <find>layui-table-main</find>
-      <find />
+      <find>.loginBody .layui-form</find>
       <find>doSearch</find>
       <find>t</find>
       <find>lay-submit</find>
@@ -287,8 +262,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="69" />
-    <option name="y" value="91" />
+    <option name="x" value="97" />
+    <option name="y" value="54" />
     <option name="width" value="1635" />
     <option name="height" value="888" />
   </component>
@@ -411,7 +386,7 @@
       <workItem from="1588047499175" duration="464000" />
       <workItem from="1588049117121" duration="656000" />
       <workItem from="1588065724064" duration="92000" />
-      <workItem from="1588068284187" duration="453000" />
+      <workItem from="1588068284187" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="花店后台前端页面">
       <created>1586490790728</created>
@@ -525,15 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587918414508</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="花店后台前端页面">
+      <created>1588068818630</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588068818630</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316526000" />
+    <option name="totallyTimeSpent" value="316716000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="991" y="136" width="1635" height="888" extended-state="0" />
-    <editor active="true" />
+    <frame x="97" y="54" width="1635" height="888" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15009265" />
       <window_info anchor="bottom" id="TODO" order="10" />

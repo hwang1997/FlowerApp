@@ -93,7 +93,7 @@ public class my_order extends AppCompatActivity {
         Map<String,String> map = new HashMap<>();
         map.put("userId",userId);
         //定义发送请求的URL
-        String url = HttpUtil.BASE_URL + "orders/selectBuyUserId";
+        String url = HttpUtil.BASE_URL + "orders/selectByUserId";
         String result = HttpUtil.getInfo(url,map);
         Gson gson = new Gson();
         Order order = gson.fromJson(result,Order.class);

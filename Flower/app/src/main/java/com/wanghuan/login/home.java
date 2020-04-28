@@ -60,6 +60,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
         TextView userId = (TextView) findViewById(R.id.tv_userId);
         TextView userName = (TextView) findViewById(R.id.tv_userName);
         intent.putExtra("userId", userId.getText().toString());
+        intent.putExtra("userName", userName.getText().toString());
         startActivityForResult(intent, 100);
     }
 
@@ -233,7 +234,7 @@ public class home extends FragmentActivity implements View.OnClickListener {
         }
         if (requestCode == 110 && data != null){
             String n = data.getStringExtra("loginId");
-            myFragment.setTv_userName(n);
+            myFragment.tv_loginId(n);
         }
     }
 }

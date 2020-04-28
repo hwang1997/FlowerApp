@@ -68,8 +68,6 @@ public class FlowerAdapter extends RecyclerView.Adapter<FlowerAdapter.ViewHolder
                 intent.putExtra("goodsCount", flowers.getGoodscount()+"");
                 intent.putExtra("goodsDes", flowers.getGoodsdes());
                 intent.putExtra("goodsImage", flowers.getGoodsimg());
-
-//                intent.putExtra("flowerList", flowers);
                 context.startActivity(intent);
             }
         });

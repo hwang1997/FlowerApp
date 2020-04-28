@@ -21,33 +21,8 @@
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/ordersIdUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/java/com/wanghuan/login/util/ordersIdUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Flower/app/src/main/res/layout/activity_make_order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/bus.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/bus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FlowerShop/page/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FlowerShop/page/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../biye" beforeDir="false" afterPath="$PROJECT_DIR$/../biye" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/62e82ad7-626c-4771-b54b-a0e923f5b70e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dao/OrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/dao/OrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mis/flowers/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrdersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/dao/OrdersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/dao/OrdersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/service/OrdersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/service/OrdersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mis/flowers/service/impl/OrdersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mis/flowers/service/impl/OrdersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrdersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/flowers-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/flowers-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/flowers.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -186,8 +161,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/UsersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+            <state relative-caret-position="296">
+              <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -307,8 +282,8 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="84" />
-    <option name="y" value="64" />
+    <option name="x" value="2" />
+    <option name="y" value="4" />
     <option name="width" value="1849" />
     <option name="height" value="1026" />
   </component>
@@ -439,7 +414,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588068692519" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588068922292" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/下载文件/mysql_word" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -532,7 +507,7 @@
       <workItem from="1587950007454" duration="2877000" />
       <workItem from="1588037628866" duration="10064000" />
       <workItem from="1588058001138" duration="39000" />
-      <workItem from="1588058083537" duration="9547000" />
+      <workItem from="1588058083537" duration="9843000" />
     </task>
     <task id="LOCAL-00001" summary="添加JAVA后台接口">
       <created>1586491826800</created>
@@ -660,11 +635,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587918485244</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="新增java商品类接口文件">
+      <created>1588068899630</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1588068899631</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224755000" />
+    <option name="totallyTimeSpent" value="225051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -676,10 +658,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="188" y="35" width="1849" height="1026" extended-state="0" />
-    <editor active="true" />
+    <frame x="2" y="4" width="1849" height="1026" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21017328" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49912128" visible="true" weight="0.21017328" />
       <window_info id="Structure" order="1" sideWeight="0.50087875" side_tool="true" weight="0.24984463" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -703,7 +684,7 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32623318" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" visible="true" weight="0.23430493" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" sideWeight="0.49731183" visible="true" weight="0.23430493" />
       <window_info anchor="bottom" id="File Transfer" order="17" weight="0.32985386" />
       <window_info anchor="bottom" id="SQL Generator" order="18" weight="0.3165236" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1252,8 +1233,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mis/flowers/controller/UsersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+        <state relative-caret-position="296">
+          <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

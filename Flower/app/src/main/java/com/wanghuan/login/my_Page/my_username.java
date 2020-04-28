@@ -32,6 +32,8 @@ public class my_username extends AppCompatActivity {
         newUsername = (EditText) findViewById(R.id.et_user_name);
         btn_updateUsername = (Button) findViewById(R.id.btn_updateUsername);
         intent = getIntent();
+        String newUsernameHint = intent.getStringExtra("userName");
+        newUsername.setHint(newUsernameHint);
     }
 
 

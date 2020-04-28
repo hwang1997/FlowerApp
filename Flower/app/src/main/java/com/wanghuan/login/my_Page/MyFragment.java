@@ -31,7 +31,7 @@ public class MyFragment extends Fragment {
         return view;
     }
     public void tv_loginId(String loginId) {
-        tv_userName.setText(loginId);
+        tv_loginId.setText(loginId);
     }
     public void setTv_userName(String name) {
         tv_userName.setText(name);

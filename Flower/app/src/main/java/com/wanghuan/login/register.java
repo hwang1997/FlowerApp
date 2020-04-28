@@ -53,7 +53,7 @@ public class register extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "注册成功！", Toast.LENGTH_SHORT).show();
                             delay();
                         }else {
-                            Toast.makeText(getApplicationContext(), user.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "注册失败，"+user.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "服务器异常，请稍后重试！", Toast.LENGTH_SHORT).show();
