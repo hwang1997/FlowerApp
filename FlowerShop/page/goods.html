@@ -178,12 +178,12 @@
             },
             cols: [[
                 {type: 'checkbox', fixed: 'left'},
-                {field: 'goodsid', title: '商品编号', sort: true, fixed: 'left', align: 'center'},
+                {field: 'goodsid', title: '商品编号', sort: true, fixed: 'left', align: 'center',width:120},
                 {field: 'goodsname', title: '商品名称'},
-                {field: 'goodsprice', title: '商品价格(元)', align: 'center'},
-                {field: 'goodscount', title: '商品数量', align: 'center'},
+                {field: 'goodsprice', title: '商品价格(元)', align: 'center',width:120},
+                {field: 'goodscount', title: '商品数量', align: 'center',width:120},
                 {field: 'goodsdes', title: '花语', align: 'left'},
-                {field: 'goodsimg', title: '图片', align: 'center',templet:function (d) {
+                {field: 'goodsimg', title: '图片', align: 'center',width:100,templet:function (d) {
                         return '<img width="40" height="40" src='+WebPath+'/file/showImageByPath?path='+ d.goodsimg+'/>'
                     }},
                 {fixed: 'right', title: '操作', toolbar: '#goodsBar', width: 220, align: 'center'}
