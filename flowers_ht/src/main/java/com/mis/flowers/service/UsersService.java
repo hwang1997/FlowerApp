@@ -27,6 +27,13 @@ public interface UsersService {
      */
     Users queryByloginId(String loginId);
     /**
+     * 通过userName查询单条数据
+     *
+     * @param userName 主键
+     * @return 实例对象
+     */
+    Users queryByUsername(String userName);
+    /**
      * 通过实体作为筛选条件查询
      *
      * @param users 实例对象

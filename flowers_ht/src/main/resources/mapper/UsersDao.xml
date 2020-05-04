@@ -24,6 +24,13 @@
         from flowers.users
         where login_id = #{loginId}
     </select>
+    <!--查询单个-->
+    <select id="queryByUsername" resultMap="UsersMap">
+        select
+            user_id, login_id, user_name, user_password, role
+        from flowers.users
+        where user_name = #{userName}
+    </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="UsersMap">

@@ -119,6 +119,28 @@ public class UsersController {
             return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
+    /**
+     * 通过userName查询单条数据
+     *
+     * @param userName 主键
+     * @return 单条数据
+     */
+    @RequestMapping(value = "userDoSearchByUsername", method = RequestMethod.GET)
+    public Result<List<Users>> userDoSearchByUsername(String userName) {
+        try {
+            Users users1 = this.usersService.queryByUsername(userName);
+            if (users1 == null){
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该用户不存在！");
+            }else {
+                List<Users> users = new ArrayList<>();
+                users.add(this.usersService.queryByUsername(userName));
+                return Result.createSuccess(users);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
+        }
+    }
 
     //插入
     @SneakyThrows
