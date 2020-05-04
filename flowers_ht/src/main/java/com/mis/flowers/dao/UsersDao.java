@@ -35,7 +35,7 @@ public interface UsersDao {
      * @param userName 主键
      * @return 实例对象
      */
-    Users queryByUsername(String userName);
+    List<Users> queryByUsername(String userName);
 
     /**
      * 查询指定行数据

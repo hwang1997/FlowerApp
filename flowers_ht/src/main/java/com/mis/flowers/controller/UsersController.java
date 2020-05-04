@@ -128,12 +128,11 @@ public class UsersController {
     @RequestMapping(value = "userDoSearchByUsername", method = RequestMethod.GET)
     public Result<List<Users>> userDoSearchByUsername(String userName) {
         try {
-            Users users1 = this.usersService.queryByUsername(userName);
+            List<Users> users1 = this.usersService.queryByUsername(userName);
             if (users1 == null){
                 return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该用户不存在！");
             }else {
-                List<Users> users = new ArrayList<>();
-                users.add(this.usersService.queryByUsername(userName));
+                List<Users> users = this.usersService.queryByUsername(userName);
                 return Result.createSuccess(users);
             }
         }catch (Exception e){

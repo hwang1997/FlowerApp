@@ -47,7 +47,7 @@ public class UsersServiceImpl implements UsersService {
      * @return 实例对象
      */
     @Override
-    public Users queryByUsername(String userName) {
+    public List<Users> queryByUsername(String userName) {
         return this.usersDao.queryByUsername(userName);
     }
     /**
