@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:text="绑定登陆账号:"
+            android:text="修改登陆账号:"
             android:textSize="18sp"/>
 
         <EditText

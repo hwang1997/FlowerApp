@@ -72,6 +72,7 @@ public class my_pwd extends AppCompatActivity {
             return false;
         }
     }
+    //修改密码
     public User changePwd(String userId, String pwd) throws Exception {
         Map<String, String> map = new HashMap<>();
         map.put("userId", userId);

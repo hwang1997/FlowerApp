@@ -18,7 +18,7 @@ public class MyFragment extends Fragment {
     private TextView tv_userId;
     private TextView tv_loginId;
     private TextView tv_userName;
-
+    //显示用户信息
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_my, container, false);
         tv_userId = view.findViewById(R.id.tv_userId);

@@ -53,9 +53,7 @@ public class goodsInfoActivity extends AppCompatActivity {
         btAdd = (Button) findViewById(R.id.addbt);
         btSub = (Button) findViewById(R.id.subbt);
         edtNumber = (EditText) findViewById(R.id.edt);
-
-
-
+        //通过Intent获取FstFragment页面传过来的商品信息
         goodsId.setText(String.valueOf(intent.getStringExtra("goodsId")));
         goodsName.setText(intent.getStringExtra("goodsName"));
         goodsPrice.setText("￥"+ intent.getStringExtra("goodsPrice"));
@@ -73,6 +71,7 @@ public class goodsInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validate()){
+                    //通过Intent将商品参数传给makeOrderActivity
                     Intent intent = new Intent(getApplicationContext(),makeOrderActivity.class);
                     intent.putExtra("goodsId",goodsId.getText()+"");
                     intent.putExtra("goodsName",goodsName.getText());

@@ -89,6 +89,7 @@ public class my_order extends AppCompatActivity {
         }
     }
 
+    //显示订单信息
     private Order queryOrderByUserId(String userId) throws Exception{
         Map<String,String> map = new HashMap<>();
         map.put("userId",userId);

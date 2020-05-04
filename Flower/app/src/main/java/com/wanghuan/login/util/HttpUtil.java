@@ -27,6 +27,7 @@ public class HttpUtil
 {
 	public static final String BASE_URL = "http://192.168.3.119:8089/";
 //	public static final String BASE_URL = "http://192.168.0.100:8089/";
+//	public static final String BASE_URL = "http://zaozige.xyz:8089/";
 	private static Map<String, List<Cookie>> cookieStore = new HashMap<>();
 	// 创建线程池
 	private static ExecutorService threadPool = Executors.newFixedThreadPool(30);

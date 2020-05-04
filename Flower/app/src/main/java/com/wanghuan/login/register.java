@@ -18,36 +18,38 @@ import java.util.Map;
 
 
 public class register extends AppCompatActivity {
-    private EditText loginId;
-    private EditText userName;
-    private EditText psw;
-    private EditText pswAgain;
-    private Button btn_register;
+    private EditText loginId;//登录账号EditText
+    private EditText userName;//用户名EditText
+    private EditText psw;//密码EditText
+    private EditText pswAgain;//确认密码EditText
+    private Button btn_register;//注册按钮Button
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        loginId = (EditText) findViewById(R.id.et_loginId);
-        userName = (EditText) findViewById(R.id.et_user_name);
-        psw = (EditText) findViewById(R.id.et_psw);
-        pswAgain = (EditText) findViewById(R.id.et_psw_again);
-        btn_register = (Button) findViewById(R.id.btn_register);
+        loginId = (EditText) findViewById(R.id.et_loginId);//登录账号
+        userName = (EditText) findViewById(R.id.et_user_name);//用户名
+        psw = (EditText) findViewById(R.id.et_psw);//登陆密码
+        pswAgain = (EditText) findViewById(R.id.et_psw_again);//确认密码
+        btn_register = (Button) findViewById(R.id.btn_register);//注册按钮
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        //监听注册按钮点击事件
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String loginIdStr = loginId.getText().toString();
-                String userNameStr = userName.getText().toString();
-                String pswStr = psw.getText().toString();
-                String role = "1";
+                String loginIdStr = loginId.getText().toString();//获取登录账号
+                String userNameStr = userName.getText().toString();//获取用户名
+                String pswStr = psw.getText().toString();//获取密码
+                String role = "1";//设置角色为普通用户
                 if (validate()){
                     try {
+                        //注册并将结果返回给User
                         User user = register(loginIdStr, userNameStr, pswStr, role);
                         if (user.getCode() == 0){
                             Toast.makeText(getApplicationContext(), "注册成功！", Toast.LENGTH_SHORT).show();
@@ -59,7 +61,6 @@ public class register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "服务器异常，请稍后重试！", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
-
                 }
             }
         });
@@ -94,6 +95,7 @@ public class register extends AppCompatActivity {
         }
         return true;
     }
+    //注册请求方法
     public User register(String loginId, String userName, String pwd, String role) throws Exception {
         Map<String, String> map = new HashMap<>();
         map.put("loginId", loginId);

@@ -24,17 +24,16 @@ public class splash extends Activity {
         initView();
     }
 
+    //倒计时
     private void initView() {
-
         timer = new CountDownTimer(5000, 10) {
             @Override
             public void onTick(long millisUntilFinished) {
                 textView.setText("跳过" + (millisUntilFinished / 1000 + 1));
             }
-
             @Override
             public void onFinish() {
-                Intent intent = new Intent(getApplicationContext(), login.class);
+                Intent intent = new Intent(getApplicationContext(), login.class);//页面跳转login.class
                 startActivity(intent);
                 finish();
                 textView.setClickable(true);
@@ -42,7 +41,7 @@ public class splash extends Activity {
         };
         timer.start();
     }
-
+    //跳过
     public void jumpTo(View view) {
         Intent intent = new Intent(getApplicationContext(), login.class);
         startActivity(intent);

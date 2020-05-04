@@ -50,6 +50,7 @@ public class FstFragment extends Fragment {
             Toast.makeText(getContext(),"服务器异常！",Toast.LENGTH_SHORT).show();
         }
     }
+    //获取商品信息
     private Flowers query() throws Exception{
         //定义发送请求的URL
         String url = HttpUtil.BASE_URL + "goods/queryAllForApp";

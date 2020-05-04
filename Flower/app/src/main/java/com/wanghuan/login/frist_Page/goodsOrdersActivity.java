@@ -127,7 +127,7 @@ public class goodsOrdersActivity extends AppCompatActivity {
             }
         });
     }
-    //定义发送请求的方法
+    //定义发送请求的方法  修改订单状态
     private Order query(String orderId, String state) throws Exception{
         //使用map封装请求参数
         Map<String, String> map = new HashMap<>();
@@ -140,7 +140,7 @@ public class goodsOrdersActivity extends AppCompatActivity {
         Order order = gson.fromJson(result,Order.class);
         return order;
     }
-    //定义发送请求的方法
+    //定义发送请求的方法  修改商品数量
     private Flowers updateCount(String goodsId, String goodsCount) throws Exception{
         //使用map封装请求参数
         Map<String, String> map = new HashMap<>();

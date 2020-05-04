@@ -71,7 +71,7 @@ public class my_loginId extends AppCompatActivity {
         }
         return true;
     }
-
+    //修改登录账号
     public User changeLoginId(String userId, String newLoginId) throws Exception {
         Map<String, String> map = new HashMap<>();
         map.put("userId", userId);

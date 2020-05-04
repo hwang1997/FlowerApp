@@ -164,7 +164,7 @@ public class makeOrderActivity extends AppCompatActivity {
 
         return true;
     }
-    //定义发送请求的方法
+    //定义发送请求的方法 创建订单
     private Order query(String orderId,String userId, String goodsId, String buyCount, String sumPrice,
                         String orderName, String orderPhone, String orderAddress, String pay, String state) throws Exception{
         //使用map封装请求参数

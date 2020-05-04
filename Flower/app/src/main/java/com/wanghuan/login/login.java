@@ -113,7 +113,6 @@ public class login extends AppCompatActivity {
         Gson gson = new Gson();
         User user = gson.fromJson(result,User.class);
         return user;
-
     }
 
 }

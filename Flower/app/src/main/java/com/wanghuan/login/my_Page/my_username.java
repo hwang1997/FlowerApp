@@ -75,7 +75,7 @@ public class my_username extends AppCompatActivity {
         }
         return true;
     }
-
+    //修改用户名
     public User changeUsername(String userId, String newUserName) throws Exception {
         Map<String, String> map = new HashMap<>();
         map.put("userId", userId);
