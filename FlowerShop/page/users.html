@@ -25,7 +25,13 @@
                 <input type="text" name="loginId1" id="loginId1" autocomplete="off" class="layui-input">
             </div>
         </div>
-        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 340px">
+        <div class="layui-inline">
+            <label class="layui-form-label">用户名:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="userName1" id="userName1" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-input-inline" style="position: absolute;top: 5px;left: 675px">
             <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search"
                     data-type="reload" id="doSearch">查询
             </button>
@@ -183,12 +189,13 @@
     var active = {
         reload:function () {
             var loginId1 = $('#loginId1').val();
+            var userName1 = $('#userName1').val();
                 var index = layer.msg("查询中，请稍后……",{
                     icon:6,
                     time:false,
                     shade:0
                 });
-                if (loginId1 == ""){
+                if (loginId1 == "" && userName1 == ""){
                     setTimeout(function () {
                         table.reload('userTable',{
                             url:WebPath + "/users/selectByPage",
@@ -203,7 +210,37 @@
                         });
                         layer.close(index);
                     },800);
-                } else {
+                } else if (loginId1 != "" && userName1 == "") {
+                    setTimeout(function () {
+                        table.reload('userTable',{
+                            url:WebPath + '/users/userDoSearch?loginId='+ loginId1,
+                            parseData:function (res) {
+                                return{
+                                    "code":res.code,
+                                    "msg":res.message,
+                                    "count": 1, //解析数据长度
+                                    "data": res.data //解析数据列表
+                                }
+                            }
+                        });
+                        layer.close(index);
+                    },800);
+                }else if (loginId1 == "" && userName1 != "") {
+                    setTimeout(function () {
+                        table.reload('userTable',{
+                            url:WebPath + '/users/userDoSearchByUsername?userName='+ userName1,
+                            parseData:function (res) {
+                                return{
+                                    "code":res.code,
+                                    "msg":res.message,
+                                    "count": 1, //解析数据长度
+                                    "data": res.data //解析数据列表
+                                }
+                            }
+                        });
+                        layer.close(index);
+                    },800);
+                }else {
                     setTimeout(function () {
                         table.reload('userTable',{
                             url:WebPath + '/users/userDoSearch?loginId='+ loginId1,
