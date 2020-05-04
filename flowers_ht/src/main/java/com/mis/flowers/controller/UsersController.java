@@ -7,10 +7,7 @@ import com.mis.flowers.util.MD5Util;
 import com.mis.flowers.util.Page;
 import com.mis.flowers.util.Result;
 import com.mis.flowers.util.ResultCode;
-import lombok.Generated;
 import lombok.SneakyThrows;
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -56,7 +53,7 @@ public class UsersController {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //App登录
@@ -77,7 +74,7 @@ public class UsersController {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //锁屏验证
@@ -119,34 +116,9 @@ public class UsersController {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return  Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
-
-//    /**
-//     * 通过实体作为筛选条件查询
-//     *
-//     * @param users 实例对象
-//     * @return 对象列表
-//     */
-//    @RequestMapping(value = "getUsersInfo", method = RequestMethod.GET)
-//    public Result<List<Users>> getUsersInfo(Users users) {
-//        List<Users> usersList = new ArrayList<Users>();
-//        for (int i = 0; i < this.usersService.queryAll(users).size(); i++) {
-//            usersList.add(this.usersService.queryAll(users).get(i));
-//            this.usersService.queryAll(users);
-//        }
-//        return Result.createSuccess(usersList);
-//    }
-
-//    @RequestMapping(value = "getUserAll",method = RequestMethod.GET)
-//    public Result<List<Users>> getUserAll(){
-//        List<Users> list = new ArrayList<Users>() ;
-//        for (int i = 0; i < this.usersService.selectAll().size();i++) {
-//            list.add(this.usersService.selectAll().get(i));
-//        }
-//        return Result.createSuccess(list);
-//    }
 
     //插入
     @SneakyThrows
@@ -169,7 +141,7 @@ public class UsersController {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(), "插入失败!");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 
@@ -181,28 +153,31 @@ public class UsersController {
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(), "删除失败!");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 
     //批量删除
     @RequestMapping(value = "batchDelete", method = RequestMethod.DELETE)
     public Result<Boolean> batchDelete(int[] userId) {
-        if (userId != null){
-            for (int i = 0; i < userId.length; i++) {
-                this.usersService.deleteById(userId[i]);
-            }
-            for (int j = 0; j < userId.length; j++) {
-                if (this.usersService.queryById(userId[j]) != null) {
-                    return Result.createFailUre(ResultCode.Fail.code(), "删除失败！");
-                }
-            }
-            return Result.createSuccess();
-        }else {
-            return Result.createFailUre(ResultCode.Fail.code(),"失败！");
-        }
-
-
+       try {
+           if (userId != null){
+               for (int i = 0; i < userId.length; i++) {
+                   this.usersService.deleteById(userId[i]);
+               }
+               for (int j = 0; j < userId.length; j++) {
+                   if (this.usersService.queryById(userId[j]) != null) {
+                       return Result.createFailUre(ResultCode.Fail.code(), "删除失败！");
+                   }
+               }
+               return Result.createSuccess();
+           }else {
+               return Result.createFailUre(ResultCode.Fail.code(),"失败！");
+           }
+       }catch (Exception e){
+           e.printStackTrace();
+           return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
+       }
     }
 
     //修改用户信息
@@ -210,12 +185,16 @@ public class UsersController {
     @RequestMapping(value = "updateUsers", method = RequestMethod.POST)
     public Result<Users> updateUsers(updateUserDto dto) {
         try {
-            Users users1 = new Users();
-            users1 = this.usersService.queryByloginId(dto.getLoginId());
-            if (users1 != null){
-                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该账号已存在，无法修改");
-            }else {
-                String password = MD5Util.md5Encode(dto.getUserPassword());
+            Users users1 = this.usersService.queryByloginId(dto.getLoginId());
+            Users users2 = this.usersService.queryById(dto.getUserId());
+
+            if (users1 == null){
+                String password = "";
+                if (users2.getUserPassword().equals(dto.getUserPassword())){
+                    password = dto.getUserPassword();
+                }else {
+                    password = MD5Util.md5Encode(dto.getUserPassword());
+                }
                 Users users = new Users();
                 users.setUserId(dto.getUserId());
                 users.setLoginId(dto.getLoginId());
@@ -224,10 +203,28 @@ public class UsersController {
                 users.setRole(dto.getRole());
                 this.usersService.update(users);
                 return Result.createSuccess();
+            }else {
+                if (users1.getUserId().equals(users2.getUserId())){
+                    Users users = new Users();
+                    users.setUserId(dto.getUserId());
+                    users.setLoginId(dto.getLoginId());
+                    users.setUserName(dto.getUserName());
+                    String password = "";
+                    if (users2.getUserPassword().equals(dto.getUserPassword())){
+                        password = dto.getUserPassword();
+                    }else {
+                        password = MD5Util.md5Encode(dto.getUserPassword());
+                    }
+                    users.setUserPassword(password);
+                    users.setRole(dto.getRole());
+                    this.usersService.update(users);
+                    return Result.createSuccess();
+                }
+                return Result.createFailUre(ResultCode.ERROR_PARAM.code(),"该账号已存在，无法修改");
             }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //APP修改登陆账号
@@ -244,7 +241,7 @@ public class UsersController {
             }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //APP修改用户名
@@ -256,7 +253,7 @@ public class UsersController {
             return Result.createSuccess(users);
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //修改用户密码
@@ -268,7 +265,8 @@ public class UsersController {
             this.usersService.updatePwd(userId,password);
             return Result.createSuccess();
         }catch (Exception e){
-            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     //APP修改用户密码
@@ -280,7 +278,8 @@ public class UsersController {
             this.usersService.updatePwd(Integer.parseInt(userId),password);
             return Result.createSuccess();
         }catch (Exception e){
-            return Result.createFailUre(ResultCode.Fail.code(), "失败！");
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 
@@ -294,7 +293,7 @@ public class UsersController {
             return Result.createSuccess(usersPage);
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
 
     }

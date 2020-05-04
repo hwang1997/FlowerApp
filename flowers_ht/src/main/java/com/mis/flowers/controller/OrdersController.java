@@ -1,14 +1,9 @@
 package com.mis.flowers.controller;
 
-import com.mis.flowers.dto.GoodsDto;
 import com.mis.flowers.dto.OrdersDto;
 import com.mis.flowers.dto.makeOrdersDto;
-import com.mis.flowers.entity.Goods;
 import com.mis.flowers.entity.Orders;
-import com.mis.flowers.entity.Users;
-import com.mis.flowers.service.GoodsService;
 import com.mis.flowers.service.OrdersService;
-import com.mis.flowers.service.UsersService;
 import com.mis.flowers.util.Page;
 import com.mis.flowers.util.Result;
 import com.mis.flowers.util.ResultCode;
@@ -32,21 +27,18 @@ public class OrdersController {
      */
     @Resource
     private OrdersService ordersService;
-    public UsersService usersService;
-    public GoodsService goodsService;
 
     //分页查询
     @RequestMapping(value = "selectByPage", method = RequestMethod.GET)
     public Result<Page<Orders>> selectByPage(int page, int limit) {
       try {
           List<Orders> list = this.ordersService.queryAllByLimit((page-1)*limit,limit);
-
           Integer count = this.ordersService.selectAll().size();
           Page<Orders> goodsPage = new Page<Orders>(list,count);
           return Result.createSuccess(goodsPage);
       }catch (Exception e){
           e.printStackTrace();
-          return Result.createFailUre(ResultCode.Fail.code(),"失败");
+          return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
       }
     }
 
@@ -59,12 +51,16 @@ public class OrdersController {
     @RequestMapping(value = "ordersDoSearch", method = RequestMethod.GET)
     public Result<List<Orders>> userDoSearch(String ordersId) {
         try {
-            List<Orders> orders = new ArrayList<>();
-            orders.add(this.ordersService.queryById(ordersId));
-            return Result.createSuccess(orders);
+            if (this.ordersService.queryById(ordersId) == null){
+                return Result.createFailUre(ResultCode.Fail.code(),"该订单不存在！");
+            }else {
+                List<Orders> orders = new ArrayList<>();
+                orders.add(this.ordersService.queryById(ordersId));
+                return Result.createSuccess(orders);
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     @RequestMapping(value = "updateOrders",method = RequestMethod.POST)
@@ -74,7 +70,7 @@ public class OrdersController {
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 
@@ -88,7 +84,7 @@ public class OrdersController {
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     /**
@@ -100,11 +96,15 @@ public class OrdersController {
     @RequestMapping(value = "selectByUserId", method = RequestMethod.POST)
     public Result<List<Orders>> selectByUserId(String userId) {
         try {
-            List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
-            return Result.createSuccess(orders);
+            if (this.ordersService.selectByUserId(Integer.parseInt(userId)) == null){
+                return Result.createFailUre(ResultCode.Fail.code(),"该用户不存在");
+            }else {
+                List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
+                return Result.createSuccess(orders);
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 
@@ -117,11 +117,15 @@ public class OrdersController {
     @RequestMapping(value = "ordersDoSearchByUserId", method = RequestMethod.GET)
     public Result<List<Orders>> ordersDoSearchByUserId(String userId) {
         try {
-            List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
-            return Result.createSuccess(orders);
+            if (this.ordersService.selectByUserId(Integer.parseInt(userId)) == null){
+                return Result.createFailUre(ResultCode.Fail.code(),"该用户不存在！");
+            }else {
+                List<Orders> orders = this.ordersService.selectByUserId(Integer.parseInt(userId));
+                return Result.createSuccess(orders);
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
     /**
@@ -140,6 +144,7 @@ public class OrdersController {
             return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
+    //修改订单状态
     @RequestMapping(value = "updateOrdersState",method = RequestMethod.POST)
     public Result<Boolean> updateOrdersState(String orderId, String state) {
         try {
@@ -150,7 +155,18 @@ public class OrdersController {
             return Result.createSuccess();
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"失败");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
+        }
+    }
+    //删除
+    @RequestMapping(value = "deleteOrders", method = RequestMethod.DELETE)
+    public Result<Boolean> deleteOrders(String orderId) {
+        try {
+            this.ordersService.deleteById(orderId);
+            return Result.createSuccess();
+        }catch (Exception e){
+            e.printStackTrace();
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(), "服务器异常");
         }
     }
 

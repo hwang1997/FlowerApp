@@ -51,7 +51,7 @@ public class GoodsController {
             return Result.createSuccess(goodsPage);
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误");
         }
     }
     /**
@@ -62,12 +62,16 @@ public class GoodsController {
     @RequestMapping(value = "goodsDoSearch", method = RequestMethod.GET)
     public Result<List<Goods>> userDoSearch(String goodsId) {
         try {
-            List<Goods> goods = new ArrayList<>();
-            goods.add(this.goodsService.queryById(Integer.parseInt(goodsId)));
-            return Result.createSuccess(goods);
+            if (this.goodsService.queryById(Integer.parseInt(goodsId)) == null){
+                return Result.createFailUre(ResultCode.Fail.code(),"暂无该商品信息");
+            }else {
+                List<Goods> goods = new ArrayList<>();
+                goods.add(this.goodsService.queryById(Integer.parseInt(goodsId)));
+                return Result.createSuccess(goods);
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return Result.createFailUre(ResultCode.Fail.code(),"搜索失败！");
+            return Result.createFailUre(ResultCode.INTERNAL_SERVER_ERROR.code(),"内部错误！");
         }
     }
     /**
