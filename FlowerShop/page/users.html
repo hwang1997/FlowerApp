@@ -218,7 +218,6 @@
                         });
                         layer.close(index);
                     },800);
-
                 }
         }
     };
@@ -255,11 +254,10 @@
                                     time: 1000
                                 });
                             }
+                            //刷新数据表格
+                            tableIns.reload(WebPath + "/users/selectByPage");
                         }
                     });
-                    //刷新数据表格
-                    tableIns.reload(WebPath + "/users/selectByPage");
-
                 } else {
                     layer.msg("你还没选批量删除的数据", {
                         icon: 5,
@@ -268,9 +266,6 @@
                 };
                 break;
             case 'reloadTable':
-                // table.read("userTable",{
-                //     url:'http://127.0.0.1:8089/users/selectByPage'
-                // })
                 tableIns.reload(WebPath + "/users/selectByPage");
                 break;
         }
@@ -284,7 +279,6 @@
 
         var deleteId = data.userId;
         if (layEvent === 'del') { //删除
-
             if(data.role == 1){
                 layer.confirm('真的删除吗？', function (index) {
                     //向服务端发送删除指令
@@ -304,11 +298,12 @@
                                     time: 1000
                                 });
                             }
+                            //刷新表格
+                            tableIns.reload(WebPath + "/users/selectByPage");
                         }
                     });
                     layer.close(index);
-                    //刷新表格
-                    tableIns.reload(WebPath + "/users/selectByPage");
+
                 });
             }else {
                 layer.msg("超级管理员无法删除！", {
@@ -386,8 +381,6 @@
         });
         //关闭弹出层
         layer.close(mainIndex);
-        //刷新表格
-        tableIns.reload(WebPath + "/users/selectByPage");
     });
 
     //监听单元格的单击事件

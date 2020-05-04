@@ -52,6 +52,7 @@
 <div id="ordersBar" style="display: none;">
     <a class="layui-btn layui-btn-xs" id="maxImg" lay-event="maxImg">查看图片</a>
     <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
 </div>
 <!--表头操作结束-->
 <!--修改弹出层开始-->
@@ -268,7 +269,7 @@
                             return "取消订单";
                         }
                     }},
-                {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 180, align: 'center'}
+                {fixed: 'right', title: '操作', toolbar: '#ordersBar', width: 220, align: 'center'}
             ]]
         });
     } else {
@@ -284,10 +285,9 @@
             area:['440px','540px'],
             offset:['100px','200px'],
             success:function (index) {
-                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
+                $("#img").attr("src",''+WebPath+'/file/showImageByPath?path='+data.goods[0].goodsimg);
             }
         });
-        // layer.close(maxImg);
     }
 
     //监听头部搜索按钮
@@ -373,7 +373,7 @@
     table.on("toolbar(ordersTable)", function (obj) {
         switch (obj.event) {
             case 'reloadTable':
-                tableIns.reload();
+                tableIns.reload(WebPath + '/orders/selectByPage');
                 break;
         }
     });
@@ -386,7 +386,40 @@
             openUpdateUser(data);
         }else if (layEvent === 'maxImg') {//查看图片
             openMaxImgGoods(data);
-        }
+        }else if (layEvent === 'del') {
+           if (data.state == 0 || data.state == 4){
+               layer.confirm('真的删除吗？', function (index) {
+                   //向服务端发送删除指令
+                   $.ajax({
+                       url: WebPath + "/orders/deleteOrders?orderId=" + data.orderid,
+                       type: "DELETE",
+                       dataType: "json",
+                       success: function (result) {
+                           if (result.code == 0) {
+                               layer.msg("删除" + result.message, {
+                                   icon: 6,
+                                   time: 1000
+                               });
+                           } else {
+                               layer.msg("删除" + result.message, {
+                                   icon: 5,
+                                   time: 1000
+                               });
+                           }
+                           //刷新表格
+                           tableIns.reload(WebPath + '/orders/selectByPage');
+                       }
+                   });
+                   layer.close(index);
+
+               });
+           } else {
+               layer.msg("该订单正在交易中，无法删除!", {
+                   icon: 5,
+                   time: 1000
+               });
+           }
+       }
     });
     var url = '';
     var mainIndex;
@@ -405,9 +438,8 @@
                 $("#goodsName").val(data.goods[0].goodsname);
                 $("#goodsPrice").val(data.goods[0].goodsprice);
                 $("#sumPrice").val((data.goods[0].goodsprice)*(data.buycount));
-                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goods[0].goodsimg);
+                $('.thumbImg').attr("src",''+WebPath+'/file/showImageByPath?path='+data.goods[0].goodsimg);
                 url = WebPath + '/orders/updateOrders';//修改接口
-
             }
         });
     }
@@ -434,12 +466,13 @@
                         time: 1000
                     });
                 }
+                //刷新表格
+                tableIns.reload(WebPath + '/orders/selectByPage');
             }
         });
         // 关闭弹出层
         layer.close(mainIndex);
-        //刷新表格
-        tableIns.reload();
+
     });
 </script>
 

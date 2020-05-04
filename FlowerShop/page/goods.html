@@ -85,8 +85,8 @@
                 <div class="layui-col-md3 layui-col-xs5">
                     <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 200px">
                         <input type="hidden" name="goodsimg" id="goodsimg" value="images/1.png">
-                        <img class="layui-upload-img thumbImg"
-                             style="width:200px;height:200px;background-size: auto" src="http://127.0.0.1:8089/file/showImageByPath?path=images/1.png">
+                        <img class="layui-upload-img thumbImg" id="imgUrl"
+                             style="width:200px;height:200px;background-size: auto">
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
         $("#goodscount").val("");
         $("#goodsdes").val("");
         $("#goodsimg").val("images/1.png");
-        $(".thumbImg").attr("src","http://127.0.0.1:8089/file/showImageByPath?path=images/1.png");
+        $(".thumbImg").attr("src",""+WebPath+"/file/showImageByPath?path=images/1.png");
     });
 
 
@@ -201,7 +201,7 @@
     });
     var active = {
         reload:function () {
-            var goodsId1 = $('#goodsId').val();
+            var goodsId1 = $('#goodsId1').val();
             var index = layer.msg("查询中，请稍后……",{
                 icon:6,
                 time:false,
@@ -225,7 +225,7 @@
             } else {
                 setTimeout(function () {
                     table.reload('goodsTable',{
-                        url:WebPath + '/goods/goodsDoSearch?goodsId='+ goodsId,
+                        url:WebPath + '/goods/goodsDoSearch?goodsId='+ goodsId1,
                         parseData:function (res) {
                             return{
                                 "code":res.code,
@@ -249,13 +249,9 @@
                 openAddUser();
                 break;
             case 'reloadTable':
-                // table.read("userTable",{
-                //     url:'http://127.0.0.1:8089/users/selectByPage'
-                // })
                 tableIns.reload(WebPath + "/goods/selectByPage");
                 break;
         }
-        ;
     });
 
     //监听行工具事件
@@ -281,11 +277,12 @@
                                 time: 1000
                             });
                         }
+                        //刷新表格
+                        tableIns.reload(WebPath + "/goods/selectByPage");
                     }
                 });
                 layer.close(index);
-                //刷新表格
-                tableIns.reload(WebPath + "/goods/selectByPage");
+
             });
         } else if (layEvent === 'edit') { //编辑
             //do something
@@ -312,14 +309,12 @@
                 $("#goodsid").val("");
                 url = WebPath + '/goods/insertGoods';//添加接口
                 $('#goodsIdHide').attr("style","display:none");
+                $('#imgUrl').attr("src",''+WebPath+'/file/showImageByPath?path=images/1.png');
                 value = "添加";
                 //设置默认图片
-                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path=images/1.png');
+                $('.thumbImg').attr("src",''+WebPath+'/file/showImageByPath?path=images/1.png');
                 $('#goodsImg').val('images/1.png');
-
             }
-
-
         });
     }
 
@@ -335,8 +330,9 @@
                 form.val('dataFrm', data);
                 value = "修改";
                 $('#goodsIdHide').removeAttr("style","display:none");
+                $('#imgUrl').attr("src",''+WebPath+'/file/showImageByPath?path=images/1.png');
                 url = WebPath + '/goods/updateGoods';//修改接口
-                $('.thumbImg').attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+                $('.thumbImg').attr("src",''+WebPath+'/file/showImageByPath?path='+data.goodsimg);
             }
         });
     }
@@ -349,10 +345,9 @@
             area:['440px','540px'],
             offset:['100px','200px'],
             success:function (index) {
-                $("#img").attr("src",'http://127.0.0.1:8089/file/showImageByPath?path='+data.goodsimg);
+                $("#img").attr("src",''+WebPath+'/file/showImageByPath?path='+data.goodsimg);
             }
         });
-        // layer.close(maxImg);
     }
 
     //保存
@@ -376,13 +371,11 @@
                         time: 1000
                     });
                 }
-                tableIns.reload(WebPath + "/users/selectByPage");
+                tableIns.reload(WebPath + "/goods/selectByPage");
             }
         });
         //关闭弹出层
         layer.close(mainIndex);
-        //刷新表格
-        tableIns.reload(WebPath + "/users/selectByPage");
     });
 </script>
 
