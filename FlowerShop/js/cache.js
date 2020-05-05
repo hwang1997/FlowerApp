@@ -152,6 +152,7 @@ layui.use(['form', 'jquery', "layer"], function () {
             menu = [];
             window.sessionStorage.removeItem("curmenu");
             window.localStorage.clear();
+            // window.location.href = 'http://zaozige.xyz';
             window.location.href = 'login.html';
         });
 
