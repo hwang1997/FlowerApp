@@ -19,6 +19,7 @@ import java.util.Properties;
 public class AppFileUtils {
     //文件上传的保存路径
     public static String UPLOAD_PATH="D:/biye/upload";
+//    public static String UPLOAD_PATH="/www/flowers/upload";
     public static String IMAGES_DEFAULTGOODSIMG_PNG = "images/1.png";
     static {
         //读取配置文件的存储地址
@@ -81,7 +82,7 @@ public class AppFileUtils {
     }
     //根据老路径删除图片
     public static void removeFileByPath(String oldPath) {
-        if (oldPath.equals(IMAGES_DEFAULTGOODSIMG_PNG)){
+        if (!oldPath.equals(IMAGES_DEFAULTGOODSIMG_PNG)){
             File file = new File(UPLOAD_PATH, oldPath);
             if (file.exists()){
                 file.delete();

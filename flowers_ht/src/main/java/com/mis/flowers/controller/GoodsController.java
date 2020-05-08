@@ -136,7 +136,7 @@ public class GoodsController {
     public Result<Boolean> deleteUsers(Integer goodsid, String goodsimg) {
         try {
             //删除原文件
-            AppFileUtils.renameFile(goodsimg);
+            AppFileUtils.removeFileByPath(goodsimg);
             this.goodsService.deleteById(goodsid);
             return Result.createSuccess();
         }catch (Exception e){
