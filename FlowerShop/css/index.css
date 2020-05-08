@@ -17,6 +17,9 @@
 .layui-nav .layui-nav-item a {
     cursor: pointer;
 }
+.beian{
+    font-style: normal;
+}
 
 .layui-nav .layui-nav-item > a {
     color: rgba(255, 255, 255, 1);
