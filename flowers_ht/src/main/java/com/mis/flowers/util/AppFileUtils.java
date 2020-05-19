@@ -1,5 +1,6 @@
 package com.mis.flowers.util;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.IdUtil;
 import org.springframework.http.HttpHeaders;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.Properties;
 
 /**
@@ -89,5 +91,26 @@ public class AppFileUtils {
             }
         }
 
+    }
+    //定时器每天23:59删除带有temp的图片
+    public static void removeFileByTimer() {
+        String dirName = DateUtil.format(new Date(),"yyyy-MM-dd");
+//        String dirName = "2020-04-12";
+        String img_path = "/"+dirName;
+        File file = new File(UPLOAD_PATH, img_path);
+        //判断是否为目录
+        if (file.isDirectory()){
+            File[] files = file.listFiles();//得到所有的File
+            for (File file1 : files){
+                String fileName = file1.getName();
+                String fileSuffix = fileName.substring(fileName.lastIndexOf("."));
+                if (fileSuffix.toLowerCase().equals(".jpg_temp")){
+                    File file2 = new File(UPLOAD_PATH, img_path+"/"+ fileName);
+                    if (file2.exists()){
+                        file2.delete();
+                    }
+                }
+            }
+        }
     }
 }

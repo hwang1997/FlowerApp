@@ -6,7 +6,6 @@ com\mis\flowers\dao\UsersDao.class
 com\mis\flowers\controller\FileController.class
 com\mis\flowers\dto\UserDto.class
 com\mis\flowers\service\impl\GoodsServiceImpl.class
-com\mis\flowers\util\ordersIdUtil.class
 com\mis\flowers\util\ResultCode.class
 com\mis\flowers\service\impl\UsersServiceImpl.class
 com\mis\flowers\config\WebConfig.class
@@ -26,6 +25,7 @@ com\mis\flowers\service\OrdersService.class
 com\mis\flowers\dto\addUserDto.class
 com\mis\flowers\dto\updateUserDto.class
 com\mis\flowers\entity\Goods.class
+com\mis\flowers\util\mytimer.class
 com\mis\flowers\dto\GoodsDto.class
 com\mis\flowers\entity\Orders.class
 com\mis\flowers\entity\Users.class
