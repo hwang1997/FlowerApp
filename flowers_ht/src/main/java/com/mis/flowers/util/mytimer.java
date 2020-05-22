@@ -18,7 +18,7 @@ public class mytimer {
 //        System.out.println("定时任务执行时间：" + dateFormat.format(new Date()));
 //    }
     //每天23：59执行
-    @Scheduled(cron = "0 59 23 ? * *")
+    @Scheduled(cron = "0 59 23 * * ?")
     public void testTasks1() {
         removeFileByTimer();
         System.out.println("定时任务执行时间：" + dateFormat.format(new Date()));
