@@ -52,8 +52,8 @@
             <if test="goodsimg != null and goodsimg != ''">
                 and goodsImg = #{goodsimg}
             </if>
-            <if test="goodsAddress != null and goodsaddress != ''">
-                and goodsImg = #{goodsimg}
+            <if test="goodsAddress != null and goodsAddress != ''">
+                and goodsAddress = #{goodsAddress}
             </if>
         </where>
     </select>
