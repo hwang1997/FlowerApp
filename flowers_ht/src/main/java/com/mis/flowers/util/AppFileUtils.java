@@ -73,6 +73,31 @@ public class AppFileUtils {
         return null;
     }
 
+    //apk文件下载
+    public static ResponseEntity<Object> LoadApp(String path) {
+        //1、构造文件对象
+        File file = new File(UPLOAD_PATH,path);
+        if (file.exists()){
+            //将下载的文件封装成byte[]
+            byte[] bytes = null;
+            try {
+                bytes = FileUtil.readBytes(file);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            //创建封装响应头信息的对象
+            HttpHeaders header = new HttpHeaders();
+            //封装响应内容类型（APPLICATION_OCTET_STREAM）
+            header.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+            //设置下载文件名称
+            header.setContentDispositionFormData("attachment","hema.apk");
+            //创建ResponseEntity对象
+            ResponseEntity<Object> entity = new ResponseEntity<Object>(bytes, header, HttpStatus.CREATED);
+
+            return entity;
+        }
+        return null;
+    }
     //根据路径改名字，取得_temp
     public static String renameFile(String goodsimg) {
         File file = new File(UPLOAD_PATH, goodsimg);

@@ -25,6 +25,10 @@ public class GoodsDto {
      * 商品图片
      */
     private String goodsimg;
+    /**
+     * 商品产地
+     */
+    private String goodsAddress;
 
     public Integer getGoodsid() {
         return goodsid;
@@ -72,5 +76,13 @@ public class GoodsDto {
 
     public void setGoodsimg(String goodsimg) {
         this.goodsimg = goodsimg;
+    }
+
+    public String getGoodsAddress() {
+        return goodsAddress;
+    }
+
+    public void setGoodsAddress(String goodsAddress) {
+        this.goodsAddress = goodsAddress;
     }
 }

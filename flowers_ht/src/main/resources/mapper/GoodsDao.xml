@@ -9,12 +9,13 @@
         <result property="goodscount" column="goodsCount" jdbcType="INTEGER"/>
         <result property="goodsdes" column="goodsDes" jdbcType="VARCHAR"/>
         <result property="goodsimg" column="goodsImg" jdbcType="VARCHAR"/>
+        <result property="goodsAddress" column="goodsAddress" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="GoodsMap">
         select
-          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg, goodsAddress
         from flowers.goods
         where goodsId = #{goodsid}
     </select>
@@ -22,7 +23,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="GoodsMap">
         select
-          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg, goodsAddress
         from flowers.goods
         limit #{offset}, #{limit}
     </select>
@@ -30,7 +31,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="GoodsMap">
         select
-          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg
+          goodsId, goodsName, goodsPrice, goodsCount, goodsDes, goodsImg, goodsAddress
         from flowers.goods
         <where>
             <if test="goodsid != null">
@@ -51,13 +52,16 @@
             <if test="goodsimg != null and goodsimg != ''">
                 and goodsImg = #{goodsimg}
             </if>
+            <if test="goodsAddress != null and goodsaddress != ''">
+                and goodsImg = #{goodsimg}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="goodsid" useGeneratedKeys="true">
-        insert into flowers.goods(goodsName, goodsPrice, goodsCount, goodsDes, goodsImg)
-        values (#{goodsname}, #{goodsprice}, #{goodscount}, #{goodsdes}, #{goodsimg})
+        insert into flowers.goods(goodsName, goodsPrice, goodsCount, goodsDes, goodsImg, goodsAddress)
+        values (#{goodsname}, #{goodsprice}, #{goodscount}, #{goodsdes}, #{goodsimg}, #{goodsAddress})
     </insert>
 
     <!--通过主键修改数据-->
@@ -79,6 +83,9 @@
             <if test="goodsimg != null and goodsimg != ''">
                 goodsImg = #{goodsimg},
             </if>
+            <if test="goodsAddress != null and goodsAddress != ''">
+                goodsAddress = #{goodsAddress},
+            </if>
         </set>
         where goodsId = #{goodsid}
     </update>
@@ -91,7 +98,7 @@
     <!--查询所有-->
     <select id="selectAll" resultMap="GoodsMap">
         select
-            goodsid, goodsname, goodsprice, goodscount,goodsdes,goodsimg
+            goodsid, goodsname, goodsprice, goodscount,goodsdes,goodsimg, goodsAddress
         from flowers.goods
     </select>
 

@@ -59,4 +59,12 @@ public class FileController {
     public ResponseEntity<Object> showImageByPath(String path){
         return AppFileUtils.createResponseEntity(path);
     }
+    /**
+     * apk文件下载
+     */
+    @RequestMapping(value = "loadApk",method = RequestMethod.GET)
+    public ResponseEntity<Object> loadApk(){
+        String path = "app-release.apk";
+        return AppFileUtils.LoadApp(path);
+    }
 }

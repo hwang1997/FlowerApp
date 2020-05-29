@@ -81,6 +81,12 @@
                             <input type="text" class="layui-input" name="goodscount" id="goodscount" lay-verify="required" placeholder="请输入商品数量">
                         </div>
                     </div>
+                    <div class="layui-form-item magt3">
+                        <label class="layui-form-label">产地：</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" name="goodsAddress" id="goodsAddress"  placeholder="请输入产地">
+                        </div>
+                    </div>
                 </div>
                 <div class="layui-col-md3 layui-col-xs5">
                     <div class="layui-upload-list thumbBox mag0 " style="border: 1px solid #0C0C0C;width: 200px">
@@ -183,6 +189,7 @@
                 {field: 'goodsprice', title: '商品价格(元)', align: 'center',width:120},
                 {field: 'goodscount', title: '商品数量', align: 'center',width:120},
                 {field: 'goodsdes', title: '花语', align: 'left'},
+                {field: 'goodsAddress', title: '产地', align: 'center'},
                 {field: 'goodsimg', title: '图片', align: 'center',width:100,templet:function (d) {
                         return '<img width="40" height="40" src='+WebPath+'/file/showImageByPath?path='+ d.goodsimg+'/>'
                     }},
@@ -307,6 +314,7 @@
                 // $('#dataFrm')[0].reset();
                 $("#reset").click();
                 $("#goodsid").val("");
+                $("#goodsAddress").val("");
                 url = WebPath + '/goods/insertGoods';//添加接口
                 $('#goodsIdHide').attr("style","display:none");
                 $('#imgUrl').attr("src",''+WebPath+'/file/showImageByPath?path=images/1.png');

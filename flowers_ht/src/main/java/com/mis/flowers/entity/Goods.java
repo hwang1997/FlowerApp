@@ -31,9 +31,13 @@ public class Goods implements Serializable {
     */
     private String goodsdes;
     /**
-    * 商品图片
-    */
+     * 商品图片
+     */
     private String goodsimg;
+    /**
+     * 商品产地
+     */
+    private String goodsAddress;
 
 
     public Integer getGoodsid() {
@@ -84,4 +88,11 @@ public class Goods implements Serializable {
         this.goodsimg = goodsimg;
     }
 
+    public String getGoodsAddress() {
+        return goodsAddress;
+    }
+
+    public void setGoodsAddress(String goodsAddress) {
+        this.goodsAddress = goodsAddress;
+    }
 }

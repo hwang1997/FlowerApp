@@ -90,6 +90,7 @@ public class GoodsController {
             goods.setGoodscount(dto.getGoodscount());
             goods.setGoodsdes(dto.getGoodsdes());
             goods.setGoodsimg(dto.getGoodsimg());
+            goods.setGoodsAddress(dto.getGoodsAddress());
             this.goodsService.insert(goods);
             return Result.createSuccess();
         }catch (Exception e){

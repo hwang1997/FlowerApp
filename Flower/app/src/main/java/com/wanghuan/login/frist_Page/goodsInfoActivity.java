@@ -96,7 +96,7 @@ public class goodsInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int numString = Integer.parseInt(edtNumber.getText().toString());
                 if (++numString > 5 ){
-                    Toast.makeText(getApplicationContext(),"购买数量必须小于5",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"购买数量必须小于等于5",Toast.LENGTH_SHORT).show();
                     num = 5;
                 }else {
                     num ++;
@@ -110,7 +110,7 @@ public class goodsInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int numString = Integer.parseInt(edtNumber.getText().toString());
                 if (--numString <= 0) {
-                    Toast.makeText(getApplicationContext(), "最低购买数量为1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "购买数量必须大于等于1", Toast.LENGTH_SHORT).show();
                     num = 1;
                 } else {
                     num--;
